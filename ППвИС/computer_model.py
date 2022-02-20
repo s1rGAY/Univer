@@ -39,8 +39,8 @@ class User:
     def turn_on_comuter(Computer):
         Computer.turn_status()
 
-    def use_command(command):
-        Keyboar.enter_command()
+    def use_command(self):
+        Keyboard.enter_command(self.accses_level)
 
 
 class Computer:
@@ -66,28 +66,31 @@ class Computer:
             self.status = True
 
 
-class Keyboar:
-    def enter_command():
+class Keyboard:
+    def enter_command(accses_level):
         command = str(input())
-        if command in comands:
-            print('right comand')
-        else:
-            print('your comand incorrect')
+
 # добавить набор команд для работы с хранилищем
 # прописать взаимодействие с хранилищем
 
+
+# как разделить storage?
 
 class Storage:
     def __init__(self, size):
         self.size = size
         self.free_memory = size
 
+        self.user_storage = User_storage(size)
+        self.system_storage = System_storage(size)
+
         if isinstance(self, User_storage):
             self.access_lvl = 'User'
             self.user_size = self.size * 0.7
-            self.system_size = self.size - self.user_size
         elif isinstance(self, System_storage):
             self.access_lvl = 'Administrator'
+            self.system_size = self.size * 0.3
+            self.
 
     def clear_storage(self):
         self.free_memory = self.size
@@ -126,4 +129,5 @@ class User_storage(Storage):
 
 
 class System_storage(Storage):
+    #  должна хранить root файлы и команды
     pass
