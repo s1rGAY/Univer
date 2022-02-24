@@ -26,38 +26,33 @@
 '''
 
 # from calendar import r
+import collections
 from distutils.command.sdist import sdist
 import os
 
 
 class User:
-    def __init_(self, name, system, accses_level):
+    def __init__(self, name, systems):
         self.name = name
-        self.accses_level = accses_level
-        self.system = system  # кортеж систем, которыми может пользоваться user
+        self.system = systems  # кортеж систем, которыми может пользоваться user
 
-    def turn_on_comuter(Computer):
+    def turn_comuter_status(Computer):
         Computer.turn_status()
 
-    def use_command(self):
-        Keyboard.enter_command(self.accses_level)
+    def use_command(self, Computer):
+        Computer.use_command()
+
+    def get_user_info(self):
+        return(self.name, self.system)
 
 
 class Computer:
-    def __init__(self, password, root_password, system_name, Storage):
+    def __init__(self, password, system_type, storage_size):
         self.password = password
-        self.root_password = root_password
-        self.storage = Storage()
-        self.status = False  # pc is switched off
-        self.system_name = system_name
-        if system_name == 'windows':
-            self.comands = ['shutdown']
-        elif system_name == 'macOS':
-            self.comands = ['shutdown']
-        elif system_name == 'linux':
-            self.comands = ['poweroff']
-        else:
-            print("Such a system isn't available")
+        self.system_type = system_type
+        self.user_storage = Storage(storage_size, system_type)
+        self.keyboard = Keyboard()
+        self.turn_status = False
 
     def turn_status(self):
         if self.status is True:
@@ -65,36 +60,63 @@ class Computer:
         else:
             self.status = True
 
+    def use_command(self):
+        return self.keyboard.enter_command()
+
 
 class Keyboard:
-    def enter_command(accses_level):
-        command = str(input())
+    def enter_command(self):
+        return str(input())
 
 # добавить набор команд для работы с хранилищем
 # прописать взаимодействие с хранилищем
 
 
 # как разделить storage?
-
+# говнокод(конструкторы)
 class Storage:
+    def __init__(self, size, system_type):
+        self.user_storage = User_storage(size*0.7)
+        self.system_storage = System_storage(size*0.3, 'Linux')
+
+    def get_memory_info(self):
+        return {'User storage : ': self.user_storage.get_memory_info(),
+                'System storage : ': self.system_storage.get_memory_info()}
+
+    def clear_storage():
+        pass
+
+
+class User_storage(Storage):
     def __init__(self, size):
-        self.size = size
         self.free_memory = size
+        self.used_memory = 0
 
-        self.user_storage = User_storage(size)
-        self.system_storage = System_storage(size)
+    def get_memory_info(self):
+        return {'Free memory :': self.free_memory, 'Used memory:': self.used_memory}
 
-        if isinstance(self, User_storage):
-            self.access_lvl = 'User'
-            self.user_size = self.size * 0.7
-        elif isinstance(self, System_storage):
-            self.access_lvl = 'Administrator'
-            self.system_size = self.size * 0.3
-            self.
+    #  прописать организацию файлов
 
-    def clear_storage(self):
-        self.free_memory = self.size
-        # прописать удаление файлов
+
+class System_storage(Storage):
+    def __init__(self, size, system_type):
+        self.free_memory = size
+        self.used_memory = 0
+        self.system_type = system_type
+        self.comands = {}
+        #  may be use lowercase()?
+        if system_type == 'Linux' or 'linux' or 'Penguin':
+            self.comands = {}
+        elif system_type == 'Windows' or 'Win' or 'win':
+            self.comands = {}
+        elif system_type == 'macOS' or 'macos' or 'MacOS':
+            self.comands = {}
+
+    def get_memory_info(self):
+        return {'Free memory :': self.free_memory, 'Used memory:': self.used_memory}
+
+    def get_command(command):
+        pass
 
 
 class File_handling:
@@ -124,10 +146,51 @@ class File_handling:
         file.close()
 
 
-class User_storage(Storage):
-    pass
+class Сommand_settings:
+    def __init__(self, system_type, commands):
+        self.commands = commands  # should be a dict (key-command,value-access)
+        self.system_type = system_type
+
+    def get_system_type(self):
+        return self.system_type
+
+    def get_command(self, command):
+        if command in self.commands.keys():
+            return self.commands[command]
+        else:
+            print('Exception!')
+
+    def add_command(self, new_command):  # should be a dict (value-access)
+        if new_command not in self.commands.keys():
+            self.commands[new_command.keys()] = new_command[new_command.keys()]
+        else:
+            print('Exception!')
+
+    def del_command(self, command):  # just a command
+        del self.commands[command]
 
 
-class System_storage(Storage):
-    #  должна хранить root файлы и команды
-    pass
+#  нужен фикс с конструктором
+class Linux__commands(Сommand_settings):
+    def __init__(self, commands):
+        super().__init__(system_type, commands)
+        self.commands = {'shutdown': 'sudo'}
+
+
+class Win_commands:
+    def __init__(self, system_type, commands):
+        super().__init__(system_type, commands)
+        self.commands = {'shutdown': 'sudo'}
+
+
+class macOS_commands:
+    def __init__(self, system_type, commands):
+        super().__init__(system_type, commands)
+        self.commands = {'shutdown': 'sudo'}
+
+
+first_user = User('Siarhei', ('Win', 'Linux', 'macOS'))
+#  first_pc = Computer('my_password', 'Linux', 100)
+storage = Storage(10, 'Linux')
+first_computer = Computer('1234', 'linux', 10)
+first_user.use_command(first_computer)
