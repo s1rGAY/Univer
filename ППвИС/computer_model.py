@@ -28,6 +28,7 @@
 # from calendar import r
 import collections
 from distutils.command.sdist import sdist
+import string
 import os
 
 
@@ -51,7 +52,7 @@ class Computer:
         self.password = password
         self.system_type = system_type
         self.user_storage = Storage(storage_size, system_type)
-        self.keyboard = Keyboard()
+        self.keselfyboard = Keyboard()
         self.turn_status = False
 
     def turn_status(self):
@@ -59,6 +60,12 @@ class Computer:
             self.status = False
         else:
             self.status = True
+
+    def get_system_type(self):
+        return self.system_type
+
+    def get_storage_info(self):
+        return self.user_storage.get_memory_info()
 
     def use_command(self):
         return self.keyboard.enter_command()
@@ -77,7 +84,7 @@ class Keyboard:
 class Storage:
     def __init__(self, size, system_type):
         self.user_storage = User_storage(size*0.7)
-        self.system_storage = System_storage(size*0.3, 'Linux')
+        self.system_storage = System_storage(size*0.3, system_type)
 
     def get_memory_info(self):
         return {'User storage : ': self.user_storage.get_memory_info(),
@@ -102,14 +109,14 @@ class System_storage(Storage):
     def __init__(self, size, system_type):
         self.free_memory = size
         self.used_memory = 0
-        self.system_type = system_type
+        self.system_type = (system_type.lover())  #  возможные проблемы
         self.comands = {}
         #  may be use lowercase()?
-        if system_type == 'Linux' or 'linux' or 'Penguin':
+        if self.system_type == 'linux':
             self.comands = {}
-        elif system_type == 'Windows' or 'Win' or 'win':
+        elif system_type == 'windows' or 'win':
             self.comands = {}
-        elif system_type == 'macOS' or 'macos' or 'MacOS':
+        elif system_type == 'macos':
             self.comands = {}
 
     def get_memory_info(self):
@@ -147,12 +154,8 @@ class File_handling:
 
 
 class Сommand_settings:
-    def __init__(self, system_type, commands):
+    def __init__(self, commands):
         self.commands = commands  # should be a dict (key-command,value-access)
-        self.system_type = system_type
-
-    def get_system_type(self):
-        return self.system_type
 
     def get_command(self, command):
         if command in self.commands.keys():
@@ -173,20 +176,38 @@ class Сommand_settings:
 #  нужен фикс с конструктором
 class Linux__commands(Сommand_settings):
     def __init__(self, commands):
-        super().__init__(system_type, commands)
-        self.commands = {'shutdown': 'sudo'}
+        linux_commands = {'shoutdown': 'off',
+                          'clear_file': 'clearing file',
+                          'rm': 'remove file',
+                          'touch': 'create file',
+                          'echo >': 'overwrite file',
+                          'echo >>': 'add data to end',
+                          'cat': 'view file data'}
+        super().__init__(commands)
 
 
 class Win_commands:
-    def __init__(self, system_type, commands):
-        super().__init__(system_type, commands)
-        self.commands = {'shutdown': 'sudo'}
+    def __init__(self, commands):
+        win_commands = {'shoutdown': 'off',
+                        'cat /dev/null': 'clearing file',
+                        'del': 'remove file',
+                        'type null >': 'create file',
+                        'echo >': 'overwrite file',
+                        'echo >>': 'add data to end',
+                        'cat': 'view file data'}
+        super().__init__(commands)
 
 
 class macOS_commands:
-    def __init__(self, system_type, commands):
-        super().__init__(system_type, commands)
-        self.commands = {'shutdown': 'sudo'}
+    def __init__(self, commands):
+        macos_commands = {'shoutdown': 'off',
+                          'clear_file': 'clearing file',
+                          'rm': 'remove file',
+                          'touch': 'create file',
+                          'echo >': 'overwrite file',
+                          'echo >>': 'add data to end',
+                          'cat': 'view file data'}
+        super().__init__(commands)
 
 
 first_user = User('Siarhei', ('Win', 'Linux', 'macOS'))
@@ -194,3 +215,4 @@ first_user = User('Siarhei', ('Win', 'Linux', 'macOS'))
 storage = Storage(10, 'Linux')
 first_computer = Computer('1234', 'linux', 10)
 first_user.use_command(first_computer)
+print(first_computer.get_storage_info())
