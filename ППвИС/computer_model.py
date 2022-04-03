@@ -28,8 +28,11 @@
 # from calendar import r
 import collections
 from distutils.command.sdist import sdist
+from inspect import CO_ASYNC_GENERATOR
 import string
 import os
+
+from cachetools import FIFOCache
 
 
 class User:
@@ -46,14 +49,29 @@ class User:
     def get_user_info(self):
         return(self.name, self.system)
 
+#парсер для данных из папки с инфой компа
+def parser():
+    pass
 
 class Computer:
     def __init__(self, password, system_type, storage_size):
         self.password = password
         self.system_type = system_type
-        self.user_storage = Storage(storage_size, system_type)
+        self.storage = Storage(storage_size, system_type)
         self.keselfyboard = Keyboard()
-        self.turn_status = False
+        self.status = False
+
+    def login(User):
+        if parser() is True:
+            # если такой пользователь есть у компа => можно запускать
+            pass
+            #добавить проверку passw
+        else:
+            #пользователя нету => доступ запрещен
+            pass
+
+    def _check_status(self):
+        return self.status
 
     def turn_status(self):
         if self.status is True:
@@ -65,10 +83,22 @@ class Computer:
         return self.system_type
 
     def get_storage_info(self):
-        return self.user_storage.get_memory_info()
+        return self.storage.get_memory_info()
 
     def use_command(self):
-        return self.keyboard.enter_command()
+        if self._check_status() is True:
+            command = self.keselfyboard.enter_command()
+            if self.storage.system_storage.find_command(command):
+                # реализация команд
+                # через класс! В котором посто будут функции с этими командами
+                pass
+            else:
+                print('Exeption! No such command.')
+            
+
+
+    def get_status(self):
+        return self.status
 
 
 class Keyboard:
@@ -81,6 +111,7 @@ class Keyboard:
 
 # как разделить storage?
 # говнокод(конструкторы)
+# странаня иерархия
 class Storage:
     def __init__(self, size, system_type):
         self.user_storage = User_storage(size*0.7)
@@ -109,19 +140,23 @@ class System_storage(Storage):
     def __init__(self, size, system_type):
         self.free_memory = size
         self.used_memory = 0
-        self.system_type = (system_type.lover())  #  возможные проблемы
+        self.system_type = (system_type.lower())  # возможные проблемы
+        self.source_commands_realization = File_handling()
         self.comands = {}
-        #  may be use lowercase()?
+        #добавить перегрузку для 1 параметра
         if self.system_type == 'linux':
-            self.comands = {}
+            self.comands = Linux_commands({'':''})
         elif system_type == 'windows' or 'win':
-            self.comands = {}
+            self.comands = Win_commands({'':''})
         elif system_type == 'macos':
-            self.comands = {}
+            self.comands = macOS_commands({'':''})
 
     def get_memory_info(self):
         return {'Free memory :': self.free_memory, 'Used memory:': self.used_memory}
 
+    def find_command(self, command):
+        return (command in self.commands.keys())
+    
     def get_command(command):
         pass
 
@@ -157,6 +192,9 @@ class Сommand_settings:
     def __init__(self, commands):
         self.commands = commands  # should be a dict (key-command,value-access)
 
+    def get_commands(self):
+        return self.commands
+
     def get_command(self, command):
         if command in self.commands.keys():
             return self.commands[command]
@@ -174,7 +212,7 @@ class Сommand_settings:
 
 
 #  нужен фикс с конструктором
-class Linux__commands(Сommand_settings):
+class Linux_commands(Сommand_settings):
     def __init__(self, commands):
         linux_commands = {'shoutdown': 'off',
                           'clear_file': 'clearing file',
@@ -183,10 +221,10 @@ class Linux__commands(Сommand_settings):
                           'echo >': 'overwrite file',
                           'echo >>': 'add data to end',
                           'cat': 'view file data'}
-        super().__init__(commands)
+        super().__init__({**linux_commands, **commands})
+#переставить версия питона на 3.9 для записи linux_commands | commands
 
-
-class Win_commands:
+class Win_commands(Сommand_settings):
     def __init__(self, commands):
         win_commands = {'shoutdown': 'off',
                         'cat /dev/null': 'clearing file',
@@ -195,24 +233,29 @@ class Win_commands:
                         'echo >': 'overwrite file',
                         'echo >>': 'add data to end',
                         'cat': 'view file data'}
-        super().__init__(commands)
+        super().__init__({**win_commands, **commands})
 
 
-class macOS_commands:
+class macOS_commands(Сommand_settings):
     def __init__(self, commands):
         macos_commands = {'shoutdown': 'off',
-                          'clear_file': 'clearing file',
+                          'echo -n': 'clearing file',
                           'rm': 'remove file',
-                          'touch': 'create file',
+                          'nano': 'create file',
                           'echo >': 'overwrite file',
                           'echo >>': 'add data to end',
                           'cat': 'view file data'}
+        super().__init__({**macos_commands, **commands})
+
+    def __init__(self, commands):
         super().__init__(commands)
 
 
-first_user = User('Siarhei', ('Win', 'Linux', 'macOS'))
-#  first_pc = Computer('my_password', 'Linux', 100)
-storage = Storage(10, 'Linux')
-first_computer = Computer('1234', 'linux', 10)
-first_user.use_command(first_computer)
-print(first_computer.get_storage_info())
+siarhei = User('Siarei','linux')
+print(str(siarhei.get_user_info())+ '\t')
+
+
+siarhei_pc = Computer(12345, 'linux', 100)
+print(str(siarhei_pc.get_status()) + '\t')
+print(str(siarhei_pc.get_storage_info()) + '\t')
+print(str(siarhei_pc.get_system_type()) + '\t')
