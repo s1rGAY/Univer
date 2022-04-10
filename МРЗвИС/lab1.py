@@ -1,9 +1,5 @@
 import numpy as np
 
-#распараллелить умножение x4
-#распараллелить сложение ч2
-
-
 def convert(n, p=2, q=10):
     D = '0123456789'
     if isinstance(n, str):
@@ -15,7 +11,6 @@ def convert(n, p=2, q=10):
 
 def formater(number):
     n = list(convert(number))
-    #через lambda переделать
     for i in range(len(n)):
         n[i] = int(n[i])
     return np.array(n)
@@ -53,9 +48,7 @@ def sum(num1, num2):
     res = res[::-1]
 
     return(res)
-
-#ебать тут говнокод
-#да и похую на этот мп3
+'''
 def ne_konv(first_numb, sec_numb):
     first_numb, sec_numb = formater(first_numb), formater(sec_numb)
     answ = np.zeros((4,8))
@@ -70,19 +63,23 @@ def ne_konv(first_numb, sec_numb):
     for i in range(answ.shape[0]):
         real_answ = sum(real_answ,answ[i].tolist())
     print(real_answ)
+'''
 
-def multipicity_for_4_bits(first_numb, sec_numb):
-    first_numb, sec_numb = formater(first_numb), formater(sec_numb)
-    answ, a, extra_bit = np.zeros((4,8)), 0, 1
-    real_answ = [0, 0, 0, 0, 0, 0, 0, 0]
-    #конвейер
-    for i in sec_numb:
-        #произведение
-        answ[a] = np.concatenate((np.concatenate((np.zeros((1,extra_bit)), primitive_multiplicator(first_numb, i)), axis=None),np.zeros(4-extra_bit)), axis=None)
-        #сумма
-        real_answ = sum(real_answ,answ[a].tolist())  
-        a = a + 1
+def get_start_values():
+    return np.zeros((4,8)), 0, 1, [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]
+
+def multipicity_for_4_bits(first_numb, sec_numb, third_numb, fouth_numb):
+    first_numb, sec_numb, third_numb, fouth_numb = formater(first_numb), formater(sec_numb), formater(third_numb), formater(fouth_numb)
+    multip, row, extra_bit, real_answ1, real_answ2 = get_start_values()
+    for i in range(len(sec_numb)+1):
+        if i!= (len(sec_numb)):
+            multip[row] = np.concatenate((np.concatenate((np.zeros((1,extra_bit)), primitive_multiplicator(first_numb, sec_numb[i])), axis=None),np.zeros(4-extra_bit)), axis=None)
+            real_answ1 = sum(real_answ1,multip[row].tolist())
+        if row >= 1:
+            multip[row-1] = np.concatenate((np.concatenate((np.zeros((1,(extra_bit-1))), primitive_multiplicator(third_numb, fouth_numb[i-1])), axis=None),np.zeros(5-extra_bit)), axis=None)
+            real_answ2 = sum(real_answ2,multip[row-1].tolist())
+        row = row + 1
         extra_bit = extra_bit + 1
-    return real_answ
+    return real_answ1, real_answ2
 
-print(multipicity_for_4_bits(15,15))
+print(multipicity_for_4_bits(11,12,14,15))
