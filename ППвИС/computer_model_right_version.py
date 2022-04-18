@@ -1,11 +1,38 @@
 #from webbrowser import MacOSX
+import json
 from multiprocessing.reduction import sendfds
 import os
 import shutil
+import jsons
 
 path = '/home/siarhei/Programming/IIT/Univer/ППвИС/Computers_data'
 
 #прописать для всего гттеры и сеттеры(по всему коду
+
+class Parser:
+    def __init__(self, path=path+'/data.json'):
+        self.data = None
+        with open(path,'r') as load_data:
+            self.data = json.loads(load_data.read())
+
+    def update_data(self, path=path+'/data.json'):
+        with open(path,'r') as load_data:
+            self.data = json.loads(load_data.read())
+
+    def upload_data_to_program(self):
+        tem_data = []
+        for i in self.data:
+            tem_data.append(Computer(i['storage']['storage_size']))
+
+    def get_data(self):
+        return self.data
+
+class Saver:
+    def __init__(self, *objects):
+        
+        with open(path+'/data.json','w') as write_file:
+            write_file.write(jsons.dumps(objects, strip_nulls = True,
+            strip_privates = True, strip_properties = True))
 
 class User:
     def __init__(self, login, password, operation_system_type):
@@ -348,3 +375,14 @@ class Operation_system:
             self.commands_sourse.add_data_to_end(file_name=input(),path=path)
         elif self.commands.get_command(command) =='view file data':
             self.commands_sourse.view_file_data(file_name=input(),path=path)
+
+
+#first_pc = Computer(10)
+#sec_pc = Computer(100)
+#third_pc = Computer(1000)
+#Saver(first_pc, sec_pc, third_pc)
+
+p1 = Parser()
+p1.update_data()
+data = p1.get_data()
+p1.upload_data_to_program()
