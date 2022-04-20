@@ -5,34 +5,54 @@ import os
 import shutil
 import jsons
 
-path = '/home/siarhei/Programming/IIT/Univer/ППвИС/Computers_data'
 
-#прописать для всего гттеры и сеттеры(по всему коду
 
 class Parser:
-    def __init__(self, path=path+'/data.json'):
+    def __init__(self, path):
         self.data = None
-        with open(path,'r') as load_data:
+        self.loc_path = path+'/data.json'
+        with open(self.loc_path,'r') as load_data:
             self.data = json.loads(load_data.read())
 
-    def update_data(self, path=path+'/data.json'):
-        with open(path,'r') as load_data:
+    def update_data(self):
+        with open(self.loc_path,'r') as load_data:
             self.data = json.loads(load_data.read())
-
-    def upload_data_to_program(self):
-        tem_data = []
-        for i in self.data:
-            tem_data.append(Computer(i['storage']['storage_size']))
 
     def get_data(self):
         return self.data
 
 class Saver:
-    def __init__(self, *objects):
-        
+    def __init__(self, *objects,path = '/home/siarhei/Programming/IIT/Univer/ППвИС/Computers_data'):
+        self.path = path
+
         with open(path+'/data.json','w') as write_file:
             write_file.write(jsons.dumps(objects, strip_nulls = True,
             strip_privates = True, strip_properties = True))
+
+    def save_state(self, *objects):
+        with open(self.path+'/data.json','w') as write_file:
+            write_file.write(jsons.dumps(objects, strip_nulls = True,
+            strip_privates = True, strip_properties = True))
+
+class StateSynchronization:
+    def __init__(self,path):
+        self.parser = Parser(path)
+        self.saved_state = self.parser.get_data()
+
+    def upload_state(self):
+        
+        temp_pc = Computer(self.saved_state[0]['storage']['storage_size'],
+        self.saved_state[0]['computer_name'],self.saved_state[0]['logged_user']['login'],
+        self.saved_state[0]['logged_user']['password'],self.saved_state[0]['logged_user']['operation_system_type'])
+        
+        if self.saved_state[0]['comp_power_status']==False:
+            temp_pc.turn_computer_power_status()
+        
+        for i in self.saved_state[0]['users']:
+            if i['login']!=self.saved_state[0]['logged_user']:
+                temp_pc.add_user(i['login'],i['password'],i['operation_system_type'])
+
+        return temp_pc
 
 class User:
     def __init__(self, login, password, operation_system_type):
@@ -40,7 +60,25 @@ class User:
         self.password = password
         self.operation_system_type = operation_system_type
     
-    def get_user_info(self):
+    def _set_login(self, login):
+        self.login = login
+
+    def get_login(self):
+        return self.login
+
+    def _set_password(self, password):
+        self.password = password
+    
+    def _get_password(self):
+        return self.password
+        
+    def _set_operation_system_type(self, operation_system_type):
+        self.operation_system_type = operation_system_type
+
+    def get_operation_system_type(self):
+        return self.operation_system_type
+
+    def get_all_user_info(self):
         return self.login, self.password, self.operation_system_type
 
     def change_user_info(self):
@@ -60,102 +98,108 @@ class User:
         else:
             print('Access denied!')
 
+
 class Computer:
-    def __init__(self, storage_size):
+    def __init__(self, storage_size, computer_name, 
+    first_user_login, first_user_password, first_user_systme_type): #мб добавить передачу имён операционок
+        
         self.operation_systems = [Operation_system('linux'), 
                                 Operation_system('macosx'), 
                                 Operation_system('windows')]
 
-        print('Enter info in order: \n Computer Name \n Login \n Password \n System_type')
-        self.computer_name = input()
-        self.users = [User(input(),input(),input())]
+        self.computer_name = computer_name
+        self.users = [User(first_user_login,first_user_password,first_user_systme_type)]
         
-        self.storage = Storage(storage_size, self.computer_name, self.operation_systems, self.users)
+        self.storage = Storage(storage_size, self.computer_name, self.operation_systems, self.users)     
         self.keyboard = Keyboard()
 
         self.comp_power_status = True
         self.logged_user = self.users[0]
     
-    def __is_on(self):
+
+    def get_computer_name(self):
+        return self.computer_name
+
+    def get_power_status(self):
         return self.comp_power_status
 
-    #Done
-    def turn_computer_status(self):
-        if self.__is_on() == True:
-            print('You turned off computer')
+    def turn_computer_power_status(self):
+        if self.get_power_status() == True:
+            print('\nYou turned off computer\n')
             self.comp_power_status = False
         else:
             self.comp_power_status = True
-            print('You turned on computer')
-            print('You should login to the system')
+            print('\nYou turned on computer\n')
+            print('\nYou should login to the system\n')
             self.__login()
 
+
     def __login(self):
-        if self.__is_on():
+        if self.get_power_status():
             access_info = self.__check_access_rights()
             if access_info[0] != False:
                 self.logged_user = access_info[1]
         else:
-            print('Computer status - OFF')
-    
-    #Done (Op System)             
+            print('\nComputer status - OFF\n')
+                
     def __check_access_rights(self):
         for j in range(3):
             print('Enter Login :')
             login = input()
             for i in self.users:
-                if i.login == login:
+                if i.get_login() == login:
                     for a in range(3):
                         print('Enter password :')
                         password = input()
-                        if i.password == password:
+                        if i._get_password() == password:
                             return (True, i)
                         else:
                             print('Invalid password! Attemps ramained : '+str(a))
                 elif i == self.users[-1]:
                     print('Access denied!')
                     return (False, None)
-                print('Invalid login! Attemps ramained :'+str(j))
+            print('Invalid login! Attemps ramained :'+str(j))
 
-    #Done 
+
     def change_logged_user(self):
-        self.__login()  
+        self.__login()
 
-    #Done (Op System)
-    def add_user(self):
-        if self.__is_on():
-            print('\n ADDING A NEW USER \nEnter info in order:\n Login \n Password \n System_type')
-            self.users.append(User(input(),input(),input()))
-            self.storage.add_new_user_direcrory(self.users[-1])
+    #инпут - норм ?
+    def add_user(self, user_login, user_password, user_systme_type):
+        if self.get_power_status():
+            #print('\n ADDING A NEW USER \nEnter info in order:\n Login \n Password \n System_type')
+            self.users.append(User(user_login, user_password, user_systme_type))
+            self.storage._add_new_user_directory(self.users[-1])
         else:
-            print('Computer status - OFF')
+            print('\nComputer status - OFF\n')
 
-    #Done (Op System)
     def del_user(self):
-        if self.__is_on():
+        if self.get_power_status():
             print('\n DELETING A USER \nTo remove user you must know it\'s login and password.')
             permission_data = self.__check_access_rights()
             if permission_data[0] == True:
-                self.storage.delete_user(permission_data[1])
+                self.storage._delete_user(permission_data[1])
                 self.users.remove(permission_data[1])
         else:
             print('Computer status - OFF')
 
-    #Done
+    def free_user_memory(self):
+        return self.storage.get_free_user_storage_size()
+
     def enter_command(self):
-        if self.__is_on():    
+        if self.get_power_status():    
             command = self.keyboard.typing()
 
             numb_of_op_system = None
             for i in range(len(self.operation_systems)):
-                if self.operation_systems[i].type == self.logged_user.operation_system:
+                if self.operation_systems[i]._get_system_type() == self.logged_user.get_operation_system_type():
                     numb_of_op_system = i
                     break
-            if self.operation_systems[numb_of_op_system].commands.get_command(command)!=False:  #переделать тк возвращало описание команды захардкодил на !=False
+            if self.operation_systems[numb_of_op_system]._get_command(command)!=False:
                 path = ('/home/siarhei/Programming/IIT/Univer/ППвИС/Computers_data/'
-                +str(self.computer_name)+'/'+str(self.logged_user.operation_system)
-                +'/User_storage/'+str(self.logged_user.login))
-                self.operation_systems[numb_of_op_system].run_command(command, path)
+                +str(self.computer_name)+'/'+str(self.logged_user.get_operation_system_type())
+                +'/User_storage/'+str(self.logged_user.get_login()))
+                self.operation_systems[numb_of_op_system]._run_command(command, path)
         else:
             print('Computer status - OFF')
 
@@ -167,49 +211,62 @@ class Keyboard:
 #добавить ограничения по размеру(сейчас может в - уходить)
 #пофиксить сохранение состояний(компа) + json file
 class Storage:
-    def __init__(self, size, computer_name, operation_systems, users):
+    def __init__(self, size, computer_name, operation_systems, users,
+    path = '/home/siarhei/Programming/IIT/Univer/ППвИС/Computers_data'):
         self.path_to_comp = (path + '/' + computer_name)
         self.storage_size = size
         self.user_storage_size = int(size*0.7)
         self.system_storage_size = int(size*0.3)
-
-        os.chdir(path=path)
-        os.mkdir(self.path_to_comp)
         
-        for i in operation_systems:
-            os.chdir(self.path_to_comp) #заходим в папку компа
-
-            os.mkdir(i.type)
-            os.chdir(self.path_to_comp+'/'+str(i.type))# в папку операционки
-
-            os.mkdir('System_storage')
-            os.chdir((self.path_to_comp+'/'+str(i.type)+'/System_storage'))# /операционка/System_storage
-
-            writing_commands_to_storage = open('Commands_and_descriptions.txt', 'w')
-            writing_commands_to_storage.write(str(i.commands.get_commands())) # записываем команды
+        if os.path.exists(self.path_to_comp)!=True:
+            os.chdir(path=path)
+            os.mkdir(self.path_to_comp)
             
-            os.chdir(self.path_to_comp+'/'+str(i.type))
-            os.mkdir('User_storage') # операционка + User_strorage
+            for i in operation_systems:
+                os.chdir(self.path_to_comp) #заходим в папку компа
 
-            if i.type == users[0].operation_system_type:
-                os.chdir((self.path_to_comp+'/'+str(i.type)+'/System_storage'))
-                os.mkdir(users[0].login) # операционка/System_storage + Login
-                os.chdir((self.path_to_comp+'/'+str(i.type)+'/System_storage/'+users[0].login))#
-                writing_user_info_to_storage = open('User_info.txt','w')
-                writing_user_info_to_storage.write(str(users[0].get_user_info()))
+                os.mkdir(i._get_system_type())
+                os.chdir(self.path_to_comp+'/'+str(i._get_system_type()))# в папку операционки
 
-                os.chdir(self.path_to_comp+'/'+str(i.type)+'/User_storage')
-                os.mkdir(users[0].login)
+                os.mkdir('System_storage')
+                os.chdir((self.path_to_comp+'/'+str(i._get_system_type())+'/System_storage'))# /операционка/System_storage
 
-    #Done
-    def get_storage_info(self):
+                writing_commands_to_storage = open('Commands_and_descriptions.txt', 'w')
+                writing_commands_to_storage.write(str(i._get_system_type())) # записываем команды
+                self.system_storage_size -= 1
+                
+                os.chdir(self.path_to_comp+'/'+str(i._get_system_type()))
+                os.mkdir('User_storage') # операционка + User_strorage
+
+                if i._get_system_type() == users[0].get_operation_system_type():
+                    os.chdir((self.path_to_comp+'/'+str(i._get_system_type())+'/System_storage'))
+                    os.mkdir(users[0].get_login()) # операционка/System_storage + Login
+                    os.chdir((self.path_to_comp+'/'+str(i._get_system_type())+'/System_storage/'+users[0].get_login()))#
+                    writing_user_info_to_storage = open('User_info.txt','w')
+                    writing_user_info_to_storage.write(str(users[0].get_all_user_info()))
+                    self.system_storage_size -= 1
+
+                    os.chdir(self.path_to_comp+'/'+str(i._get_system_type())+'/User_storage')
+                    os.mkdir(users[0].get_login())
+
+
+    def get_all_storage_info(self):
         return {self.storage_size:' storage size.',
                 self.system_storage_size : ' free system memory.',
                 self.user_storage_size :' free user memory'}
     
-    #Done
+    def get_storage_size(self):
+        return self.storage_size
+
+    def get_free_system_storage_size(self):
+        return self.system_storage_size
+
+    def get_free_user_storage_size(self):
+        return self.user_storage_size
+
+
     def __clear_user_s_storage(self, user):
-        folder = self.path_to_comp+'/'+str(user.operation_system_type)+'/User_storage/'+str(user.login)
+        folder = self.path_to_comp+'/'+str(user.get_operation_system_type())+'/User_storage/'+str(user.get_login())
         for the_file in os.listdir(folder):
             file_path = os.path.join(folder, the_file)
             try:
@@ -222,7 +279,7 @@ class Storage:
         self.user_storage_size = self.storage_size*0.7
 
     def __clear_user_s_system_storage(self, user):
-        folder = self.path_to_comp+'/'+str(user.operation_system_type)+'/System_storage/'+str(user.login)
+        folder = self.path_to_comp+'/'+str(user.get_operation_system_type())+'/System_storage/'+str(user.get_login())
         for the_file in os.listdir(folder):
             file_path = os.path.join(folder, the_file)
             try:
@@ -234,58 +291,55 @@ class Storage:
         os.rmdir(folder)
         self.system_storage_size = self.storage_size*0.3
 
-    #Done
-    def add_new_user_direcrory(self,user):
-        os.chdir(self.path_to_comp+'/'+str(user.operation_system_type)+'/System_storage')
-        os.mkdir(str(user.login))
-        os.chdir(self.path_to_comp+'/'+str(user.operation_system_type)+'/System_storage/'+str(user.login)+'/')#
-        writing_user_info_to_storage = open('User_info.txt','w')
-        writing_user_info_to_storage.write(str(user.get_user_info()))
 
-        os.chdir(self.path_to_comp+'/'+str(user.operation_system_type)+'/User_storage')
-        os.mkdir(str(user.login))
+    def _add_new_user_directory(self,user):
+        if os.path.exists(self.path_to_comp+'/'+str(user.get_operation_system_type())+'/System_storage/'+str(user.get_login()))!=True:
+            path_to_user_syst = self.path_to_comp+'/'+str(user.get_operation_system_type())
+            user_login = user.get_login()
+
+            os.chdir(path_to_user_syst+'/System_storage')
+            os.mkdir(str(user_login))
+            os.chdir(path_to_user_syst+'/System_storage/'+str(user_login)+'/')#
+            writing_user_info_to_storage = open('User_info.txt','w')
+            writing_user_info_to_storage.write(str(user.get_all_user_info()))
+
+            os.chdir(path_to_user_syst+'/User_storage')
+            os.mkdir(str(user_login))
 
 
-    def delete_user(self, user):
+    def _delete_user(self, user):
         self.__clear_user_s_storage(user)
         self.__clear_user_s_system_storage(user)
-
         
 
 
 class Commands_realization:
 
-    #Done
     def clear_file(self, file_name, path):
         os.chdir(path=path)
         open(file_name, 'w').close()
 
-    #Done
     def delete_file(self, file_name, path):
         os.chdir(path=path)
         os.remove(str(file_name))
 
-    #Done
     def create_file(self, file_name, path):
         os.chdir(path=path)
         file = open(str(file_name), "w")
         file.close()
 
-    #Done
     def overwrite_file(self, file_name, path):
         os.chdir(path=path)
         file = open(str(file_name), "w")
         file.write(str(input()))
         file.close()
 
-    #Done
     def add_data_to_end(self, file_name, path):
         os.chdir(path=path)
         file = open(str(file_name), "a")
         file.write(str(input()))
         file.close()
     
-    #Done
     def view_file_data(self, file_name, path):
         os.chdir(path=path)
         file = open(str(file_name), "r")
@@ -304,7 +358,7 @@ class Сommand_settings:
         if command in self.commands.keys():
             return self.commands[command]
         else:
-            print('No such command!')
+            return False
 
     def add_command(self, new_command):
         if new_command not in self.commands.keys():
@@ -316,6 +370,7 @@ class Сommand_settings:
         del self.commands[command]
 
 
+
 class Linux_commands(Сommand_settings):
     def __init__(self):
         self.commands = {'clear file': 'clearing file',
@@ -325,6 +380,7 @@ class Linux_commands(Сommand_settings):
                           'echo >>': 'add data to end',
                           'cat': 'view file data'}
 
+
 class Win_commands(Сommand_settings):
     def __init__(self):
         self.commands = {'cat /dev/null': 'clearing file',
@@ -333,6 +389,7 @@ class Win_commands(Сommand_settings):
                         'echo >': 'overwrite file',
                         'echo >>': 'add data to end',
                         'cat': 'view file data'}
+
 
 class macOS_commands(Сommand_settings):
     def __init__(self):
@@ -361,8 +418,19 @@ class Operation_system:
         else:
             print('Invalid operating system name!')
     
-    #Done
-    def run_command(self, command, path):
+    def _get_system_type(self):
+        return self.type
+
+    def _get_command(self, command):
+        return self.commands.get_command(command)
+
+    def _get_all_commands(self):
+        return self.commands.get_commands
+
+    def _delete_command(self,command):
+        return self.commands.del_command(command)
+
+    def _run_command(self, command, path):
         if self.commands.get_command(command) == 'clearing file':
             self.commands_sourse.clear_file(file_name=input(),path=path)
         elif self.commands.get_command(command) =='remove file':
@@ -375,14 +443,8 @@ class Operation_system:
             self.commands_sourse.add_data_to_end(file_name=input(),path=path)
         elif self.commands.get_command(command) =='view file data':
             self.commands_sourse.view_file_data(file_name=input(),path=path)
+        else:
+            print('\nNo such command!\n')
 
 
-#first_pc = Computer(10)
-#sec_pc = Computer(100)
-#third_pc = Computer(1000)
-#Saver(first_pc, sec_pc, third_pc)
-
-p1 = Parser()
-p1.update_data()
-data = p1.get_data()
-p1.upload_data_to_program()
+first_pc = Computer(100,'kkk','kkk','1','linux')

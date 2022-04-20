@@ -72,6 +72,7 @@ def multipicity_for_4_bits(first_numb, sec_numb, third_numb, fouth_numb):
     first_numb, sec_numb, third_numb, fouth_numb = formater(first_numb), formater(sec_numb), formater(third_numb), formater(fouth_numb)
     multip, row, extra_bit, real_answ1, real_answ2 = get_start_values()
     for i in range(len(sec_numb)+1):
+        print('такт : '+str(i))
         if i!= (len(sec_numb)):
             multip[row] = np.concatenate((np.concatenate((np.zeros((1,extra_bit)), primitive_multiplicator(first_numb, sec_numb[i])), axis=None),np.zeros(4-extra_bit)), axis=None)
             real_answ1 = sum(real_answ1,multip[row].tolist())
@@ -80,6 +81,8 @@ def multipicity_for_4_bits(first_numb, sec_numb, third_numb, fouth_numb):
             real_answ2 = sum(real_answ2,multip[row-1].tolist())
         row = row + 1
         extra_bit = extra_bit + 1
+        print('Матрица : ')
+        print(multip)
     return real_answ1, real_answ2
 
 print(multipicity_for_4_bits(11,12,14,15))
