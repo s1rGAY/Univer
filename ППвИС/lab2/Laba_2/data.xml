@@ -1,0 +1,63 @@
+<!---<?xml version="1.0" ?>
+<competitions>
+	<tournament title="European masters">
+		<date>2018-12-31</date>
+		<kind>снукер</kind>
+		<winner>Фань Чжэнъи</winner>
+		<prize>14022</prize>
+	</tournament>
+	<tournament title="ATP">
+		<date>2018-12-31</date>
+		<kind>теннис</kind>
+		<winner>Рафаэль Надаль</winner>
+		<prize>2871</prize>
+	</tournament>
+	<tournament title="The International 10">
+		<date>2018-12-31</date>
+		<kind>киберспорт</kind>
+		<winner>Team Spirit</winner>
+		<prize>1822</prize>
+	</tournament>
+	<tournament title="European masters">
+		<date>2018-12-31</date>
+		<kind>снукер</kind>
+		<winner>Фань Чжэнъи</winner>
+		<prize>140</prize>
+	</tournament>
+	<tournament title="ATP">
+		<date>2018-12-31</date>
+		<kind>теннис</kind>
+		<winner>Рафаэль Надаль</winner>
+		<prize>28710</prize>
+	</tournament>
+	<tournament title="The International 10">
+		<date>2018-12-31</date>
+		<kind>киберспорт</kind>
+		<winner>Team Spirit</winner>
+		<prize>9999</prize>
+	</tournament>
+	<tournament title="European masters">
+		<date>2018-12-31</date>
+		<kind>снукер</kind>
+		<winner>Фань Чжэнъи</winner>
+		<prize>1232</prize>
+	</tournament>
+	<tournament title="ATP">
+		<date>2018-12-31</date>
+		<kind>теннис</kind>
+		<winner>Рафаэль Надаль</winner>
+		<prize>3333</prize>
+	</tournament>
+	<tournament title="The International 10">
+		<date>2018-12-31</date>
+		<kind>киберспорт</kind>
+		<winner>Team Spirit</winner>
+		<prize>43332</prize>
+	</tournament>
+	<tournament title="Школьный турнир">
+		<date>2002-02-02</date>
+		<kind>Бег трусцой</kind>
+		<winner>Андрей Воропаев</winner>
+		<prize>12233</prize>
+	</tournament>
+</competitions>-->
