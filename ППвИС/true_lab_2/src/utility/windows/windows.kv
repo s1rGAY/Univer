@@ -1,0 +1,149 @@
+# basic inputs
+<TextInputField@MDTextField>:
+    size_hint: 0.5, 0.1
+    input_type: "text"
+
+
+<NumberInputField@TextInputField>:
+    max_text_length: 3
+
+
+# windows
+<DialogContent>:
+
+    orientation: 'vertical'
+    spacing: "5dp"
+    size_hint_y: None
+    height: "660dp"
+
+
+<SaveDialogContent>:
+    height: "50dp"
+    path: save_path
+
+    TextInputField:
+        id: save_path
+        hint_text: "Enter path to file:"
+
+
+<UploadDialogContent>:
+    height: "50dp"
+    path: upload_path
+
+    TextInputField:
+        id: upload_path
+        hint_text: "Enter path to file:"
+    
+
+<InputDialogContent>:
+    name: input_name
+    group: input_group
+    semester_1: input_1_semester
+    semester_2: input_2_semester
+    semester_3: input_3_semester
+    semester_4: input_4_semester
+    semester_5: input_5_semester
+    semester_6: input_6_semester
+    semester_7: input_7_semester
+    semester_8: input_8_semester
+    semester_9: input_9_semester
+    semester_10: input_10_semester
+
+    TextInputField:
+        id: input_name
+        hint_text: 'Enter full student name:'
+
+    TextInputField:
+        id: input_group
+        hint_text: 'Enter student`s group:'
+
+    NumberInputField:
+        id: input_1_semester
+        hint_text: 'Enter first semester work hours:'
+
+    NumberInputField:
+        id: input_2_semester
+        hint_text: 'Enter second semester work hours:'
+
+    NumberInputField:
+        id: input_3_semester
+        hint_text: 'Enter third semester work hours:'
+    
+    NumberInputField:
+        id: input_4_semester
+        hint_text: 'Enter fourth semester work hours:'
+    
+    NumberInputField:
+        id: input_5_semester
+        hint_text: 'Enter fifth semester work hours:'
+
+    NumberInputField:
+        id: input_6_semester
+        hint_text: 'Enter sixth semester work hours:'
+    
+    NumberInputField:
+        id: input_7_semester
+        hint_text: 'Enter seventh semester work hours:'
+    
+    NumberInputField:
+        id: input_8_semester
+        hint_text: 'Enter eigth semester work hours:'
+    
+    NumberInputField:
+        id: input_9_semester
+        hint_text: 'Enter nine`s semester work hours:'
+
+    NumberInputField:
+        id: input_10_semester   
+        hint_text: 'Enter tenth semester work hours:'
+
+
+<FilterDialogContent>:
+    height: "300dp"
+
+    name: filter_name
+    group: filter_group
+    count_lower: filter_count_lower
+    count_upper: filter_count_upper
+
+    TextInputField:
+        id: filter_name
+        hint_text: 'Enter student`s last name:'
+
+    TextInputField:
+        id: filter_group
+        hint_text: 'Enter student`s group number:'
+
+    TextInputField:
+        id: filter_count_lower
+        hint_text: 'Enter student`s lower bound work hours:'
+    
+    TextInputField:
+        id: filter_count_upper
+        hint_text: 'Enter student`s upper bound work hours:'
+
+
+
+<DeleteDialogContent>:
+    height: "300dp"
+
+    name: delete_name
+    group: delete_group
+    count_lower: delete_count_lower
+    count_upper: delete_count_upper
+
+    TextInputField:
+        id: delete_name
+        hint_text: 'Enter student`s last name:'
+
+    TextInputField:
+        id: delete_group
+        hint_text: 'Enter student`s group number:'
+
+    TextInputField:
+        id: delete_count_lower
+        hint_text: 'Enter student`s lower bound work hours:'
+
+    TextInputField:
+        id: delete_count_upper
+        hint_text: 'Enter student`s upper bound work hours:'
