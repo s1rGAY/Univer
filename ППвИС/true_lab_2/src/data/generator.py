@@ -1,3 +1,5 @@
+#генерация данных для ?теста?
+#НУЖЕН ФИКС
 from random import randint
 from utility.parsers.writer import XmlWriter
 

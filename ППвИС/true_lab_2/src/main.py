@@ -7,7 +7,7 @@ from model.model import ModelComponent
 from kivy.core.window import Window
 from kivy.metrics import dp
 
-
+#создание основной таблицы
 class TableApplication(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -15,28 +15,22 @@ class TableApplication(MDApp):
             pos_hint={'center_x': 0.5, 'center_y': 0.54},
             size_hint={0.9, 0.8},
             use_pagination=True,
-            rows_num=13,
+            rows_num=6,
             column_data=[
-                ('Full name', dp(30)),
-                ('Group', dp(20)),
-                ('1', dp(15)),
-                ('2', dp(15)),
-                ('3', dp(15)),
-                ('4', dp(15)),
-                ('5', dp(15)),
-                ('6', dp(15)),
-                ('7', dp(15)),
-                ('8', dp(15)),
-                ('9', dp(15)),
-                ('10', dp(15)),
-                ('Total', dp(15)),
-            ],
+                ('Train number', dp(30)),
+                ('Departure station', dp(30)),
+                ('Arrival station', dp(30)),
+                ('Date and time of departure', dp(50)),
+                ('Date and time of arrival', dp(50)),
+                ('Travel time', dp(40))
+            ]
         )
         self.model = ModelComponent(table=self.table)
         self.controller = ControllerComponent(self.model)
 
+    #запуск окна с размерами пикселей
     def build(self):
-        Window.size = (1280, 800)
+        Window.size = (1600, 1000)
         return self.controller.get_screen()
 
 

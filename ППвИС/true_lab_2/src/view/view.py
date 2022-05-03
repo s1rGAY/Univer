@@ -26,6 +26,7 @@ class ViewComponent(MDScreen):
         self.table = table
         self.screen = Screen()
 
+    #МЕНЮ ДЛЯ ВЫЗОВА СООТВЕТСТУЮЩЕГО ОКНА(СОГЛАСНО НАЖАТИЮ)
     def open_dialog(self, window_type: str):
         if window_type == 'input':
             self.dialog = InputWindow(view=self)
@@ -66,5 +67,4 @@ class ViewComponent(MDScreen):
         self.add_widget(self.table)
         return self
 
-
-Builder.load_file('/home/evgeny/source/repos/ideal-giggle/src/view/view.kv')
+Builder.load_file('/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/view/view.kv')

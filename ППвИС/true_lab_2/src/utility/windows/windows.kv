@@ -10,11 +10,11 @@
 
 # windows
 <DialogContent>:
-
+#редактор окна для "+"
     orientation: 'vertical'
-    spacing: "5dp"
+    spacing: "50dp"
     size_hint_y: None
-    height: "660dp"
+    height: "500dp"
 
 
 <SaveDialogContent>:
@@ -36,68 +36,34 @@
     
 
 <InputDialogContent>:
-    name: input_name
-    group: input_group
-    semester_1: input_1_semester
-    semester_2: input_2_semester
-    semester_3: input_3_semester
-    semester_4: input_4_semester
-    semester_5: input_5_semester
-    semester_6: input_6_semester
-    semester_7: input_7_semester
-    semester_8: input_8_semester
-    semester_9: input_9_semester
-    semester_10: input_10_semester
+    train_number: input_train_number
+    depart_st: input_depart_st
+    arriv_st: input_arriv_st
+    data_of_departure: input_data_of_depart
+    data_of_arrival: input_data_of_arriv
+    
+
+    NumberInputField:
+        id: input_train_number
+        hint_text: 'Enter train number:'
 
     TextInputField:
-        id: input_name
-        hint_text: 'Enter full student name:'
+        id: input_depart_st
+        hint_text: 'Enter departure station'
 
     TextInputField:
-        id: input_group
-        hint_text: 'Enter student`s group:'
+        id: input_arriv_st
+        hint_text: 'Enter Arrival station'
 
-    NumberInputField:
-        id: input_1_semester
-        hint_text: 'Enter first semester work hours:'
+    TextInputField:
+        id: input_data_of_depart
+        hint_text: 'Enter Date and time of departure'
 
-    NumberInputField:
-        id: input_2_semester
-        hint_text: 'Enter second semester work hours:'
+    TextInputField:
+        id: input_data_of_arriv
+        hint_text: 'Enter Date and time of arrival'
 
-    NumberInputField:
-        id: input_3_semester
-        hint_text: 'Enter third semester work hours:'
-    
-    NumberInputField:
-        id: input_4_semester
-        hint_text: 'Enter fourth semester work hours:'
-    
-    NumberInputField:
-        id: input_5_semester
-        hint_text: 'Enter fifth semester work hours:'
-
-    NumberInputField:
-        id: input_6_semester
-        hint_text: 'Enter sixth semester work hours:'
-    
-    NumberInputField:
-        id: input_7_semester
-        hint_text: 'Enter seventh semester work hours:'
-    
-    NumberInputField:
-        id: input_8_semester
-        hint_text: 'Enter eigth semester work hours:'
-    
-    NumberInputField:
-        id: input_9_semester
-        hint_text: 'Enter nine`s semester work hours:'
-
-    NumberInputField:
-        id: input_10_semester   
-        hint_text: 'Enter tenth semester work hours:'
-
-
+#НУЖЕН ФИКС(ФИЛЬТР НЕ ПЕРЕДЕЛЫВАЛ)
 <FilterDialogContent>:
     height: "300dp"
 
@@ -125,25 +91,35 @@
 
 
 <DeleteDialogContent>:
-    height: "300dp"
+    height: "600dp"
 
-    name: delete_name
-    group: delete_group
-    count_lower: delete_count_lower
-    count_upper: delete_count_upper
+    train_number: del_train_number
+    depart_st: del_depart_st
+    arriv_st: del_arriv_st
+    data_of_departure: del_data_of_depart
+    data_of_arriv: del_data_of_arriv
+    time_of_travel: del_time_of_travel
 
-    TextInputField:
-        id: delete_name
-        hint_text: 'Enter student`s last name:'
-
-    TextInputField:
-        id: delete_group
-        hint_text: 'Enter student`s group number:'
+    NumberInputField:
+        id: del_train_number
+        hint_text: 'Enter train number:'
 
     TextInputField:
-        id: delete_count_lower
-        hint_text: 'Enter student`s lower bound work hours:'
+        id: del_depart_st
+        hint_text: 'Enter departure station'
 
     TextInputField:
-        id: delete_count_upper
-        hint_text: 'Enter student`s upper bound work hours:'
+        id: del_arriv_st
+        hint_text: 'Enter Arrival station'
+
+    TextInputField:
+        id: del_data_of_depart
+        hint_text: 'Enter Date and time of departure'
+
+    TextInputField:
+        id: del_data_of_arriv
+        hint_text: 'Enter Date and time of arrival'
+
+    TextInputField:
+        id: del_time_of_travel
+        hint_text: 'Enter time of travel'

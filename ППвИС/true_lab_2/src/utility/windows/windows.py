@@ -48,11 +48,11 @@ class DialogWindow(MDDialog):
         self.dismiss()
         self.view.close_dialog()
 
-
+#Сделано, но без глубокой переработки
 class InputWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
-            title='Fill new student data:',
+            title='Fill new train data:',
             content_cls=InputDialogContent(),
             mode='input',
             view=kwargs['view'],
@@ -62,22 +62,15 @@ class InputWindow(DialogWindow):
         self.dismiss()
         self.view.close_dialog(
             [
-                self.content_cls.ids.input_name.text,
-                self.content_cls.ids.input_group.text,
-                self.content_cls.ids.input_1_semester.text,
-                self.content_cls.ids.input_2_semester.text,
-                self.content_cls.ids.input_3_semester.text,
-                self.content_cls.ids.input_4_semester.text,
-                self.content_cls.ids.input_5_semester.text,
-                self.content_cls.ids.input_6_semester.text,
-                self.content_cls.ids.input_7_semester.text,
-                self.content_cls.ids.input_8_semester.text,
-                self.content_cls.ids.input_9_semester.text,
-                self.content_cls.ids.input_10_semester.text,
+                self.content_cls.ids.input_train_number.text,
+                self.content_cls.ids.input_depart_st.text,
+                self.content_cls.ids.input_arriv_st.text,
+                self.content_cls.ids.input_data_of_depart.text,
+                self.content_cls.ids.input_data_of_arriv.text
             ]
         )
 
-
+#Не смотрел
 class FilterWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
@@ -98,28 +91,31 @@ class FilterWindow(DialogWindow):
             ]
         )
 
-
+#Окно сделано, но не работает удаление
 class DeleteWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
-                title="#Note: if you don't need some term of search, just don't fill it.\nDelete students: ",
+                title="Delete students: ",
                 content_cls=DeleteDialogContent(),
                 mode="delete",
                 view=kwargs["view"],
         )
-
+    
+    #закртытие вводимых окон?
     def close(self, obj):
         self.dismiss()
         self.view.close_dialog(
             [
-                self.content_cls.ids.delete_name.text,
-                self.content_cls.ids.delete_group.text,
-                self.content_cls.ids.delete_count_lower.text,
-                self.content_cls.ids.delete_count_upper.text,
+                self.content_cls.ids.del_train_number.text,
+                self.content_cls.ids.del_depart_st.text,
+                self.content_cls.ids.del_arriv_st.text,
+                self.content_cls.ids.del_data_of_depart.text,
+                self.content_cls.ids.del_data_of_arriv.text,
+                self.content_cls.ids.del_time_of_travel.text
             ]
         )
 
-
+#Не делал
 class SaveWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
@@ -133,7 +129,7 @@ class SaveWindow(DialogWindow):
         self.dismiss()
         self.view.close_dialog(self.content_cls.ids.save_path.text)
 
-
+#Не делал
 class UploadWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
@@ -148,4 +144,4 @@ class UploadWindow(DialogWindow):
         self.view.close_dialog(self.content_cls.ids.upload_path.text)
 
 
-Builder.load_file('/home/evgeny/source/repos/ideal-giggle/src/utility/windows/windows.kv')
+Builder.load_file('/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/utility/windows/windows.kv')

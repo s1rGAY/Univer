@@ -1,3 +1,6 @@
+#сейвер данных
+#надо переделать структуру данных
+
 import xml.dom.minidom as minidom
 
 
