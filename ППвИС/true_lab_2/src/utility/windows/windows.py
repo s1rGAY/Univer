@@ -97,7 +97,7 @@ class FilterWindow(DialogWindow):
 class DeleteWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
-                title="Delete students: ",
+                title="Delete trains: ",
                 content_cls=DeleteDialogContent(),
                 mode="delete",
                 view=kwargs["view"],

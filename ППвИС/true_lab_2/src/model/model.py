@@ -25,7 +25,7 @@ class ModelComponent():
             handler.parser.parse('/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/data/' + path)
 
             for data in handler.table_data:
-                self.add_new_student(data)
+                self.add_new_train(data)
         except Exception as e:
             print(e)
             pass
@@ -53,12 +53,12 @@ class ModelComponent():
                 data_dict['Date and time of departure'] = row[3]
                 data_dict['Date and time of arrival'] = row[4]
                 data_dict['Time travel'] = row[5]
-                dom.create_xml_student(data_dict)
+                dom.create_xml_train(data_dict)
 
             dom.create_xml_file()
 
     #Done   
-    def add_new_student(self, row):
+    def add_new_train(self, row):
         try:
             #тут проблема надо приобразовать во время
             if type(row[len(row)-1]) == str and type(row[len(row)-2]) == str:
@@ -85,7 +85,7 @@ class ModelComponent():
     def get_second_name(name: str):
         return name.split()[1]
 
-    def refresh_students(self):
+    def refresh_trains(self):
         try:
             self.table.row_data += self._not_filtered
         except ValueError as v:
@@ -94,60 +94,60 @@ class ModelComponent():
         self._not_filtered = []
 
     #В частных запросах РАБОТАЕТ, но нужен фикс времени в пути
-    def select_students(self, filters: list):
-        selected_students = []
+    def select_trains(self, filters: list):
+        selected_trains = []
 
         for row in self.table.row_data:
             
             #Селекция по номеру поезда
             if filters[0] != '':
-                if row[0] != int(filters[0]):
-                    selected_students.append(tuple(row))
-                elif row in selected_students:
-                    del selected_students[selected_students.index(row)]
+                if int(row[0]) != int(filters[0]):
+                    selected_trains.append(tuple(row))
+                elif row in selected_trains:
+                    del selected_trains[selected_trains.index(row)]
                     #найти его в selected_students и удалить
 
             #Селекция по станции отправления
             if filters[1] !='':
                 if row[1] != filters[1]: #если станция не совпадает -> оставляем поезд
-                    selected_students.append(tuple(row))
-                elif row in selected_students:
-                    del selected_students[selected_students.index(row)]
+                    selected_trains.append(tuple(row))
+                elif row in selected_trains:
+                    del selected_trains[selected_trains.index(row)]
 
             #Селекция по станции прибытия
             if filters[2] !='':
                 if row[2] != filters[2]: #если станция не совпадает -> оставляем поезд
-                    selected_students.append(tuple(row))
-                elif row in selected_students:
-                    del selected_students[selected_students.index(row)]
+                    selected_trains.append(tuple(row))
+                elif row in selected_trains:
+                    del selected_trains[selected_trains.index(row)]
 
             #Селекция по времени отправления(нижний предел)
             if filters[3] !='':
                 if row[3] >= datetime.strptime(filters[3], "%d/%m/%Y %H:%M:%S"): #если станция не совпадает -> оставляем поезд
-                    selected_students.append(tuple(row))
-                elif row in selected_students:
-                    del selected_students[selected_students.index(row)]
+                    selected_trains.append(tuple(row))
+                elif row in selected_trains:
+                    del selected_trains[selected_trains.index(row)]
 
             #Селекция по времени прибытия(нижний предел)
             if filters[4] !='':
                 if row[4] >= datetime.strptime(filters[4], "%d/%m/%Y %H:%M:%S"): #если станция не совпадает -> оставляем поезд
-                    selected_students.append(tuple(row))
-                elif row in selected_students:
-                    del selected_students[selected_students.index(row)]
+                    selected_trains.append(tuple(row))
+                elif row in selected_trains:
+                    del selected_trains[selected_trains.index(row)]
 
             #НУЖЕН ФИКС
             #Селекция по времени в пути(верхний предел)
             if filters[5] !='':
                 if row[5] <= datetime.strptime(filters[5], "%d/%m/%Y %H:%M:%S"): #если станция не совпадает -> оставляем поезд
-                    selected_students.append(tuple(row))
-                elif row in selected_students:
-                    del selected_students[selected_students.index(row)]
+                    selected_trains.append(tuple(row))
+                elif row in selected_trains:
+                    del selected_trains[selected_trains.index(row)]
 
-        return selected_students
+        return selected_trains
 
     #По идее работает, если работает select_students
-    def filter_students(self, filters: list):
-        self._not_filtered = self.select_students(filters=filters)
+    def filter_trains(self, filters: list):
+        self._not_filtered = self.select_trains(filters=filters)
         for row in self._not_filtered:
             try:
                 self.table.row_data.remove(row)
@@ -164,13 +164,13 @@ class ModelComponent():
         return True
 
     #Работает
-    def delete_students(self, filters):
+    def delete_trains(self, filters):
         deleted_count = 0 #кол-во удаленных "поездов"
         if self.empty_filters(filters): #проверка по каким фильтрам удаляем
             return deleted_count
-        students = self.select_students(filters=filters)
+        trains = self.select_trains(filters=filters)
         for row in self.table.row_data[:]:
-            if row not in students:
+            if row not in trains:
                 try:
                     self.table.row_data.remove(row)
                     deleted_count += 1

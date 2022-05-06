@@ -10,7 +10,7 @@ class ControllerComponent:
         self.subscribe(self.view)
 
     def refresh(self):
-        self.model.refresh_students()
+        self.model.refresh_trains()
 
     def get_screen(self):
         return self.view.build()
@@ -20,7 +20,7 @@ class ControllerComponent:
         
 #для заполнения новых данных!
 #input_student -> input_train
-    def input_student(self, data):
+    def input_train(self, data):
         for i in range(len(data)):
             value = None
             if i == 0:
@@ -41,15 +41,15 @@ class ControllerComponent:
         
             data[i] = value
 
-        self.model.add_new_student(row=data)
+        self.model.add_new_train(row=data)
 
     #filter_students -> filter_trains
-    def filter_students(self, data):
-        self.model.filter_students(filters=data)
+    def filter_trains(self, data):
+        self.model.filter_trains(filters=data)
 
     #delete_students -> delete_trains
-    def delete_students(self, data):
-        deleted = self.model.delete_students(filters=data)
+    def delete_trains(self, data):
+        deleted = self.model.delete_trains(filters=data)
         return deleted
 
 #Done

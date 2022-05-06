@@ -29,7 +29,7 @@ class XmlGenerator:
                 data_dict['arriv_st'] = cities.get_city()
                 data_dict['data_of_departure'] = data.get_dep_data()
                 data_dict['data_of_arrival'] = data.get_arr_data()
-                writer.create_xml_student(data_dict)
+                writer.create_xml_train(data_dict)
         writer.create_xml_file()
 
 

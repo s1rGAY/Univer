@@ -44,11 +44,11 @@ class ViewComponent(MDScreen):
 
     def close_dialog(self, dialog_data: list = []):
         if self.dialog.mode == 'input':
-            self.controller.input_student(dialog_data)
+            self.controller.input_train(dialog_data)
         elif self.dialog.mode == 'filter':
-            self.controller.filter_students(dialog_data)
+            self.controller.filter_trains(dialog_data)
         elif self.dialog.mode == 'delete':
-            deleted = self.controller.delete_students(dialog_data)
+            deleted = self.controller.delete_trains(dialog_data)
             Snackbar(text=f'{deleted} trains are deleted.').open()
         elif self.dialog.mode == 'upload':
             self.controller.upload_from_file(dialog_data)

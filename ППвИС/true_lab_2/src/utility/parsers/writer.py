@@ -9,7 +9,7 @@ class XmlWriter:
         self.domtree = minidom.Document()
         self.rows = []
 
-    def create_xml_student(self, data: tuple):
+    def create_xml_train(self, data: tuple):
         train = self.domtree.createElement('train')
 
         for value in data:
@@ -23,8 +23,8 @@ class XmlWriter:
     def create_xml_file(self):
         pass_table = self.domtree.createElement('trains')
 
-        for student in self.rows:
-            pass_table.appendChild(student)
+        for train in self.rows:
+            pass_table.appendChild(train)
 
         self.domtree.appendChild(pass_table)
 
