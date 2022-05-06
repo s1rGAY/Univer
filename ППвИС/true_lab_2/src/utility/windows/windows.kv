@@ -34,7 +34,7 @@
         id: upload_path
         hint_text: "Enter path to file:"
     
-
+#Done
 <InputDialogContent>:
     train_number: input_train_number
     depart_st: input_depart_st
@@ -63,30 +63,40 @@
         id: input_data_of_arriv
         hint_text: 'Enter Date and time of arrival'
 
-#НУЖЕН ФИКС(ФИЛЬТР НЕ ПЕРЕДЕЛЫВАЛ)
+#доделать бинарный фильтр
 <FilterDialogContent>:
-    height: "300dp"
+    height: "600dp"
 
-    name: filter_name
-    group: filter_group
-    count_lower: filter_count_lower
-    count_upper: filter_count_upper
+    train_number: find_train_number
+    depart_st: find_depart_st
+    arriv_st: find_arriv_st
+    data_of_departure: find_data_of_depart
+    data_of_arriv: find_data_of_arriv
+    time_of_travel: find_time_of_travel
 
-    TextInputField:
-        id: filter_name
-        hint_text: 'Enter student`s last name:'
-
-    TextInputField:
-        id: filter_group
-        hint_text: 'Enter student`s group number:'
+    NumberInputField:
+        id: find_train_number
+        hint_text: 'Enter train number:'
 
     TextInputField:
-        id: filter_count_lower
-        hint_text: 'Enter student`s lower bound work hours:'
-    
+        id: find_depart_st
+        hint_text: 'Enter departure station'
+
     TextInputField:
-        id: filter_count_upper
-        hint_text: 'Enter student`s upper bound work hours:'
+        id: find_arriv_st
+        hint_text: 'Enter Arrival station'
+
+    TextInputField:
+        id: find_data_of_depart
+        hint_text: 'Enter Date and time of departure'
+
+    TextInputField:
+        id: find_data_of_arriv
+        hint_text: 'Enter Date and time of arrival'
+
+    TextInputField:
+        id: find_time_of_travel
+        hint_text: 'Enter time of travel'
 
 
 

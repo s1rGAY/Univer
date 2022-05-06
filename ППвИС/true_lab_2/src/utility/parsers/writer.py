@@ -1,5 +1,4 @@
-#сейвер данных
-#надо переделать структуру данных
+#просто поменял имена
 
 import xml.dom.minidom as minidom
 
@@ -11,18 +10,18 @@ class XmlWriter:
         self.rows = []
 
     def create_xml_student(self, data: tuple):
-        student = self.domtree.createElement('student')
+        train = self.domtree.createElement('train')
 
         for value in data:
             temp_child = self.domtree.createElement(value)
-            student.appendChild(temp_child)
+            train.appendChild(temp_child)
 
             node_text = self.domtree.createTextNode(str(data[value]).strip())
             temp_child.appendChild(node_text)
-        self.rows.append(student)
+        self.rows.append(train)
 
     def create_xml_file(self):
-        pass_table = self.domtree.createElement('students')
+        pass_table = self.domtree.createElement('trains')
 
         for student in self.rows:
             pass_table.appendChild(student)

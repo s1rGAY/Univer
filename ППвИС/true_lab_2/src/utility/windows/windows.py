@@ -70,11 +70,11 @@ class InputWindow(DialogWindow):
             ]
         )
 
-#Не смотрел
+#Не смотрел(класс для фильтрации данных)
 class FilterWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
-                title='''#Note: if you don't need some term of search, just don't fill it.\nFilter students:''',
+                title='''Filter trains:''',
                 content_cls=FilterDialogContent(),
                 mode="filter",
                 view=kwargs["view"],
@@ -84,10 +84,12 @@ class FilterWindow(DialogWindow):
         self.dismiss()
         self.view.close_dialog(
             [
-                self.content_cls.ids.filter_name.text,
-                self.content_cls.ids.filter_group.text,
-                self.content_cls.ids.filter_count_lower.text,
-                self.content_cls.ids.filter_count_upper.text,
+                self.content_cls.ids.find_train_number.text,
+                self.content_cls.ids.find_depart_st.text,
+                self.content_cls.ids.find_arriv_st.text,
+                self.content_cls.ids.find_data_of_depart.text,
+                self.content_cls.ids.find_data_of_arriv.text,
+                self.content_cls.ids.find_time_of_travel.text
             ]
         )
 

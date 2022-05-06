@@ -17,12 +17,12 @@ class ModelComponent():
     def __init__(self, table):
         self.table = table
 
-    #НЕ ПРОВЕРЯЛ, но по идее остаётся без изменений
+    #проблема в пути
     def read_data(self, path):
         try:
             handler = XmlReader()
             handler.parser.setContentHandler(handler)
-            handler.parser.parse('src/data/' + path)
+            handler.parser.parse('/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/data/' + path)
 
             for data in handler.table_data:
                 self.add_new_student(data)
@@ -42,7 +42,7 @@ class ModelComponent():
 
     #НЕ ПРОВЕРЯЛ, но по идее должно остаться таким же
     def write_data_to_file(self, path: str):
-        path = 'src/data/' + path
+        path = '/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/data/' + path
         if self.create_empty_file(path):
             dom = XmlWriter(path)
             data_dict = {}
@@ -60,7 +60,11 @@ class ModelComponent():
     #Done   
     def add_new_student(self, row):
         try:
-            total = row[len(row)-1] - row[len(row)-2]
+            #тут проблема надо приобразовать во время
+            if type(row[len(row)-1]) == str and type(row[len(row)-2]) == str:
+                total = datetime.strptime(row[len(row)-1], "%d/%m/%Y %H:%M:%S") - datetime.strptime(row[len(row)-2], "%d/%m/%Y %H:%M:%S")
+            else:
+                total = row[len(row)-1] - row[len(row)-2]
 
             self.table.row_data.insert(
                 len(self.table.row_data),
@@ -99,57 +103,45 @@ class ModelComponent():
             if filters[0] != '':
                 if row[0] != int(filters[0]):
                     selected_students.append(tuple(row))
+                elif row in selected_students:
+                    del selected_students[selected_students.index(row)]
+                    #найти его в selected_students и удалить
 
             #Селекция по станции отправления
             if filters[1] !='':
                 if row[1] != filters[1]: #если станция не совпадает -> оставляем поезд
                     selected_students.append(tuple(row))
-            
+                elif row in selected_students:
+                    del selected_students[selected_students.index(row)]
+
             #Селекция по станции прибытия
             if filters[2] !='':
                 if row[2] != filters[2]: #если станция не совпадает -> оставляем поезд
                     selected_students.append(tuple(row))
-            
+                elif row in selected_students:
+                    del selected_students[selected_students.index(row)]
+
             #Селекция по времени отправления(нижний предел)
             if filters[3] !='':
                 if row[3] >= datetime.strptime(filters[3], "%d/%m/%Y %H:%M:%S"): #если станция не совпадает -> оставляем поезд
                     selected_students.append(tuple(row))
+                elif row in selected_students:
+                    del selected_students[selected_students.index(row)]
 
             #Селекция по времени прибытия(нижний предел)
             if filters[4] !='':
                 if row[4] >= datetime.strptime(filters[4], "%d/%m/%Y %H:%M:%S"): #если станция не совпадает -> оставляем поезд
                     selected_students.append(tuple(row))
+                elif row in selected_students:
+                    del selected_students[selected_students.index(row)]
 
             #НУЖЕН ФИКС
             #Селекция по времени в пути(верхний предел)
             if filters[5] !='':
                 if row[5] <= datetime.strptime(filters[5], "%d/%m/%Y %H:%M:%S"): #если станция не совпадает -> оставляем поезд
                     selected_students.append(tuple(row))
-            '''# group search
-            if filters[1] != '' and row[1] != filters[1]:
-                selected_students.append(tuple(row))
-
-            # boundaries search
-            upper = None
-            lower = None
-            if filters[2]:
-                try:
-                    lower = int(filters[2])
-                except Exception as e:
-                    pass
-
-            if filters[3]:
-                try:
-                    upper = int(filters[3])
-                except Exception as e:
-                    pass
-            '''
-            '''current_value = int(row[12])  И НАХУЙ ЭТО НАДО ?
-            if lower and lower > current_value:
-                selected_students.append(tuple(row))
-
-            if upper and upper < current_value:
-                selected_students.append(tuple(row))'''
+                elif row in selected_students:
+                    del selected_students[selected_students.index(row)]
 
         return selected_students
 

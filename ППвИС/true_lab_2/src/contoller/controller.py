@@ -19,6 +19,7 @@ class ControllerComponent:
         self.open_dialog(window_type, dialog)
         
 #для заполнения новых данных!
+#input_student -> input_train
     def input_student(self, data):
         for i in range(len(data)):
             value = None
@@ -40,17 +41,18 @@ class ControllerComponent:
         
             data[i] = value
 
-        #вычисление пути
-        #data.append(data[len(data)-1] - data[len(data)-2])
         self.model.add_new_student(row=data)
 
+    #filter_students -> filter_trains
     def filter_students(self, data):
         self.model.filter_students(filters=data)
 
+    #delete_students -> delete_trains
     def delete_students(self, data):
         deleted = self.model.delete_students(filters=data)
         return deleted
 
+#Done
     def upload_from_file(self, data):
         self.model.read_data(path=data)
 

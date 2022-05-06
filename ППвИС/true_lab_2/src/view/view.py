@@ -49,7 +49,7 @@ class ViewComponent(MDScreen):
             self.controller.filter_students(dialog_data)
         elif self.dialog.mode == 'delete':
             deleted = self.controller.delete_students(dialog_data)
-            Snackbar(text=f'{deleted} students are deleted.').open()
+            Snackbar(text=f'{deleted} trains are deleted.').open()
         elif self.dialog.mode == 'upload':
             self.controller.upload_from_file(dialog_data)
         elif self.dialog.mode == 'save':

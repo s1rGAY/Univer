@@ -1,563 +1,283 @@
 <?xml version="1.0" ?>
- <pass_table>
-  <student>
-   <name>James Moores</name>
-   <group>103057</group>
-   <semester_1>17</semester_1>
-   <semester_2>12</semester_2>
-   <semester_3>13</semester_3>
-   <semester_4>16</semester_4>
-   <semester_5>14</semester_5>
-   <semester_6>8</semester_6>
-   <semester_7>7</semester_7>
-   <semester_8>17</semester_8>
-   <semester_9>11</semester_9>
-   <semester_10>2</semester_10>
-  </student>
-  <student>
-   <name>James Jimenez</name>
-   <group>759229</group>
-   <semester_1>7</semester_1>
-   <semester_2>10</semester_2>
-   <semester_3>19</semester_3>
-   <semester_4>18</semester_4>
-   <semester_5>13</semester_5>
-   <semester_6>8</semester_6>
-   <semester_7>4</semester_7>
-   <semester_8>19</semester_8>
-   <semester_9>19</semester_9>
-   <semester_10>20</semester_10>
-  </student>
-  <student>
-   <name>Jennifer Taggert</name>
-   <group>807593</group>
-   <semester_1>16</semester_1>
-   <semester_2>5</semester_2>
-   <semester_3>12</semester_3>
-   <semester_4>11</semester_4>
-   <semester_5>14</semester_5>
-   <semester_6>17</semester_6>
-   <semester_7>18</semester_7>
-   <semester_8>4</semester_8>
-   <semester_9>20</semester_9>
-   <semester_10>13</semester_10>
-  </student>
-  <student>
-   <name>Connie Veloz</name>
-   <group>874584</group>
-   <semester_1>8</semester_1>
-   <semester_2>14</semester_2>
-   <semester_3>7</semester_3>
-   <semester_4>5</semester_4>
-   <semester_5>18</semester_5>
-   <semester_6>10</semester_6>
-   <semester_7>14</semester_7>
-   <semester_8>3</semester_8>
-   <semester_9>3</semester_9>
-   <semester_10>19</semester_10>
-  </student>
-  <student>
-   <name>Dwight Mack</name>
-   <group>630738</group>
-   <semester_1>19</semester_1>
-   <semester_2>20</semester_2>
-   <semester_3>10</semester_3>
-   <semester_4>3</semester_4>
-   <semester_5>15</semester_5>
-   <semester_6>3</semester_6>
-   <semester_7>7</semester_7>
-   <semester_8>20</semester_8>
-   <semester_9>12</semester_9>
-   <semester_10>16</semester_10>
-  </student>
-  <student>
-   <name>Margaret Crist</name>
-   <group>952731</group>
-   <semester_1>7</semester_1>
-   <semester_2>2</semester_2>
-   <semester_3>9</semester_3>
-   <semester_4>2</semester_4>
-   <semester_5>2</semester_5>
-   <semester_6>15</semester_6>
-   <semester_7>12</semester_7>
-   <semester_8>2</semester_8>
-   <semester_9>11</semester_9>
-   <semester_10>7</semester_10>
-  </student>
-  <student>
-   <name>Martha Favreau</name>
-   <group>798347</group>
-   <semester_1>10</semester_1>
-   <semester_2>4</semester_2>
-   <semester_3>5</semester_3>
-   <semester_4>7</semester_4>
-   <semester_5>15</semester_5>
-   <semester_6>3</semester_6>
-   <semester_7>12</semester_7>
-   <semester_8>9</semester_8>
-   <semester_9>11</semester_9>
-   <semester_10>1</semester_10>
-  </student>
-  <student>
-   <name>Sarah Wise</name>
-   <group>302331</group>
-   <semester_1>4</semester_1>
-   <semester_2>19</semester_2>
-   <semester_3>13</semester_3>
-   <semester_4>10</semester_4>
-   <semester_5>11</semester_5>
-   <semester_6>10</semester_6>
-   <semester_7>16</semester_7>
-   <semester_8>11</semester_8>
-   <semester_9>15</semester_9>
-   <semester_10>4</semester_10>
-  </student>
-  <student>
-   <name>Janet Garcia</name>
-   <group>551367</group>
-   <semester_1>13</semester_1>
-   <semester_2>13</semester_2>
-   <semester_3>10</semester_3>
-   <semester_4>11</semester_4>
-   <semester_5>6</semester_5>
-   <semester_6>17</semester_6>
-   <semester_7>13</semester_7>
-   <semester_8>12</semester_8>
-   <semester_9>6</semester_9>
-   <semester_10>9</semester_10>
-  </student>
-  <student>
-   <name>Ophelia Hill</name>
-   <group>904854</group>
-   <semester_1>6</semester_1>
-   <semester_2>10</semester_2>
-   <semester_3>5</semester_3>
-   <semester_4>4</semester_4>
-   <semester_5>11</semester_5>
-   <semester_6>10</semester_6>
-   <semester_7>1</semester_7>
-   <semester_8>17</semester_8>
-   <semester_9>9</semester_9>
-   <semester_10>13</semester_10>
-  </student>
-  <student>
-   <name>Terrence Padgett</name>
-   <group>514539</group>
-   <semester_1>11</semester_1>
-   <semester_2>4</semester_2>
-   <semester_3>20</semester_3>
-   <semester_4>17</semester_4>
-   <semester_5>4</semester_5>
-   <semester_6>8</semester_6>
-   <semester_7>7</semester_7>
-   <semester_8>20</semester_8>
-   <semester_9>9</semester_9>
-   <semester_10>4</semester_10>
-  </student>
-  <student>
-   <name>Dallas Chalifour</name>
-   <group>853143</group>
-   <semester_1>11</semester_1>
-   <semester_2>5</semester_2>
-   <semester_3>14</semester_3>
-   <semester_4>5</semester_4>
-   <semester_5>13</semester_5>
-   <semester_6>11</semester_6>
-   <semester_7>8</semester_7>
-   <semester_8>4</semester_8>
-   <semester_9>4</semester_9>
-   <semester_10>20</semester_10>
-  </student>
-  <student>
-   <name>Lois Jacobs</name>
-   <group>491913</group>
-   <semester_1>3</semester_1>
-   <semester_2>17</semester_2>
-   <semester_3>13</semester_3>
-   <semester_4>5</semester_4>
-   <semester_5>6</semester_5>
-   <semester_6>19</semester_6>
-   <semester_7>19</semester_7>
-   <semester_8>18</semester_8>
-   <semester_9>2</semester_9>
-   <semester_10>7</semester_10>
-  </student>
-  <student>
-   <name>Keith Ramsey</name>
-   <group>638928</group>
-   <semester_1>14</semester_1>
-   <semester_2>9</semester_2>
-   <semester_3>14</semester_3>
-   <semester_4>20</semester_4>
-   <semester_5>3</semester_5>
-   <semester_6>20</semester_6>
-   <semester_7>12</semester_7>
-   <semester_8>15</semester_8>
-   <semester_9>16</semester_9>
-   <semester_10>9</semester_10>
-  </student>
-  <student>
-   <name>John Skinner</name>
-   <group>146893</group>
-   <semester_1>4</semester_1>
-   <semester_2>11</semester_2>
-   <semester_3>18</semester_3>
-   <semester_4>2</semester_4>
-   <semester_5>11</semester_5>
-   <semester_6>12</semester_6>
-   <semester_7>15</semester_7>
-   <semester_8>19</semester_8>
-   <semester_9>18</semester_9>
-   <semester_10>16</semester_10>
-  </student>
-  <student>
-   <name>Larry Stalnaker</name>
-   <group>257177</group>
-   <semester_1>1</semester_1>
-   <semester_2>14</semester_2>
-   <semester_3>11</semester_3>
-   <semester_4>3</semester_4>
-   <semester_5>2</semester_5>
-   <semester_6>5</semester_6>
-   <semester_7>13</semester_7>
-   <semester_8>2</semester_8>
-   <semester_9>8</semester_9>
-   <semester_10>13</semester_10>
-  </student>
-  <student>
-   <name>Anthony Hoover</name>
-   <group>746911</group>
-   <semester_1>15</semester_1>
-   <semester_2>3</semester_2>
-   <semester_3>14</semester_3>
-   <semester_4>6</semester_4>
-   <semester_5>13</semester_5>
-   <semester_6>19</semester_6>
-   <semester_7>6</semester_7>
-   <semester_8>7</semester_8>
-   <semester_9>12</semester_9>
-   <semester_10>10</semester_10>
-  </student>
-  <student>
-   <name>Veronica Goldsberry</name>
-   <group>324334</group>
-   <semester_1>7</semester_1>
-   <semester_2>4</semester_2>
-   <semester_3>3</semester_3>
-   <semester_4>4</semester_4>
-   <semester_5>1</semester_5>
-   <semester_6>11</semester_6>
-   <semester_7>5</semester_7>
-   <semester_8>2</semester_8>
-   <semester_9>20</semester_9>
-   <semester_10>12</semester_10>
-  </student>
-  <student>
-   <name>Stephen Campana</name>
-   <group>489235</group>
-   <semester_1>13</semester_1>
-   <semester_2>1</semester_2>
-   <semester_3>17</semester_3>
-   <semester_4>17</semester_4>
-   <semester_5>14</semester_5>
-   <semester_6>13</semester_6>
-   <semester_7>6</semester_7>
-   <semester_8>16</semester_8>
-   <semester_9>13</semester_9>
-   <semester_10>3</semester_10>
-  </student>
-  <student>
-   <name>Ronald Mckim</name>
-   <group>825527</group>
-   <semester_1>9</semester_1>
-   <semester_2>10</semester_2>
-   <semester_3>18</semester_3>
-   <semester_4>19</semester_4>
-   <semester_5>6</semester_5>
-   <semester_6>6</semester_6>
-   <semester_7>14</semester_7>
-   <semester_8>10</semester_8>
-   <semester_9>4</semester_9>
-   <semester_10>9</semester_10>
-  </student>
-  <student>
-   <name>Myriam Peters</name>
-   <group>215196</group>
-   <semester_1>10</semester_1>
-   <semester_2>3</semester_2>
-   <semester_3>1</semester_3>
-   <semester_4>7</semester_4>
-   <semester_5>16</semester_5>
-   <semester_6>9</semester_6>
-   <semester_7>2</semester_7>
-   <semester_8>11</semester_8>
-   <semester_9>10</semester_9>
-   <semester_10>19</semester_10>
-  </student>
-  <student>
-   <name>Dan Allen</name>
-   <group>996191</group>
-   <semester_1>5</semester_1>
-   <semester_2>11</semester_2>
-   <semester_3>13</semester_3>
-   <semester_4>14</semester_4>
-   <semester_5>2</semester_5>
-   <semester_6>4</semester_6>
-   <semester_7>10</semester_7>
-   <semester_8>8</semester_8>
-   <semester_9>9</semester_9>
-   <semester_10>1</semester_10>
-  </student>
-  <student>
-   <name>Michelle Rodriguez</name>
-   <group>650929</group>
-   <semester_1>12</semester_1>
-   <semester_2>9</semester_2>
-   <semester_3>13</semester_3>
-   <semester_4>5</semester_4>
-   <semester_5>18</semester_5>
-   <semester_6>20</semester_6>
-   <semester_7>17</semester_7>
-   <semester_8>1</semester_8>
-   <semester_9>7</semester_9>
-   <semester_10>1</semester_10>
-  </student>
-  <student>
-   <name>Madeline Banks</name>
-   <group>355663</group>
-   <semester_1>15</semester_1>
-   <semester_2>8</semester_2>
-   <semester_3>8</semester_3>
-   <semester_4>15</semester_4>
-   <semester_5>19</semester_5>
-   <semester_6>17</semester_6>
-   <semester_7>1</semester_7>
-   <semester_8>7</semester_8>
-   <semester_9>3</semester_9>
-   <semester_10>14</semester_10>
-  </student>
-  <student>
-   <name>Jewell Wood</name>
-   <group>434966</group>
-   <semester_1>5</semester_1>
-   <semester_2>7</semester_2>
-   <semester_3>7</semester_3>
-   <semester_4>4</semester_4>
-   <semester_5>4</semester_5>
-   <semester_6>4</semester_6>
-   <semester_7>15</semester_7>
-   <semester_8>9</semester_8>
-   <semester_9>9</semester_9>
-   <semester_10>20</semester_10>
-  </student>
-  <student>
-   <name>Shirley Foss</name>
-   <group>714856</group>
-   <semester_1>14</semester_1>
-   <semester_2>16</semester_2>
-   <semester_3>2</semester_3>
-   <semester_4>5</semester_4>
-   <semester_5>1</semester_5>
-   <semester_6>6</semester_6>
-   <semester_7>12</semester_7>
-   <semester_8>2</semester_8>
-   <semester_9>5</semester_9>
-   <semester_10>15</semester_10>
-  </student>
-  <student>
-   <name>Norma Harris</name>
-   <group>829582</group>
-   <semester_1>13</semester_1>
-   <semester_2>6</semester_2>
-   <semester_3>7</semester_3>
-   <semester_4>11</semester_4>
-   <semester_5>20</semester_5>
-   <semester_6>12</semester_6>
-   <semester_7>4</semester_7>
-   <semester_8>13</semester_8>
-   <semester_9>6</semester_9>
-   <semester_10>19</semester_10>
-  </student>
-  <student>
-   <name>Irene Fallenstein</name>
-   <group>268407</group>
-   <semester_1>3</semester_1>
-   <semester_2>9</semester_2>
-   <semester_3>19</semester_3>
-   <semester_4>1</semester_4>
-   <semester_5>10</semester_5>
-   <semester_6>11</semester_6>
-   <semester_7>5</semester_7>
-   <semester_8>20</semester_8>
-   <semester_9>6</semester_9>
-   <semester_10>13</semester_10>
-  </student>
-  <student>
-   <name>Delores Dafoe</name>
-   <group>403221</group>
-   <semester_1>1</semester_1>
-   <semester_2>4</semester_2>
-   <semester_3>9</semester_3>
-   <semester_4>16</semester_4>
-   <semester_5>3</semester_5>
-   <semester_6>14</semester_6>
-   <semester_7>10</semester_7>
-   <semester_8>20</semester_8>
-   <semester_9>18</semester_9>
-   <semester_10>2</semester_10>
-  </student>
-  <student>
-   <name>Carolyn Jackson</name>
-   <group>998209</group>
-   <semester_1>18</semester_1>
-   <semester_2>19</semester_2>
-   <semester_3>16</semester_3>
-   <semester_4>17</semester_4>
-   <semester_5>13</semester_5>
-   <semester_6>17</semester_6>
-   <semester_7>6</semester_7>
-   <semester_8>17</semester_8>
-   <semester_9>10</semester_9>
-   <semester_10>5</semester_10>
-  </student>
-  <student>
-   <name>April Preciado</name>
-   <group>303217</group>
-   <semester_1>6</semester_1>
-   <semester_2>15</semester_2>
-   <semester_3>19</semester_3>
-   <semester_4>4</semester_4>
-   <semester_5>1</semester_5>
-   <semester_6>10</semester_6>
-   <semester_7>14</semester_7>
-   <semester_8>13</semester_8>
-   <semester_9>6</semester_9>
-   <semester_10>5</semester_10>
-  </student>
-  <student>
-   <name>Bruce Valladares</name>
-   <group>600867</group>
-   <semester_1>10</semester_1>
-   <semester_2>12</semester_2>
-   <semester_3>2</semester_3>
-   <semester_4>13</semester_4>
-   <semester_5>15</semester_5>
-   <semester_6>17</semester_6>
-   <semester_7>20</semester_7>
-   <semester_8>13</semester_8>
-   <semester_9>12</semester_9>
-   <semester_10>18</semester_10>
-  </student>
-  <student>
-   <name>Marcelina Crump</name>
-   <group>494496</group>
-   <semester_1>16</semester_1>
-   <semester_2>4</semester_2>
-   <semester_3>2</semester_3>
-   <semester_4>17</semester_4>
-   <semester_5>9</semester_5>
-   <semester_6>8</semester_6>
-   <semester_7>8</semester_7>
-   <semester_8>20</semester_8>
-   <semester_9>8</semester_9>
-   <semester_10>11</semester_10>
-  </student>
-  <student>
-   <name>John Smith</name>
-   <group>295505</group>
-   <semester_1>7</semester_1>
-   <semester_2>3</semester_2>
-   <semester_3>4</semester_3>
-   <semester_4>3</semester_4>
-   <semester_5>3</semester_5>
-   <semester_6>19</semester_6>
-   <semester_7>2</semester_7>
-   <semester_8>3</semester_8>
-   <semester_9>3</semester_9>
-   <semester_10>20</semester_10>
-  </student>
-  <student>
-   <name>Ariane Wilson</name>
-   <group>353732</group>
-   <semester_1>7</semester_1>
-   <semester_2>4</semester_2>
-   <semester_3>9</semester_3>
-   <semester_4>13</semester_4>
-   <semester_5>14</semester_5>
-   <semester_6>11</semester_6>
-   <semester_7>16</semester_7>
-   <semester_8>2</semester_8>
-   <semester_9>1</semester_9>
-   <semester_10>6</semester_10>
-  </student>
-  <student>
-   <name>Dovie Malinowski</name>
-   <group>708614</group>
-   <semester_1>3</semester_1>
-   <semester_2>7</semester_2>
-   <semester_3>15</semester_3>
-   <semester_4>8</semester_4>
-   <semester_5>6</semester_5>
-   <semester_6>7</semester_6>
-   <semester_7>5</semester_7>
-   <semester_8>17</semester_8>
-   <semester_9>6</semester_9>
-   <semester_10>15</semester_10>
-  </student>
-  <student>
-   <name>Megan Luna</name>
-   <group>627754</group>
-   <semester_1>15</semester_1>
-   <semester_2>7</semester_2>
-   <semester_3>4</semester_3>
-   <semester_4>13</semester_4>
-   <semester_5>1</semester_5>
-   <semester_6>16</semester_6>
-   <semester_7>11</semester_7>
-   <semester_8>20</semester_8>
-   <semester_9>6</semester_9>
-   <semester_10>6</semester_10>
-  </student>
-  <student>
-   <name>Susan Sanchez</name>
-   <group>859348</group>
-   <semester_1>13</semester_1>
-   <semester_2>16</semester_2>
-   <semester_3>20</semester_3>
-   <semester_4>10</semester_4>
-   <semester_5>17</semester_5>
-   <semester_6>19</semester_6>
-   <semester_7>8</semester_7>
-   <semester_8>1</semester_8>
-   <semester_9>11</semester_9>
-   <semester_10>19</semester_10>
-  </student>
-  <student>
-   <name>Michael Nichols</name>
-   <group>540912</group>
-   <semester_1>10</semester_1>
-   <semester_2>13</semester_2>
-   <semester_3>5</semester_3>
-   <semester_4>13</semester_4>
-   <semester_5>8</semester_5>
-   <semester_6>16</semester_6>
-   <semester_7>1</semester_7>
-   <semester_8>14</semester_8>
-   <semester_9>14</semester_9>
-   <semester_10>19</semester_10>
-  </student>
-  <student>
-   <name>Ralph Goldberg</name>
-   <group>931244</group>
-   <semester_1>15</semester_1>
-   <semester_2>6</semester_2>
-   <semester_3>14</semester_3>
-   <semester_4>2</semester_4>
-   <semester_5>18</semester_5>
-   <semester_6>8</semester_6>
-   <semester_7>1</semester_7>
-   <semester_8>16</semester_8>
-   <semester_9>8</semester_9>
-   <semester_10>17</semester_10>
-  </student>
- </pass_table>
+ <trains>
+  <train>
+   <train_number>22</train_number>
+   <depart_st>Watervliet</depart_st>
+   <arriv_st>Cooperstown</arriv_st>
+   <data_of_departure>11/6/2000 2:58:24</data_of_departure>
+   <data_of_arrival>5/10/2005 22:12:59</data_of_arrival>
+  </train>
+  <train>
+   <train_number>72</train_number>
+   <depart_st>Oswego</depart_st>
+   <arriv_st>Lake</arriv_st>
+   <data_of_departure>12/3/2003 15:37:2</data_of_departure>
+   <data_of_arrival>3/3/2010 9:33:5</data_of_arrival>
+  </train>
+  <train>
+   <train_number>368</train_number>
+   <depart_st>Chautauqua</depart_st>
+   <arriv_st>Windsor</arriv_st>
+   <data_of_departure>31/10/2002 6:48:1</data_of_departure>
+   <data_of_arrival>18/9/2006 20:41:53</data_of_arrival>
+  </train>
+  <train>
+   <train_number>605</train_number>
+   <depart_st>Falls</depart_st>
+   <arriv_st>Flushing</arriv_st>
+   <data_of_departure>26/8/2003 23:19:57</data_of_departure>
+   <data_of_arrival>18/8/2008 3:41:48</data_of_arrival>
+  </train>
+  <train>
+   <train_number>473</train_number>
+   <depart_st>Placid</depart_st>
+   <arriv_st>Point</arriv_st>
+   <data_of_departure>6/5/2001 19:20:19</data_of_departure>
+   <data_of_arrival>12/9/2010 5:52:43</data_of_arrival>
+  </train>
+  <train>
+   <train_number>966</train_number>
+   <depart_st>Lackawanna</depart_st>
+   <arriv_st>Forest</arriv_st>
+   <data_of_departure>12/1/2004 17:7:29</data_of_departure>
+   <data_of_arrival>1/6/2009 6:20:8</data_of_arrival>
+  </train>
+  <train>
+   <train_number>423</train_number>
+   <depart_st>Great</depart_st>
+   <arriv_st>Queens</arriv_st>
+   <data_of_departure>17/8/2001 7:19:29</data_of_departure>
+   <data_of_arrival>13/4/2008 8:42:51</data_of_arrival>
+  </train>
+  <train>
+   <train_number>433</train_number>
+   <depart_st>White</depart_st>
+   <arriv_st>Brook</arriv_st>
+   <data_of_departure>31/12/2000 5:31:10</data_of_departure>
+   <data_of_arrival>2/5/2005 7:19:60</data_of_arrival>
+  </train>
+  <train>
+   <train_number>330</train_number>
+   <depart_st>Aurora</depart_st>
+   <arriv_st>Rochester</arriv_st>
+   <data_of_departure>10/11/2001 4:21:6</data_of_departure>
+   <data_of_arrival>20/3/2005 8:44:59</data_of_arrival>
+  </train>
+  <train>
+   <train_number>363</train_number>
+   <depart_st>Kingston</depart_st>
+   <arriv_st>Saratoga</arriv_st>
+   <data_of_departure>22/2/2001 22:15:36</data_of_departure>
+   <data_of_arrival>20/1/2006 14:29:33</data_of_arrival>
+  </train>
+  <train>
+   <train_number>805</train_number>
+   <depart_st>Cooperstown</depart_st>
+   <arriv_st>Oyster</arriv_st>
+   <data_of_departure>8/2/2001 22:32:27</data_of_departure>
+   <data_of_arrival>10/4/2010 2:40:58</data_of_arrival>
+  </train>
+  <train>
+   <train_number>305</train_number>
+   <depart_st>Rensselaer</depart_st>
+   <arriv_st>Ithaca</arriv_st>
+   <data_of_departure>15/11/2001 11:11:23</data_of_departure>
+   <data_of_arrival>15/8/2007 8:60:32</data_of_arrival>
+  </train>
+  <train>
+   <train_number>724</train_number>
+   <depart_st>Crown</depart_st>
+   <arriv_st>Ilion</arriv_st>
+   <data_of_departure>28/3/2002 1:49:41</data_of_departure>
+   <data_of_arrival>12/8/2005 23:49:26</data_of_arrival>
+  </train>
+  <train>
+   <train_number>380</train_number>
+   <depart_st>Schenectady</depart_st>
+   <arriv_st>Ossining</arriv_st>
+   <data_of_departure>14/11/2001 1:58:1</data_of_departure>
+   <data_of_arrival>3/9/2006 6:33:7</data_of_arrival>
+  </train>
+  <train>
+   <train_number>67</train_number>
+   <depart_st>Bedford</depart_st>
+   <arriv_st>Middletown</arriv_st>
+   <data_of_departure>16/3/2000 4:4:30</data_of_departure>
+   <data_of_arrival>30/5/2007 13:6:26</data_of_arrival>
+  </train>
+  <train>
+   <train_number>375</train_number>
+   <depart_st>Gloversville</depart_st>
+   <arriv_st>Jamestown</arriv_st>
+   <data_of_departure>16/8/2004 15:7:55</data_of_departure>
+   <data_of_arrival>17/10/2005 12:37:51</data_of_arrival>
+  </train>
+  <train>
+   <train_number>890</train_number>
+   <depart_st>Jamestown</depart_st>
+   <arriv_st>Queens</arriv_st>
+   <data_of_departure>28/11/2004 16:42:8</data_of_departure>
+   <data_of_arrival>15/11/2005 13:56:41</data_of_arrival>
+  </train>
+  <train>
+   <train_number>193</train_number>
+   <depart_st>Springs</depart_st>
+   <arriv_st>North</arriv_st>
+   <data_of_departure>25/6/2001 24:9:13</data_of_departure>
+   <data_of_arrival>24/1/2010 24:53:3</data_of_arrival>
+  </train>
+  <train>
+   <train_number>568</train_number>
+   <depart_st>Babylon</depart_st>
+   <arriv_st>Washington</arriv_st>
+   <data_of_departure>22/8/2001 15:22:21</data_of_departure>
+   <data_of_arrival>11/8/2009 16:22:19</data_of_arrival>
+  </train>
+  <train>
+   <train_number>442</train_number>
+   <depart_st>Bay</depart_st>
+   <arriv_st>Queens</arriv_st>
+   <data_of_departure>26/1/2003 4:3:28</data_of_departure>
+   <data_of_arrival>2/2/2007 2:41:31</data_of_arrival>
+  </train>
+  <train>
+   <train_number>196</train_number>
+   <depart_st>Nyack</depart_st>
+   <arriv_st>Sag</arriv_st>
+   <data_of_departure>15/5/2002 2:31:30</data_of_departure>
+   <data_of_arrival>19/5/2008 20:27:49</data_of_arrival>
+  </train>
+  <train>
+   <train_number>658</train_number>
+   <depart_st>Dunkirk</depart_st>
+   <arriv_st>Forest</arriv_st>
+   <data_of_departure>28/4/2002 18:20:29</data_of_departure>
+   <data_of_arrival>12/10/2009 23:45:5</data_of_arrival>
+  </train>
+  <train>
+   <train_number>953</train_number>
+   <depart_st>Hammondsport</depart_st>
+   <arriv_st>Queens</arriv_st>
+   <data_of_departure>19/12/2001 9:51:44</data_of_departure>
+   <data_of_arrival>20/9/2007 6:57:19</data_of_arrival>
+  </train>
+  <train>
+   <train_number>487</train_number>
+   <depart_st>Southampton</depart_st>
+   <arriv_st>Hammondsport</arriv_st>
+   <data_of_departure>29/8/2000 23:49:14</data_of_departure>
+   <data_of_arrival>22/1/2005 11:42:18</data_of_arrival>
+  </train>
+  <train>
+   <train_number>164</train_number>
+   <depart_st>Aurora</depart_st>
+   <arriv_st>Fredonia</arriv_st>
+   <data_of_departure>12/8/2003 9:6:1</data_of_departure>
+   <data_of_arrival>20/8/2010 18:36:23</data_of_arrival>
+  </train>
+  <train>
+   <train_number>924</train_number>
+   <depart_st>Scarsdale</depart_st>
+   <arriv_st>Peekskill</arriv_st>
+   <data_of_departure>4/12/2001 4:15:26</data_of_departure>
+   <data_of_arrival>20/8/2009 24:11:26</data_of_arrival>
+  </train>
+  <train>
+   <train_number>135</train_number>
+   <depart_st>Placid</depart_st>
+   <arriv_st>Beacon</arriv_st>
+   <data_of_departure>31/2/2001 24:50:8</data_of_departure>
+   <data_of_arrival>26/4/2009 1:18:26</data_of_arrival>
+  </train>
+  <train>
+   <train_number>454</train_number>
+   <depart_st>Harlem</depart_st>
+   <arriv_st>Niagara</arriv_st>
+   <data_of_departure>3/4/2003 17:5:19</data_of_departure>
+   <data_of_arrival>8/5/2010 15:2:6</data_of_arrival>
+  </train>
+  <train>
+   <train_number>579</train_number>
+   <depart_st>Johnstown</depart_st>
+   <arriv_st>Johnstown</arriv_st>
+   <data_of_departure>17/5/2000 16:12:10</data_of_departure>
+   <data_of_arrival>26/11/2010 7:6:55</data_of_arrival>
+  </train>
+  <train>
+   <train_number>969</train_number>
+   <depart_st>White</depart_st>
+   <arriv_st>Plains</arriv_st>
+   <data_of_departure>2/10/2003 10:24:55</data_of_departure>
+   <data_of_arrival>22/1/2005 1:14:13</data_of_arrival>
+  </train>
+  <train>
+   <train_number>768</train_number>
+   <depart_st>Ticonderoga</depart_st>
+   <arriv_st>Saratoga</arriv_st>
+   <data_of_departure>20/4/2002 2:32:48</data_of_departure>
+   <data_of_arrival>15/12/2006 16:7:29</data_of_arrival>
+  </train>
+  <train>
+   <train_number>349</train_number>
+   <depart_st>Rye</depart_st>
+   <arriv_st>Point</arriv_st>
+   <data_of_departure>30/6/2000 16:7:11</data_of_departure>
+   <data_of_arrival>28/8/2008 8:15:55</data_of_arrival>
+  </train>
+  <train>
+   <train_number>901</train_number>
+   <depart_st>Brook</depart_st>
+   <arriv_st>Saratoga</arriv_st>
+   <data_of_departure>3/5/2003 2:27:15</data_of_departure>
+   <data_of_arrival>2/6/2006 3:1:21</data_of_arrival>
+  </train>
+  <train>
+   <train_number>647</train_number>
+   <depart_st>Peekskill</depart_st>
+   <arriv_st>Point</arriv_st>
+   <data_of_departure>10/8/2002 12:44:60</data_of_departure>
+   <data_of_arrival>10/6/2006 23:1:24</data_of_arrival>
+  </train>
+  <train>
+   <train_number>311</train_number>
+   <depart_st>Oyster</depart_st>
+   <arriv_st>Lackawanna</arriv_st>
+   <data_of_departure>25/3/2003 18:49:56</data_of_departure>
+   <data_of_arrival>29/6/2006 8:44:3</data_of_arrival>
+  </train>
+  <train>
+   <train_number>677</train_number>
+   <depart_st>Crown</depart_st>
+   <arriv_st>Buffalo</arriv_st>
+   <data_of_departure>6/10/2004 11:50:10</data_of_departure>
+   <data_of_arrival>3/10/2006 5:30:22</data_of_arrival>
+  </train>
+  <train>
+   <train_number>212</train_number>
+   <depart_st>Babylon</depart_st>
+   <arriv_st>Falls</arriv_st>
+   <data_of_departure>19/11/2005 21:15:14</data_of_departure>
+   <data_of_arrival>12/11/2006 14:57:42</data_of_arrival>
+  </train>
+  <train>
+   <train_number>154</train_number>
+   <depart_st>Oyster</depart_st>
+   <arriv_st>Falls</arriv_st>
+   <data_of_departure>16/4/2000 8:19:2</data_of_departure>
+   <data_of_arrival>17/10/2007 13:28:23</data_of_arrival>
+  </train>
+  <train>
+   <train_number>750</train_number>
+   <depart_st>Bay</depart_st>
+   <arriv_st>Oyster</arriv_st>
+   <data_of_departure>27/9/2000 5:11:28</data_of_departure>
+   <data_of_arrival>21/2/2006 19:17:3</data_of_arrival>
+  </train>
+  <train>
+   <train_number>813</train_number>
+   <depart_st>Schenectady</depart_st>
+   <arriv_st>Mamaroneck</arriv_st>
+   <data_of_departure>1/6/2003 12:32:26</data_of_departure>
+   <data_of_arrival>24/6/2006 8:60:44</data_of_arrival>
+  </train>
+ </trains>
