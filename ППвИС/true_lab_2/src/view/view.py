@@ -1,4 +1,3 @@
-import os
 
 from utility.windows.windows import InputWindow
 from utility.windows.windows import FilterWindow
@@ -6,13 +5,10 @@ from utility.windows.windows import DeleteWindow
 from utility.windows.windows import SaveWindow
 from utility.windows.windows import UploadWindow
 
-from utility.abstractions.observer import Observer
 
-# kivy dependencies
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 
-# kivyMD dependencies
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.screen import Screen
 from kivymd.uix.snackbar import Snackbar
@@ -26,7 +22,7 @@ class ViewComponent(MDScreen):
         self.table = table
         self.screen = Screen()
 
-    #МЕНЮ ДЛЯ ВЫЗОВА СООТВЕТСТУЮЩЕГО ОКНА(СОГЛАСНО НАЖАТИЮ)
+
     def open_dialog(self, window_type: str):
         if window_type == 'input':
             self.dialog = InputWindow(view=self)

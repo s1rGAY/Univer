@@ -15,7 +15,7 @@ class XmlGenerator:
 
     @staticmethod
     def generate_xml_file(count_of_trains):
-        path = '/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/data/data.xml'
+        path = '/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/data/data5.xml'
         data_dict = {}
         with open(path, 'w') as file:
             writer = XmlWriter(path)
@@ -34,7 +34,7 @@ class XmlGenerator:
 
 
 def main():
-    XmlGenerator.generate_xml_file(40)
+    XmlGenerator.generate_xml_file(100)
 
 
 if __name__ == "__main__":

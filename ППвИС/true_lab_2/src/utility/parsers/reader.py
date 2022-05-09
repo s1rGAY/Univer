@@ -1,6 +1,3 @@
-#if len(self.train_data) == 5: - возможные проблемы
-#тк не добавил загрузку времени пути
-
 import xml.sax as sax
 
 

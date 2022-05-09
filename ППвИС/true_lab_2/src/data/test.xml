@@ -1,0 +1,643 @@
+<?xml version="1.0" ?>
+ <trains>
+  <train>
+   <Train number>376</Train number>
+   <Departure station>New</Departure station>
+   <Arival station>Stony</Arival station>
+   <Date and time of departure>6/9/2002 18:25:8</Date and time of departure>
+   <Date and time of arrival>8/2/2005 16:41:4</Date and time of arrival>
+   <Time travel>885 days, 22:15:56</Time travel>
+  </train>
+  <train>
+   <Train number>906</Train number>
+   <Departure station>Port</Departure station>
+   <Arival station>Port</Arival station>
+   <Date and time of departure>20/6/2000 8:33:41</Date and time of departure>
+   <Date and time of arrival>18/4/2005 12:57:35</Date and time of arrival>
+   <Time travel>1763 days, 4:23:54</Time travel>
+  </train>
+  <train>
+   <Train number>792</Train number>
+   <Departure station>Woodstock</Departure station>
+   <Arival station>Port</Arival station>
+   <Date and time of departure>26/5/2002 23:12:13</Date and time of departure>
+   <Date and time of arrival>1/3/2007 6:40:42</Date and time of arrival>
+   <Time travel>1739 days, 7:28:29</Time travel>
+  </train>
+  <train>
+   <Train number>643</Train number>
+   <Departure station>Lockport</Departure station>
+   <Arival station>Great</Arival station>
+   <Date and time of departure>28/5/2003 15:26:58</Date and time of departure>
+   <Date and time of arrival>12/12/2008 14:52:31</Date and time of arrival>
+   <Time travel>2024 days, 23:25:33</Time travel>
+  </train>
+  <train>
+   <Train number>25</Train number>
+   <Departure station>Woodstock</Departure station>
+   <Arival station>Falls</Arival station>
+   <Date and time of departure>17/12/2000 10:55:25</Date and time of departure>
+   <Date and time of arrival>16/2/2006 5:35:46</Date and time of arrival>
+   <Time travel>1886 days, 18:40:21</Time travel>
+  </train>
+  <train>
+   <Train number>404</Train number>
+   <Departure station>Plattsburgh</Departure station>
+   <Arival station>Rotterdam</Arival station>
+   <Date and time of departure>9/11/2002 16:38:26</Date and time of departure>
+   <Date and time of arrival>12/2/2007 11:36:51</Date and time of arrival>
+   <Time travel>1555 days, 18:58:25</Time travel>
+  </train>
+  <train>
+   <Train number>375</Train number>
+   <Departure station>Oyster</Departure station>
+   <Arival station>Plains</Arival station>
+   <Date and time of departure>11/7/2004 2:18:24</Date and time of departure>
+   <Date and time of arrival>31/5/2006 4:33:5</Date and time of arrival>
+   <Time travel>689 days, 2:14:41</Time travel>
+  </train>
+  <train>
+   <Train number>361</Train number>
+   <Departure station>Glens</Departure station>
+   <Arival station>New</Arival station>
+   <Date and time of departure>11/6/2004 7:11:39</Date and time of departure>
+   <Date and time of arrival>16/12/2009 9:13:15</Date and time of arrival>
+   <Time travel>2014 days, 2:01:36</Time travel>
+  </train>
+  <train>
+   <Train number>7</Train number>
+   <Departure station>Rochester</Departure station>
+   <Arival station>Mineola</Arival station>
+   <Date and time of departure>4/6/2001 9:27:59</Date and time of departure>
+   <Date and time of arrival>13/1/2008 16:31:36</Date and time of arrival>
+   <Time travel>2414 days, 7:03:37</Time travel>
+  </train>
+  <train>
+   <Train number>445</Train number>
+   <Departure station>Elmira</Departure station>
+   <Arival station>Placid</Arival station>
+   <Date and time of departure>30/12/2002 5:54:58</Date and time of departure>
+   <Date and time of arrival>31/3/2010 21:35:25</Date and time of arrival>
+   <Time travel>2648 days, 15:40:27</Time travel>
+  </train>
+  <train>
+   <Train number>210</Train number>
+   <Departure station>Coney</Departure station>
+   <Arival station>Oyster</Arival station>
+   <Date and time of departure>16/4/2005 23:57:45</Date and time of departure>
+   <Date and time of arrival>5/8/2006 2:30:3</Date and time of arrival>
+   <Time travel>475 days, 2:32:18</Time travel>
+  </train>
+  <train>
+   <Train number>177</Train number>
+   <Departure station>Neck</Departure station>
+   <Arival station>Syracuse</Arival station>
+   <Date and time of departure>29/9/2001 16:17:38</Date and time of departure>
+   <Date and time of arrival>6/3/2005 18:17:25</Date and time of arrival>
+   <Time travel>1254 days, 1:59:47</Time travel>
+  </train>
+  <train>
+   <Train number>219</Train number>
+   <Departure station>Niagara</Departure station>
+   <Arival station>Ossining</Arival station>
+   <Date and time of departure>15/8/2000 17:10:56</Date and time of departure>
+   <Date and time of arrival>3/4/2008 9:26:5</Date and time of arrival>
+   <Time travel>2787 days, 16:15:09</Time travel>
+  </train>
+  <train>
+   <Train number>962</Train number>
+   <Departure station>New</Departure station>
+   <Arival station>Syracuse</Arival station>
+   <Date and time of departure>28/3/2004 8:48:8</Date and time of departure>
+   <Date and time of arrival>20/9/2005 16:16:18</Date and time of arrival>
+   <Time travel>541 days, 7:28:10</Time travel>
+  </train>
+  <train>
+   <Train number>156</Train number>
+   <Departure station>Southampton</Departure station>
+   <Arival station>Middletown</Arival station>
+   <Date and time of departure>24/1/2002 4:18:53</Date and time of departure>
+   <Date and time of arrival>9/8/2005 1:22:22</Date and time of arrival>
+   <Time travel>1292 days, 21:03:29</Time travel>
+  </train>
+  <train>
+   <Train number>456</Train number>
+   <Departure station>Lake</Departure station>
+   <Arival station>Point</Arival station>
+   <Date and time of departure>12/9/2002 20:6:33</Date and time of departure>
+   <Date and time of arrival>25/4/2008 17:2:9</Date and time of arrival>
+   <Time travel>2051 days, 20:55:36</Time travel>
+  </train>
+  <train>
+   <Train number>111</Train number>
+   <Departure station>Seneca</Departure station>
+   <Arival station>Mamaroneck</Arival station>
+   <Date and time of departure>11/2/2002 2:26:59</Date and time of departure>
+   <Date and time of arrival>3/9/2007 18:33:42</Date and time of arrival>
+   <Time travel>2030 days, 16:06:43</Time travel>
+  </train>
+  <train>
+   <Train number>578</Train number>
+   <Departure station>Johnstown</Departure station>
+   <Arival station>Ithaca</Arival station>
+   <Date and time of departure>9/6/2005 18:13:23</Date and time of departure>
+   <Date and time of arrival>26/3/2009 17:9:43</Date and time of arrival>
+   <Time travel>1385 days, 22:56:20</Time travel>
+  </train>
+  <train>
+   <Train number>399</Train number>
+   <Departure station>Oneida</Departure station>
+   <Arival station>Sag</Arival station>
+   <Date and time of departure>10/3/2000 11:29:11</Date and time of departure>
+   <Date and time of arrival>5/10/2005 5:16:52</Date and time of arrival>
+   <Time travel>2034 days, 17:47:41</Time travel>
+  </train>
+  <train>
+   <Train number>962</Train number>
+   <Departure station>Jamestown</Departure station>
+   <Arival station>Herkimer</Arival station>
+   <Date and time of departure>22/3/2005 4:7:12</Date and time of departure>
+   <Date and time of arrival>11/11/2006 5:58:46</Date and time of arrival>
+   <Time travel>599 days, 1:51:34</Time travel>
+  </train>
+  <train>
+   <Train number>158</Train number>
+   <Departure station>West</Departure station>
+   <Arival station>Hudson</Arival station>
+   <Date and time of departure>4/10/2005 5:45:4</Date and time of departure>
+   <Date and time of arrival>14/1/2009 21:55:49</Date and time of arrival>
+   <Time travel>1198 days, 16:10:45</Time travel>
+  </train>
+  <train>
+   <Train number>884</Train number>
+   <Departure station>North</Departure station>
+   <Arival station>Stony</Arival station>
+   <Date and time of departure>14/4/2001 21:16:26</Date and time of departure>
+   <Date and time of arrival>14/12/2006 3:26:59</Date and time of arrival>
+   <Time travel>2069 days, 6:10:33</Time travel>
+  </train>
+  <train>
+   <Train number>884</Train number>
+   <Departure station>Nyack</Departure station>
+   <Arival station>Levittown</Arival station>
+   <Date and time of departure>12/2/2005 11:5:23</Date and time of departure>
+   <Date and time of arrival>31/10/2007 8:34:2</Date and time of arrival>
+   <Time travel>990 days, 21:28:39</Time travel>
+  </train>
+  <train>
+   <Train number>658</Train number>
+   <Departure station>Rensselaer</Departure station>
+   <Arival station>Point</Arival station>
+   <Date and time of departure>20/2/2001 14:1:20</Date and time of departure>
+   <Date and time of arrival>24/12/2007 5:1:6</Date and time of arrival>
+   <Time travel>2497 days, 14:59:46</Time travel>
+  </train>
+  <train>
+   <Train number>88</Train number>
+   <Departure station>Amsterdam</Departure station>
+   <Arival station>Kingston</Arival station>
+   <Date and time of departure>9/9/2002 9:26:26</Date and time of departure>
+   <Date and time of arrival>21/4/2007 22:43:41</Date and time of arrival>
+   <Time travel>1685 days, 13:17:15</Time travel>
+  </train>
+  <train>
+   <Train number>186</Train number>
+   <Departure station>Fredonia</Departure station>
+   <Arival station>Amsterdam</Arival station>
+   <Date and time of departure>15/7/2000 3:8:13</Date and time of departure>
+   <Date and time of arrival>27/2/2010 10:52:23</Date and time of arrival>
+   <Time travel>3514 days, 7:44:10</Time travel>
+  </train>
+  <train>
+   <Train number>706</Train number>
+   <Departure station>Falls</Departure station>
+   <Arival station>Mount</Arival station>
+   <Date and time of departure>14/12/2003 8:45:20</Date and time of departure>
+   <Date and time of arrival>24/2/2006 19:35:26</Date and time of arrival>
+   <Time travel>803 days, 10:50:06</Time travel>
+  </train>
+  <train>
+   <Train number>628</Train number>
+   <Departure station>Southampton</Departure station>
+   <Arival station>Hempstead</Arival station>
+   <Date and time of departure>14/6/2005 9:36:42</Date and time of departure>
+   <Date and time of arrival>27/5/2005 1:50:28</Date and time of arrival>
+   <Time travel>-19 days, 16:13:46</Time travel>
+  </train>
+  <train>
+   <Train number>802</Train number>
+   <Departure station>Scarsdale</Departure station>
+   <Arival station>Manhattan</Arival station>
+   <Date and time of departure>6/7/2000 17:10:34</Date and time of departure>
+   <Date and time of arrival>1/8/2005 2:36:29</Date and time of arrival>
+   <Time travel>1851 days, 9:25:55</Time travel>
+  </train>
+  <train>
+   <Train number>501</Train number>
+   <Departure station>Newburgh</Departure station>
+   <Arival station>City</Arival station>
+   <Date and time of departure>10/10/2002 22:31:16</Date and time of departure>
+   <Date and time of arrival>3/7/2009 22:23:24</Date and time of arrival>
+   <Time travel>2457 days, 23:52:08</Time travel>
+  </train>
+  <train>
+   <Train number>104</Train number>
+   <Departure station>Forest</Departure station>
+   <Arival station>Eastchester</Arival station>
+   <Date and time of departure>13/6/2000 23:8:30</Date and time of departure>
+   <Date and time of arrival>13/7/2007 15:42:45</Date and time of arrival>
+   <Time travel>2585 days, 16:34:15</Time travel>
+  </train>
+  <train>
+   <Train number>175</Train number>
+   <Departure station>New</Departure station>
+   <Arival station>Garden</Arival station>
+   <Date and time of departure>20/6/2002 23:16:54</Date and time of departure>
+   <Date and time of arrival>16/8/2009 23:55:44</Date and time of arrival>
+   <Time travel>2614 days, 0:38:50</Time travel>
+  </train>
+  <train>
+   <Train number>223</Train number>
+   <Departure station>Amsterdam</Departure station>
+   <Arival station>Peekskill</Arival station>
+   <Date and time of departure>1/8/2005 4:53:33</Date and time of departure>
+   <Date and time of arrival>19/9/2009 19:42:33</Date and time of arrival>
+   <Time travel>1510 days, 14:49:00</Time travel>
+  </train>
+  <train>
+   <Train number>790</Train number>
+   <Departure station>Hyde</Departure station>
+   <Arival station>City</Arival station>
+   <Date and time of departure>28/5/2001 12:7:45</Date and time of departure>
+   <Date and time of arrival>26/10/2010 13:44:7</Date and time of arrival>
+   <Time travel>3438 days, 1:36:22</Time travel>
+  </train>
+  <train>
+   <Train number>715</Train number>
+   <Departure station>Oneida</Departure station>
+   <Arival station>Park</Arival station>
+   <Date and time of departure>26/2/2001 8:56:21</Date and time of departure>
+   <Date and time of arrival>20/5/2005 18:37:36</Date and time of arrival>
+   <Time travel>1544 days, 9:41:15</Time travel>
+  </train>
+  <train>
+   <Train number>147</Train number>
+   <Departure station>Levittown</Departure station>
+   <Arival station>Vernon</Arival station>
+   <Date and time of departure>1/4/2000 16:25:26</Date and time of departure>
+   <Date and time of arrival>5/8/2005 3:59:22</Date and time of arrival>
+   <Time travel>1951 days, 11:33:56</Time travel>
+  </train>
+  <train>
+   <Train number>841</Train number>
+   <Departure station>Johnstown</Departure station>
+   <Arival station>Levittown</Arival station>
+   <Date and time of departure>6/12/2003 19:48:14</Date and time of departure>
+   <Date and time of arrival>7/10/2010 20:6:42</Date and time of arrival>
+   <Time travel>2497 days, 0:18:28</Time travel>
+  </train>
+  <train>
+   <Train number>220</Train number>
+   <Departure station>West</Departure station>
+   <Arival station>Glens</Arival station>
+   <Date and time of departure>17/5/2004 13:3:15</Date and time of departure>
+   <Date and time of arrival>21/2/2006 13:12:59</Date and time of arrival>
+   <Time travel>645 days, 0:09:44</Time travel>
+  </train>
+  <train>
+   <Train number>842</Train number>
+   <Departure station>Corning</Departure station>
+   <Arival station>Johnstown</Arival station>
+   <Date and time of departure>4/8/2000 8:57:14</Date and time of departure>
+   <Date and time of arrival>12/4/2006 3:18:19</Date and time of arrival>
+   <Time travel>2076 days, 18:21:05</Time travel>
+  </train>
+  <train>
+   <Train number>999</Train number>
+   <Departure station>Gloversville</Departure station>
+   <Arival station>Niagara</Arival station>
+   <Date and time of departure>18/8/2001 3:20:4</Date and time of departure>
+   <Date and time of arrival>26/9/2009 6:6:16</Date and time of arrival>
+   <Time travel>2961 days, 2:46:12</Time travel>
+  </train>
+  <train>
+   <Train number>310</Train number>
+   <Departure station>North</Departure station>
+   <Arival station>Bay</Arival station>
+   <Date and time of departure>31/10/2001 4:17:43</Date and time of departure>
+   <Date and time of arrival>23/3/2008 7:17:52</Date and time of arrival>
+   <Time travel>2335 days, 3:00:09</Time travel>
+  </train>
+  <train>
+   <Train number>453</Train number>
+   <Departure station>Scarsdale</Departure station>
+   <Arival station>Cheektowaga</Arival station>
+   <Date and time of departure>11/3/2003 14:28:19</Date and time of departure>
+   <Date and time of arrival>24/6/2006 23:32:38</Date and time of arrival>
+   <Time travel>1201 days, 9:04:19</Time travel>
+  </train>
+  <train>
+   <Train number>964</Train number>
+   <Departure station>Niagara</Departure station>
+   <Arival station>Ithaca</Arival station>
+   <Date and time of departure>12/12/2005 3:31:20</Date and time of departure>
+   <Date and time of arrival>25/6/2010 15:44:33</Date and time of arrival>
+   <Time travel>1656 days, 12:13:13</Time travel>
+  </train>
+  <train>
+   <Train number>848</Train number>
+   <Departure station>Troy</Departure station>
+   <Arival station>Dunkirk</Arival station>
+   <Date and time of departure>23/7/2002 12:12:35</Date and time of departure>
+   <Date and time of arrival>6/12/2006 20:24:28</Date and time of arrival>
+   <Time travel>1597 days, 8:11:53</Time travel>
+  </train>
+  <train>
+   <Train number>313</Train number>
+   <Departure station>Rye</Departure station>
+   <Arival station>Vernon</Arival station>
+   <Date and time of departure>20/5/2000 20:31:47</Date and time of departure>
+   <Date and time of arrival>20/4/2009 10:6:2</Date and time of arrival>
+   <Time travel>3256 days, 13:34:15</Time travel>
+  </train>
+  <train>
+   <Train number>61</Train number>
+   <Departure station>Watervliet</Departure station>
+   <Arival station>Brook</Arival station>
+   <Date and time of departure>13/8/2003 5:15:52</Date and time of departure>
+   <Date and time of arrival>17/8/2010 17:47:17</Date and time of arrival>
+   <Time travel>2561 days, 12:31:25</Time travel>
+  </train>
+  <train>
+   <Train number>249</Train number>
+   <Departure station>Park</Departure station>
+   <Arival station>Brooklyn</Arival station>
+   <Date and time of departure>21/12/2004 18:27:9</Date and time of departure>
+   <Date and time of arrival>23/11/2007 13:55:5</Date and time of arrival>
+   <Time travel>1066 days, 19:27:56</Time travel>
+  </train>
+  <train>
+   <Train number>152</Train number>
+   <Departure station>Watervliet</Departure station>
+   <Arival station>Beacon</Arival station>
+   <Date and time of departure>3/8/2001 23:15:33</Date and time of departure>
+   <Date and time of arrival>13/6/2007 23:19:21</Date and time of arrival>
+   <Time travel>2140 days, 0:03:48</Time travel>
+  </train>
+  <train>
+   <Train number>185</Train number>
+   <Departure station>Babylon</Departure station>
+   <Arival station>Levittown</Arival station>
+   <Date and time of departure>3/3/2001 10:28:41</Date and time of departure>
+   <Date and time of arrival>15/5/2010 13:26:27</Date and time of arrival>
+   <Time travel>3360 days, 2:57:46</Time travel>
+  </train>
+  <train>
+   <Train number>225</Train number>
+   <Departure station>Lake</Departure station>
+   <Arival station>Falls</Arival station>
+   <Date and time of departure>8/4/2001 8:9:47</Date and time of departure>
+   <Date and time of arrival>26/9/2006 8:30:3</Date and time of arrival>
+   <Time travel>1997 days, 0:20:16</Time travel>
+  </train>
+  <train>
+   <Train number>279</Train number>
+   <Departure station>Falls</Departure station>
+   <Arival station>Newburgh</Arival station>
+   <Date and time of departure>16/7/2000 13:24:49</Date and time of departure>
+   <Date and time of arrival>12/10/2010 11:59:29</Date and time of arrival>
+   <Time travel>3739 days, 22:34:40</Time travel>
+  </train>
+  <train>
+   <Train number>489</Train number>
+   <Departure station>Auburn</Departure station>
+   <Arival station>New</Arival station>
+   <Date and time of departure>4/10/2001 3:40:39</Date and time of departure>
+   <Date and time of arrival>25/1/2009 4:51:18</Date and time of arrival>
+   <Time travel>2670 days, 1:10:39</Time travel>
+  </train>
+  <train>
+   <Train number>676</Train number>
+   <Departure station>Woodstock</Departure station>
+   <Arival station>Coney</Arival station>
+   <Date and time of departure>5/2/2005 7:45:12</Date and time of departure>
+   <Date and time of arrival>3/6/2008 6:43:23</Date and time of arrival>
+   <Time travel>1213 days, 22:58:11</Time travel>
+  </train>
+  <train>
+   <Train number>575</Train number>
+   <Departure station>Neck</Departure station>
+   <Arival station>Levittown</Arival station>
+   <Date and time of departure>2/11/2003 5:37:34</Date and time of departure>
+   <Date and time of arrival>2/12/2007 4:52:13</Date and time of arrival>
+   <Time travel>1490 days, 23:14:39</Time travel>
+  </train>
+  <train>
+   <Train number>392</Train number>
+   <Departure station>Albany</Departure station>
+   <Arival station>Flushing</Arival station>
+   <Date and time of departure>24/6/2005 1:56:25</Date and time of departure>
+   <Date and time of arrival>10/9/2007 9:4:2</Date and time of arrival>
+   <Time travel>808 days, 7:07:37</Time travel>
+  </train>
+  <train>
+   <Train number>138</Train number>
+   <Departure station>Point</Departure station>
+   <Arival station>Massena</Arival station>
+   <Date and time of departure>16/11/2005 19:15:15</Date and time of departure>
+   <Date and time of arrival>23/3/2008 3:47:23</Date and time of arrival>
+   <Time travel>857 days, 8:32:08</Time travel>
+  </train>
+  <train>
+   <Train number>925</Train number>
+   <Departure station>Placid</Departure station>
+   <Arival station>Vernon</Arival station>
+   <Date and time of departure>4/8/2005 4:43:56</Date and time of departure>
+   <Date and time of arrival>4/1/2009 13:17:10</Date and time of arrival>
+   <Time travel>1249 days, 8:33:14</Time travel>
+  </train>
+  <train>
+   <Train number>139</Train number>
+   <Departure station>Batavia</Departure station>
+   <Arival station>Coney</Arival station>
+   <Date and time of departure>2/11/2001 9:14:58</Date and time of departure>
+   <Date and time of arrival>16/11/2005 5:19:7</Date and time of arrival>
+   <Time travel>1474 days, 20:04:09</Time travel>
+  </train>
+  <train>
+   <Train number>899</Train number>
+   <Departure station>Hampton</Departure station>
+   <Arival station>Cortland</Arival station>
+   <Date and time of departure>12/11/2001 1:11:16</Date and time of departure>
+   <Date and time of arrival>21/12/2006 14:11:33</Date and time of arrival>
+   <Time travel>1865 days, 13:00:17</Time travel>
+  </train>
+  <train>
+   <Train number>63</Train number>
+   <Departure station>Auburn</Departure station>
+   <Arival station>Troy</Arival station>
+   <Date and time of departure>21/10/2000 17:11:21</Date and time of departure>
+   <Date and time of arrival>17/5/2010 18:1:25</Date and time of arrival>
+   <Time travel>3495 days, 0:50:04</Time travel>
+  </train>
+  <train>
+   <Train number>851</Train number>
+   <Departure station>Point</Departure station>
+   <Arival station>Batavia</Arival station>
+   <Date and time of departure>20/5/2005 15:45:38</Date and time of departure>
+   <Date and time of arrival>26/8/2010 2:41:46</Date and time of arrival>
+   <Time travel>1923 days, 10:56:08</Time travel>
+  </train>
+  <train>
+   <Train number>159</Train number>
+   <Departure station>Tarrytown</Departure station>
+   <Arival station>Falls</Arival station>
+   <Date and time of departure>28/6/2002 16:57:55</Date and time of departure>
+   <Date and time of arrival>13/9/2010 1:40:39</Date and time of arrival>
+   <Time travel>2998 days, 8:42:44</Time travel>
+  </train>
+  <train>
+   <Train number>33</Train number>
+   <Departure station>Brook</Departure station>
+   <Arival station>City</Arival station>
+   <Date and time of departure>14/10/2003 16:44:43</Date and time of departure>
+   <Date and time of arrival>12/4/2006 20:2:33</Date and time of arrival>
+   <Time travel>911 days, 3:17:50</Time travel>
+  </train>
+  <train>
+   <Train number>149</Train number>
+   <Departure station>Albany</Departure station>
+   <Arival station>Buffalo</Arival station>
+   <Date and time of departure>12/7/2002 20:19:26</Date and time of departure>
+   <Date and time of arrival>21/1/2007 11:19:39</Date and time of arrival>
+   <Time travel>1653 days, 15:00:13</Time travel>
+  </train>
+  <train>
+   <Train number>139</Train number>
+   <Departure station>Plattsburgh</Departure station>
+   <Arival station>Hammondsport</Arival station>
+   <Date and time of departure>26/1/2003 15:55:28</Date and time of departure>
+   <Date and time of arrival>4/6/2006 17:28:34</Date and time of arrival>
+   <Time travel>1225 days, 1:33:06</Time travel>
+  </train>
+  <train>
+   <Train number>330</Train number>
+   <Departure station>Mount</Departure station>
+   <Arival station>Glen</Arival station>
+   <Date and time of departure>11/8/2003 3:44:5</Date and time of departure>
+   <Date and time of arrival>5/2/2010 11:42:36</Date and time of arrival>
+   <Time travel>2370 days, 7:58:31</Time travel>
+  </train>
+  <train>
+   <Train number>952</Train number>
+   <Departure station>Schenectady</Departure station>
+   <Arival station>Aurora</Arival station>
+   <Date and time of departure>16/6/2002 7:17:38</Date and time of departure>
+   <Date and time of arrival>24/3/2010 22:21:12</Date and time of arrival>
+   <Time travel>2838 days, 15:03:34</Time travel>
+  </train>
+  <train>
+   <Train number>187</Train number>
+   <Departure station>Bay</Departure station>
+   <Arival station>Johnstown</Arival station>
+   <Date and time of departure>6/11/2005 16:9:36</Date and time of departure>
+   <Date and time of arrival>14/7/2006 19:28:9</Date and time of arrival>
+   <Time travel>250 days, 3:18:33</Time travel>
+  </train>
+  <train>
+   <Train number>533</Train number>
+   <Departure station>Bay</Departure station>
+   <Arival station>Gloversville</Arival station>
+   <Date and time of departure>6/9/2001 4:3:58</Date and time of departure>
+   <Date and time of arrival>24/11/2008 17:46:4</Date and time of arrival>
+   <Time travel>2636 days, 13:42:06</Time travel>
+  </train>
+  <train>
+   <Train number>561</Train number>
+   <Departure station>Ossining</Departure station>
+   <Arival station>Beacon</Arival station>
+   <Date and time of departure>18/3/2002 21:7:29</Date and time of departure>
+   <Date and time of arrival>19/11/2010 1:33:38</Date and time of arrival>
+   <Time travel>3167 days, 4:26:09</Time travel>
+  </train>
+  <train>
+   <Train number>849</Train number>
+   <Departure station>Amsterdam</Departure station>
+   <Arival station>Babylon</Arival station>
+   <Date and time of departure>2/5/2003 1:5:41</Date and time of departure>
+   <Date and time of arrival>5/7/2007 2:42:8</Date and time of arrival>
+   <Time travel>1525 days, 1:36:27</Time travel>
+  </train>
+  <train>
+   <Train number>696</Train number>
+   <Departure station>Lake</Departure station>
+   <Arival station>Oneonta</Arival station>
+   <Date and time of departure>13/5/2001 21:14:20</Date and time of departure>
+   <Date and time of arrival>12/7/2010 18:32:17</Date and time of arrival>
+   <Time travel>3346 days, 21:17:57</Time travel>
+  </train>
+  <train>
+   <Train number>317</Train number>
+   <Departure station>Ilion</Departure station>
+   <Arival station>Queens</Arival station>
+   <Date and time of departure>18/7/2001 5:3:28</Date and time of departure>
+   <Date and time of arrival>17/1/2007 17:45:48</Date and time of arrival>
+   <Time travel>2009 days, 12:42:20</Time travel>
+  </train>
+  <train>
+   <Train number>286</Train number>
+   <Departure station>Washington</Departure station>
+   <Arival station>Rome</Arival station>
+   <Date and time of departure>24/3/2001 10:44:35</Date and time of departure>
+   <Date and time of arrival>7/8/2009 7:5:30</Date and time of arrival>
+   <Time travel>3057 days, 20:20:55</Time travel>
+  </train>
+  <train>
+   <Train number>745</Train number>
+   <Departure station>Point</Departure station>
+   <Arival station>Stony</Arival station>
+   <Date and time of departure>15/5/2001 3:45:5</Date and time of departure>
+   <Date and time of arrival>2/10/2008 16:12:46</Date and time of arrival>
+   <Time travel>2697 days, 12:27:41</Time travel>
+  </train>
+  <train>
+   <Train number>234</Train number>
+   <Departure station>Port</Departure station>
+   <Arival station>Neck</Arival station>
+   <Date and time of departure>16/1/2004 21:51:52</Date and time of departure>
+   <Date and time of arrival>21/2/2010 7:44:12</Date and time of arrival>
+   <Time travel>2227 days, 9:52:20</Time travel>
+  </train>
+  <train>
+   <Train number>569</Train number>
+   <Departure station>Washington</Departure station>
+   <Arival station>New</Arival station>
+   <Date and time of departure>18/2/2002 16:38:5</Date and time of departure>
+   <Date and time of arrival>5/9/2007 9:12:33</Date and time of arrival>
+   <Time travel>2024 days, 16:34:28</Time travel>
+  </train>
+  <train>
+   <Train number>875</Train number>
+   <Departure station>Vernon</Departure station>
+   <Arival station>White</Arival station>
+   <Date and time of departure>8/2/2001 22:53:12</Date and time of departure>
+   <Date and time of arrival>13/4/2006 2:48:19</Date and time of arrival>
+   <Time travel>1889 days, 3:55:07</Time travel>
+  </train>
+  <train>
+   <Train number>580</Train number>
+   <Departure station>Plains</Departure station>
+   <Arival station>Cortland</Arival station>
+   <Date and time of departure>5/2/2004 11:20:51</Date and time of departure>
+   <Date and time of arrival>12/1/2005 3:6:53</Date and time of arrival>
+   <Time travel>341 days, 15:46:02</Time travel>
+  </train>
+  <train>
+   <Train number>13</Train number>
+   <Departure station>Minsk</Departure station>
+   <Arival station>Gomel</Arival station>
+   <Date and time of departure>2022-05-07 11:24:24.324655</Date and time of departure>
+   <Date and time of arrival>2022-05-07 11:24:24.324679</Date and time of arrival>
+   <Time travel>0:00:00.000024</Time travel>
+  </train>
+ </trains>

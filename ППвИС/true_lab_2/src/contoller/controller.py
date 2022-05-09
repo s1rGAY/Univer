@@ -1,6 +1,5 @@
-#ОБЩАЯ ЛОГИЕ(СКОРЕЕ ВСЕГО В ФИКСЕ НЕ НУЖДАЕТСЯ)
 from view.view import ViewComponent
-from datetime import datetime, timedelta
+from datetime import datetime
 
 class ControllerComponent:
     def __init__(self, model):
@@ -18,8 +17,6 @@ class ControllerComponent:
     def dialog(self, window_type, dialog):
         self.open_dialog(window_type, dialog)
         
-#для заполнения новых данных!
-#input_student -> input_train
     def input_train(self, data):
         for i in range(len(data)):
             value = None
@@ -43,16 +40,13 @@ class ControllerComponent:
 
         self.model.add_new_train(row=data)
 
-    #filter_students -> filter_trains
     def filter_trains(self, data):
         self.model.filter_trains(filters=data)
 
-    #delete_students -> delete_trains
     def delete_trains(self, data):
         deleted = self.model.delete_trains(filters=data)
         return deleted
 
-#Done
     def upload_from_file(self, data):
         self.model.read_data(path=data)
 

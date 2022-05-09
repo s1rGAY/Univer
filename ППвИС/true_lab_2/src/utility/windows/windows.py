@@ -1,4 +1,3 @@
-import os
 
 from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
@@ -48,7 +47,7 @@ class DialogWindow(MDDialog):
         self.dismiss()
         self.view.close_dialog()
 
-#Сделано, но без глубокой переработки
+
 class InputWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
@@ -70,7 +69,7 @@ class InputWindow(DialogWindow):
             ]
         )
 
-#Не смотрел(класс для фильтрации данных)
+
 class FilterWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
@@ -93,7 +92,7 @@ class FilterWindow(DialogWindow):
             ]
         )
 
-#Окно сделано, но не работает удаление
+
 class DeleteWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
@@ -103,7 +102,7 @@ class DeleteWindow(DialogWindow):
                 view=kwargs["view"],
         )
     
-    #закртытие вводимых окон?
+
     def close(self, obj):
         self.dismiss()
         self.view.close_dialog(
@@ -117,7 +116,7 @@ class DeleteWindow(DialogWindow):
             ]
         )
 
-#Не делал
+
 class SaveWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(
@@ -131,7 +130,7 @@ class SaveWindow(DialogWindow):
         self.dismiss()
         self.view.close_dialog(self.content_cls.ids.save_path.text)
 
-#Не делал
+
 class UploadWindow(DialogWindow):
     def __init__(self, **kwargs):
         super().__init__(

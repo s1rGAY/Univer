@@ -1,5 +1,3 @@
-#просто поменял имена
-
 import xml.dom.minidom as minidom
 
 
