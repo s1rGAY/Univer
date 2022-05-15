@@ -4,7 +4,9 @@ from numba.typed import Dict
 from numba import int32
 import pygame
 
-_ = False
+_ = False #обозначение пустого места
+# _ - пустое место
+# Обозначения соответствуют номерам текстуры(легче потом отрисовывать)
 matrix_map = [
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 [1, _, _, _, _, _, 2, _, _, _, _, _, _, _, _, 3, _, 4, _, _, _, _, _, 1],
@@ -26,13 +28,14 @@ matrix_map = [
 
 WORLD_WIDTH, WORLD_HEIGHT = max([len(i) for i in matrix_map]) * TILE, len(matrix_map) * TILE
 world_map = Dict.empty(key_type=types.UniTuple(int32, 2), value_type=int32)
-mini_map = set()
-collision_walls = []
+mini_map = set() #множество позиций стен миникарты
+collision_walls = [] # список стен для последующего чека столкновений
 for j, row in enumerate(matrix_map):
     for i, char in enumerate(row):
         if char:
-            mini_map.add((i * MAP_TILE, j * MAP_TILE))
+            mini_map.add((i * MAP_TILE, j * MAP_TILE))#учет коэффицентов
             collision_walls.append(pygame.Rect(i * TILE, j * TILE, TILE, TILE))
+            #ключи - корд. стен, знач - номера текстур
             if char == 1:
                 world_map[(i * TILE, j * TILE)] = 1
             elif char == 2:

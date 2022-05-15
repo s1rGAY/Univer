@@ -1,3 +1,4 @@
+#отрисовка всех элементов
 import pygame
 from settings import *
 from map import mini_map
@@ -5,16 +6,19 @@ from collections import deque
 from random import randrange
 import sys
 
-path = '/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/'
+path = '/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/'
 
 class Drawing:
     def __init__(self, sc, sc_map, player, clock):
-        self.sc = sc
+        self.sc = sc #основная поверхность
         self.sc_map = sc_map
         self.player = player
         self.clock = clock
-        self.font = pygame.font.SysFont('Arial', 36, bold=True)
+        self.font = pygame.font.SysFont('Arial', 36, bold=True) #отображение кол-ва кадров
         self.font_win = pygame.font.Font(path+'font/font.ttf', 144)
+        
+        #атрибут для текстур
+        # словарь, тк удобнее потом писать запрос на вывод
         self.textures = {1: pygame.image.load(path+'img/wall6.png').convert(),
                          2: pygame.image.load(path+'img/wall5.png').convert(),
                          3: pygame.image.load(path+'img/wall3.png').convert(),
@@ -26,7 +30,7 @@ class Drawing:
         self.menu_picture = pygame.image.load(path+'img/bg.jpg').convert()
         # weapon parameters
         self.weapon_base_sprite = pygame.image.load(path+'sprites/weapons/shotgun/base/0.png').convert_alpha()
-        self.weapon_shot_animation = deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/weapons/shotgun/shot/{i}.png')
+        self.weapon_shot_animation = deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/weapons/shotgun/shot/{i}.png')
                                  .convert_alpha() for i in range(20)])
         self.weapon_rect = self.weapon_base_sprite.get_rect()
         self.weapon_pos = (HALF_WIDTH - self.weapon_rect.width // 2, HEIGHT - self.weapon_rect.height)
@@ -37,27 +41,31 @@ class Drawing:
         self.shot_animation_count = 0
         self.shot_sound = pygame.mixer.Sound(path+'sound/shotgun.wav')
         # shot SFX
-        self.sfx = deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/weapons/sfx/{i}.png').convert_alpha() for i in range(9)])
+        self.sfx = deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/weapons/sfx/{i}.png').convert_alpha() for i in range(9)])
         self.sfx_length_count = 0
         self.sfx_length = len(self.sfx)
 
+    #отрисовка фона
     def background(self):
         sky_offset = -10 * math.degrees(self.player.angle) % WIDTH
+        #в зависимости от смещения разные кадры неба
         self.sc.blit(self.textures['S'], (sky_offset, 0))
         self.sc.blit(self.textures['S'], (sky_offset - WIDTH, 0))
         self.sc.blit(self.textures['S'], (sky_offset + WIDTH, 0))
         pygame.draw.rect(self.sc, DARKGRAY, (0, HALF_HEIGHT, WIDTH, HALF_HEIGHT))
 
+    #отрисовка главной проекции
     def world(self, world_objects):
-        for obj in sorted(world_objects, key=lambda n: n[0], reverse=True):
+        for obj in sorted(world_objects, key=lambda n: n[0], reverse=True): #для отрисовки
             if obj[0]:
                 _, object, object_pos = obj
                 self.sc.blit(object, object_pos)
 
+    #получение fps
     def fps(self, clock):
-        display_fps = str(int(clock.get_fps()))
-        render = self.font.render(display_fps, 0, DARKORANGE)
-        self.sc.blit(render, FPS_POS)
+        display_fps = str(int(clock.get_fps())) #получаем из clock
+        render = self.font.render(display_fps, 0, DARKORANGE) #цвет
+        self.sc.blit(render, FPS_POS) #размещение (FPS_POS - settings)
 
     def win(self):
         render = self.font_win.render('YOU WIN!!!', 1, (randrange(40, 120), 0, 0))
@@ -68,15 +76,18 @@ class Drawing:
         pygame.display.flip()
         self.clock.tick(15)
 
+    #отрисовка миникарты
     def mini_map(self):
-        self.sc_map.fill(BLACK)
-        map_x, map_y = self.player.x // MAP_SCALE, self.player.y // MAP_SCALE
+        self.sc_map.fill(BLACK) #Фон карты
+        map_x, map_y = self.player.x // MAP_SCALE, self.player.y // MAP_SCALE #маштабирование позиции
+        
+        # отрисовка карты и игрока
         pygame.draw.line(self.sc_map, YELLOW, (map_x, map_y), (map_x + 8 * math.cos(self.player.angle),
                                                                map_y + 8 * math.sin(self.player.angle)), 2)
         pygame.draw.circle(self.sc_map, RED, (int(map_x), int(map_y)), 4)
         for x, y in mini_map:
             pygame.draw.rect(self.sc_map, DARKBROWN, (x, y, MAP_TILE, MAP_TILE))
-        self.sc.blit(self.sc_map, MAP_POS)
+        self.sc.blit(self.sc_map, MAP_POS) #расположение по дефолту
 
     def player_weapon(self, shot_projections):
         if self.player.shot:

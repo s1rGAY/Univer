@@ -5,7 +5,7 @@ import math
 import pygame
 from numba import njit
 
-path = '/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/'
+path = '/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/'
 
 @njit(fastmath=True, cache=True)
 def ray_casting_npc_player(npc_x, npc_y, blocked_doors, world_map, player_pos):

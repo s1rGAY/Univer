@@ -1,3 +1,4 @@
+#управление игроком
 from map import collision_walls
 from settings import *
 import pygame
@@ -6,16 +7,17 @@ import math
 
 class Player:
     def __init__(self, sprites):
-        self.x, self.y = player_pos
-        self.angle = player_angle
+        self.x, self.y = player_pos #координаты игрока
+        self.angle = player_angle #направление взгляда (для лучей)
         self.sensitivity = 0.004
         self.sprites = sprites
         # collision parameters
-        self.side = 50
-        self.rect = pygame.Rect(*player_pos, self.side, self.side)
+        self.side = 50 #парметр игрока для столкновения
+        self.rect = pygame.Rect(*player_pos, self.side, self.side) #полный список
         # weapon settings
         self.shot = False
 
+    #просто получение позиции по (X,Y)
     @property
     def pos(self):
         return (self.x, self.y)
@@ -25,17 +27,22 @@ class Player:
         return collision_walls + [pygame.Rect(*obj.pos, obj.side, obj.side) for obj
                                   in self.sprites.list_of_objects if obj.blocked]
 
+    #отслеживает нажатые клавиши =>
+    #меняет значения атрибутов 
+    #при разрешении перемещает
     def movement(self):
         self.keys_control()
         self.mouse_control()
         self.rect.center = self.x, self.y
         self.angle %= DOUBLE_PI
 
+    #обработка столкновений
     def detect_collision(self, dx, dy):
         next_rect = self.rect.copy()
         next_rect.move_ip(dx, dy)
-        hit_indexes = next_rect.collidelistall(self.collision_list)
+        hit_indexes = next_rect.collidelistall(self.collision_list) #стены для стокновений
 
+        #нахождение стороны столкновения
         if len(hit_indexes):
             delta_x, delta_y = 0, 0
             for hit_index in hit_indexes:
@@ -49,7 +56,8 @@ class Player:
                 else:
                     delta_y += hit_rect.bottom - next_rect.top
 
-            if abs(delta_x - delta_y) < 20: # <-------------
+            #запрет передвижений
+            if abs(delta_x - delta_y) < 20:
                 dx, dy = 0, 0
             elif delta_x > delta_y:
                 dy = 0
@@ -58,6 +66,9 @@ class Player:
         self.x += dx
         self.y += dy
 
+    #управление передвижениме
+    #дефолтные математические вычиселния
+    #направления отличаются друг от друга на 90 градусов
     def keys_control(self):
         sin_a = math.sin(self.angle)
         cos_a = math.cos(self.angle)
@@ -90,6 +101,7 @@ class Player:
                 if event.button == 1 and not self.shot:
                     self.shot = True
 
+    #работает по принципу переноса мышки от центра экрана(угол), а потом её обратный перенос
     def mouse_control(self):
         if pygame.mouse.get_focused():
             difference = pygame.mouse.get_pos()[0] - HALF_WIDTH

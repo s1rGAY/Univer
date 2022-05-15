@@ -6,8 +6,8 @@ from numba.core import types
 from numba.typed import Dict
 from numba import int32
 
-path = '/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/'
-
+path = '/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/'
+#всегда альфа канал
 class Sprites:
     def __init__(self):
         self.sprite_parameters = {
@@ -18,8 +18,8 @@ class Sprites:
                 'scale': (0.4, 0.4),
                 'side': 30,
                 'animation': deque(
-                    [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/barrel/anim/{i}.png').convert_alpha() for i in range(12)]),
-                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/barrel/death/{i}.png')
+                    [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/barrel/anim/{i}.png').convert_alpha() for i in range(12)]),
+                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/barrel/death/{i}.png')
                                           .convert_alpha() for i in range(4)]),
                 'is_dead': None,
                 'dead_shift': 2.6,
@@ -35,7 +35,7 @@ class Sprites:
                 'shift': 0.6,
                 'scale': (0.6, 0.6),
                 'side': 30,
-                'animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/pin/anim/{i}.png').convert_alpha() for i in range(8)]),
+                'animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/pin/anim/{i}.png').convert_alpha() for i in range(8)]),
                 'death_animation': [],
                 'is_dead': 'immortal',
                 'dead_shift': None,
@@ -52,7 +52,7 @@ class Sprites:
                 'scale': (0.6, 0.6),
                 'side': 30,
                 'animation': deque(
-                    [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/flame/anim/{i}.png').convert_alpha() for i in range(16)]),
+                    [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/flame/anim/{i}.png').convert_alpha() for i in range(16)]),
                 'death_animation': [],
                 'is_dead': 'immortal',
                 'dead_shift': 1.8,
@@ -63,13 +63,13 @@ class Sprites:
                 'obj_action': []
             },
             'npc_devil0': {
-                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/devil0/base/{i}.png').convert_alpha() for i in range(8)],
+                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/devil0/base/{i}.png').convert_alpha() for i in range(8)],
                 'viewing_angles': True,
                 'shift': 0.0,
                 'scale': (1.1, 1.1),
                 'side': 50,
                 'animation': [],
-                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/devil0/death/{i}.png')
+                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/devil0/death/{i}.png')
                                            .convert_alpha() for i in range(6)]),
                 'is_dead': None,
                 'dead_shift': 0.6,
@@ -78,16 +78,16 @@ class Sprites:
                 'blocked': True,
                 'flag': 'npc',
                 'obj_action': deque(
-                    [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/devil0/anim/{i}.png').convert_alpha() for i in range(9)]),
+                    [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/devil0/anim/{i}.png').convert_alpha() for i in range(9)]),
             },
             'npc_devil1': {
-                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/devil1/base/{i}.png').convert_alpha() for i in range(8)],
+                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/devil1/base/{i}.png').convert_alpha() for i in range(8)],
                 'viewing_angles': True,
                 'shift': 0,
                 'scale': (0.9, 1.0),
                 'side': 30,
                 'animation': [],
-                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/devil1/death/{i}.png')
+                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/devil1/death/{i}.png')
                                            .convert_alpha() for i in range(11)]),
                 'is_dead': None,
                 'dead_shift': 0.5,
@@ -95,17 +95,17 @@ class Sprites:
                 'animation_speed': 6,
                 'blocked': True,  # <-------------------
                 'flag': 'npc',
-                'obj_action': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/devil1/action/{i}.png')
+                'obj_action': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/devil1/action/{i}.png')
                                     .convert_alpha() for i in range(6)])
             },
             'npc_soldier0': {
-                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/soldier0/base/{i}.png').convert_alpha() for i in range(8)],
+                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/soldier0/base/{i}.png').convert_alpha() for i in range(8)],
                 'viewing_angles': True,
                 'shift': 0.8,
                 'scale': (0.4, 0.6),
                 'side': 30,
                 'animation': [],
-                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/soldier0/death/{i}.png')
+                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/soldier0/death/{i}.png')
                                            .convert_alpha() for i in range(10)]),
                 'is_dead': None,
                 'dead_shift': 1.7,
@@ -113,17 +113,17 @@ class Sprites:
                 'animation_speed': 6,
                 'blocked': True,
                 'flag': 'npc',
-                'obj_action': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/soldier0/action/{i}.png')
+                'obj_action': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/soldier0/action/{i}.png')
                                            .convert_alpha() for i in range(4)])
             },
             'npc_soldier1': {
-                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/soldier1/base/{i}.png').convert_alpha() for i in range(8)],
+                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/soldier1/base/{i}.png').convert_alpha() for i in range(8)],
                 'viewing_angles': True,
                 'shift': 0.8,
                 'scale': (0.4, 0.6),
                 'side': 30,
                 'animation': [],
-                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/soldier1/death/{i}.png')
+                'death_animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/soldier1/death/{i}.png')
                                            .convert_alpha() for i in range(11)]),
                 'is_dead': None,
                 'dead_shift': 1.7,
@@ -131,11 +131,11 @@ class Sprites:
                 'animation_speed': 6,
                 'blocked': True,  # <-------------------
                 'flag': 'npc',
-                'obj_action': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/npc/soldier1/action/{i}.png')
+                'obj_action': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/npc/soldier1/action/{i}.png')
                                     .convert_alpha() for i in range(4)])
             },
             'sprite_door_v': {
-                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/doors/door_v/{i}.png').convert_alpha() for i in range(16)],
+                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/doors/door_h1/{i}.png').convert_alpha() for i in range(16)],
                 'viewing_angles': True,
                 'shift': 0.1,
                 'scale': (2.6, 1.2),
@@ -151,7 +151,7 @@ class Sprites:
                 'obj_action': []
             },
             'sprite_door_h': {
-                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3_doom/Python-DOOM/sprites/doors/door_h/{i}.png').convert_alpha() for i in range(16)],
+                'sprite': [pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/doors/door_h/{i}.png').convert_alpha() for i in range(16)],
                 'viewing_angles': True,
                 'shift': 0.1,
                 'scale': (2.6, 1.2),
