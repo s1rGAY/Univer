@@ -145,4 +145,4 @@ class UploadWindow(DialogWindow):
         self.view.close_dialog(self.content_cls.ids.upload_path.text)
 
 
-Builder.load_file('/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/utility/windows/windows.kv')
+Builder.load_file('/home/siarhei/Programming/IIT/Univer/ППвИС/lab_2/src/utility/windows/windows.kv')

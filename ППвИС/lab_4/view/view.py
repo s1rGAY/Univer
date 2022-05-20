@@ -1,4 +1,3 @@
-
 from utility.windows.windows import InputWindow
 from utility.windows.windows import FilterWindow
 from utility.windows.windows import DeleteWindow
@@ -63,4 +62,4 @@ class ViewComponent(MDScreen):
         self.add_widget(self.table)
         return self
 
-Builder.load_file('/home/siarhei/Programming/IIT/Univer/ППвИС/true_lab_2/src/view/view.kv')
+Builder.load_file('/home/siarhei/Programming/IIT/Univer/ППвИС/lab_4/view/view.kv')
