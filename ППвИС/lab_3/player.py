@@ -9,15 +9,14 @@ class Player:
     def __init__(self, sprites):
         self.x, self.y = player_pos #координаты игрока
         self.angle = player_angle #направление взгляда (для лучей)
-        self.sensitivity = 0.004
-        self.sprites = sprites
-        # collision parameters
-        self.side = 50 #парметр игрока для столкновения
+        self.sensitivity = 0.004 #сенса
+        self.sprites = sprites #спрайты
+        # #парметр игрока для столкновения
+        self.side = 50 
         self.rect = pygame.Rect(*player_pos, self.side, self.side) #полный список
-        # weapon settings
+        # параметр баха моей бандуры
         self.shot = False
 
-    #просто получение позиции по (X,Y)
     @property
     def pos(self):
         return (self.x, self.y)
@@ -102,6 +101,7 @@ class Player:
                     self.shot = True
 
     #работает по принципу переноса мышки от центра экрана(угол), а потом её обратный перенос
+    #типа фикс прицела
     def mouse_control(self):
         if pygame.mouse.get_focused():
             difference = pygame.mouse.get_pos()[0] - HALF_WIDTH

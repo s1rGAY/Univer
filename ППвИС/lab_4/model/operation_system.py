@@ -1,7 +1,7 @@
-from commands_realization import Commands_realization
-from linux_commands import Linux_commands
-from win_commands import Win_commands
-from macos_commands import macOS_commands
+from model.commands_realization import Commands_realization
+from model.linux_commands import Linux_commands
+from model.win_commands import Win_commands
+from model.macos_commands import macOS_commands
 
 class Operation_system:
     def __init__(self, system_type):

@@ -4,7 +4,7 @@ class ControllerComponent():
     def __init__(self, model):
         self.model = model
 
-        self.view = ViewComponent(table=self.model.table, controller=self,)
+        self.view = ViewComponent()
 
     def get_screen(self):
         return self.view.build()

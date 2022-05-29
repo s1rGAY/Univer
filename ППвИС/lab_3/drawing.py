@@ -23,7 +23,7 @@ class Drawing:
                          2: pygame.image.load(path+'img/wall5.png').convert(),
                          3: pygame.image.load(path+'img/wall3.png').convert(),
                          4: pygame.image.load(path+'img/wall7.png').convert(),
-                         'S': pygame.image.load(path+'img/sky0.png').convert(),
+                         'S': pygame.image.load(path+'img/sky3.png').convert(),
                          }
         # menu
         self.menu_trigger = True
@@ -31,7 +31,7 @@ class Drawing:
         # weapon parameters
         self.weapon_base_sprite = pygame.image.load(path+'sprites/weapons/shotgun/base/0.png').convert_alpha()
         self.weapon_shot_animation = deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/weapons/shotgun/shot/{i}.png')
-                                 .convert_alpha() for i in range(20)])
+                                 .convert_alpha() for i in range(10)])
         self.weapon_rect = self.weapon_base_sprite.get_rect()
         self.weapon_pos = (HALF_WIDTH - self.weapon_rect.width // 2, HEIGHT - self.weapon_rect.height)
         self.shot_length = len(self.weapon_shot_animation)
@@ -39,7 +39,7 @@ class Drawing:
         self.shot_animation_trigger = True
         self.shot_animation_speed = 3
         self.shot_animation_count = 0
-        self.shot_sound = pygame.mixer.Sound(path+'sound/shotgun.wav')
+        self.shot_sound = pygame.mixer.Sound(path+'sound/awp1.mp3')
         # shot SFX
         self.sfx = deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/weapons/sfx/{i}.png').convert_alpha() for i in range(9)])
         self.sfx_length_count = 0
@@ -105,7 +105,6 @@ class Drawing:
                 self.shot_animation_trigger = False
             if self.shot_length_count == self.shot_length:
                 self.player.shot = False
-                # self.shot_animation_count = 0
                 self.shot_length_count = 0
                 self.sfx_length_count = 0
                 self.shot_animation_trigger = True
@@ -121,12 +120,11 @@ class Drawing:
             self.sfx.rotate(-1)
 
     def menu(self):
-        x = 0
         pygame.mixer.music.load(path+'sound/win.mp3')
         pygame.mixer.music.play()
         button_font = pygame.font.Font(path+'font/font.ttf', 72)
         label_font = pygame.font.Font(path+'font/font1.otf', 400)
-        start = button_font.render('START', 1, pygame.Color('lightgray'))
+        start = button_font.render('GOOOO', 1, pygame.Color('lightgray'))
         button_start = pygame.Rect(0, 0, 400, 150)
         button_start.center = HALF_WIDTH, HALF_HEIGHT
         exit = button_font.render('EXIT', 1, pygame.Color('lightgray'))
@@ -139,8 +137,7 @@ class Drawing:
                     pygame.quit()
                     sys.exit()
 
-            self.sc.blit(self.menu_picture, (0, 0), (x % WIDTH, HALF_HEIGHT, WIDTH, HEIGHT))
-            x += 1
+            self.sc.blit(self.menu_picture, (0, 0), (0 % WIDTH, HALF_HEIGHT, WIDTH, HEIGHT))
 
             pygame.draw.rect(self.sc, BLACK, button_start, border_radius=25, width=10)
             self.sc.blit(start, (button_start.centerx - 130, button_start.centery - 70))
@@ -149,7 +146,7 @@ class Drawing:
             self.sc.blit(exit, (button_exit.centerx - 85, button_exit.centery - 70))
 
             color = randrange(40)
-            label = label_font.render('DOOMPy', 1, (color, color, color))
+            label = label_font.render('SEREGA', 1, (color, color, color))
             self.sc.blit(label, (15, -30))
 
             mouse_pos = pygame.mouse.get_pos()

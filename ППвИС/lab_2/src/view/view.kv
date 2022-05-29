@@ -1,12 +1,6 @@
 <ViewComponent>:
-    MDBottomAppBar:
+    Label:
+        text: 'Привет'
 
-        MDToolbar:
-            title: ""
-            icon: "plus"
-            type: "bottom"
-            on_action_button: root.open_dialog('input')
-
-            right_action_items: [["refresh", lambda x: root.refresh()], ["upload", lambda x: root.open_dialog('upload')], ["content-save-outline", lambda x: root.open_dialog('save')]]
-
-            left_action_items: [['trash-can-outline', lambda x: root.open_dialog('delete')], ['filter-outline', lambda x: root.open_dialog('filter')]]
+    Label:
+        text: 'Мир'

@@ -1,4 +1,4 @@
-from command_settings import Сommand_settings
+from model.command_settings import Сommand_settings
 
 class Win_commands(Сommand_settings):
     def __init__(self):

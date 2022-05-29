@@ -9,7 +9,6 @@ def mapping(a, b):
     return int((a // TILE) * TILE), int((b // TILE) * TILE) #квадрат в котором находмся в данный момент
 
 #для оптимизации был выбран алгоритм пересечения квадратов Брезенхема
-#numba....
 @njit(fastmath=True, cache=True)
 def ray_casting(player_pos, player_angle, world_map):
     casted_walls = []

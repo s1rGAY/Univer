@@ -14,10 +14,11 @@ def ray_casting_npc_player(npc_x, npc_y, blocked_doors, world_map, player_pos):
     delta_x, delta_y = ox - npc_x, oy - npc_y
     angle = math.atan2(delta_y, delta_x)
     angle += math.pi
-    # ray casting
+
     sin_a = math.sin(angle)
     cos_a = math.cos(angle)
-    # verticals
+    #Брезенхем
+    # для вертикалей
     x, dx = (xm + TILE, 1) if cos_a >= 0 else (xm, -1)
     for i in range(int(abs(delta_x) // TILE)):
         depth_v = (x - ox) / cos_a
@@ -26,7 +27,7 @@ def ray_casting_npc_player(npc_x, npc_y, blocked_doors, world_map, player_pos):
         if tile_v in world_map or tile_v in blocked_doors:
             return False
         x += dx * TILE
-    # horizontals
+    # для гориз.
     y, dy = (ym + TILE, 1) if sin_a >= 0 else (ym, -1)
     for i in range(int(abs(delta_y) // TILE)):
         depth_h = (y - oy) / sin_a

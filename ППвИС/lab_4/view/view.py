@@ -1,3 +1,9 @@
+from re import M
+from kivy.core.text import Label
+
+
+import kivy
+from matplotlib.pyplot import text
 from utility.windows.windows import InputWindow
 from utility.windows.windows import FilterWindow
 from utility.windows.windows import DeleteWindow
@@ -8,18 +14,44 @@ from utility.windows.windows import UploadWindow
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 
-from kivymd.uix.screen import MDScreen
-from kivymd.uix.screen import Screen
+from kivy.uix.screenmanager import Screen
+from kivy.uix.button import Button
+from kivy.uix.pagelayout import PageLayout
+
+ 
 from kivymd.uix.snackbar import Snackbar
 
 
-class ViewComponent(MDScreen):
+class MainWidget():
+    def init(self, info='Def string'):
+        self.info = info
+        
+        self.fg = PageLayout()
+
+        btn1 = Button(text =self.info)
+        btn2 = Button(text =self.info)
+        btn3 = Button(text =self.info)
+
+        lab1 = Label(text=self.info)
+
+        self.fg.add_widget(btn1)
+        self.fg.add_widget(btn2)    
+        self.fg.add_widget(btn3)
+        self.fg.add_widget(lab1)
+
+    def get(self):
+        return self.fg
+        
+
+class ViewComponent(Screen):
     controller = ObjectProperty()
 
-    def __init__(self, table, **kw):
+    def __init__(self, **kw):
         super().__init__(**kw)
-        self.table = table
+        self.widget = MainWidget('dsdsfsdfds')
+        self.table = self.widget.get()
         self.screen = Screen()
+
 
 
     def open_dialog(self, window_type: str):
@@ -62,4 +94,4 @@ class ViewComponent(MDScreen):
         self.add_widget(self.table)
         return self
 
-Builder.load_file('/home/siarhei/Programming/IIT/Univer/ППвИС/lab_4/view/view.kv')
+#Builder.load_file('/home/siarhei/Programming/IIT/Univer/ППвИС/lab_4/view/view.kv')

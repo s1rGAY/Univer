@@ -1,7 +1,7 @@
-from operation_system import Operation_system
-from storage import Storage
-from user import User
-from keyboard import Keyboard
+from model.operation_system import Operation_system
+from model.storage import Storage
+from model.user import User
+from model.keyboard import Keyboard
 
 class Computer:
     def __init__(self, storage_size, computer_name, 

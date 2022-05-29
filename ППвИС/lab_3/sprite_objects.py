@@ -7,7 +7,7 @@ from numba.typed import Dict
 from numba import int32
 
 path = '/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/'
-#всегда альфа канал
+#всегда альфа канал(бустит ресурсы)
 class Sprites:
     def __init__(self):
         self.sprite_parameters = {
@@ -25,22 +25,6 @@ class Sprites:
                 'dead_shift': 2.6,
                 'animation_dist': 800,
                 'animation_speed': 6,
-                'blocked': True,
-                'flag': 'decor',
-                'obj_action': []
-            },
-            'sprite_pin': {
-                'sprite': pygame.image.load(path+'sprites/pin/base/0.png').convert_alpha(),
-                'viewing_angles': None,
-                'shift': 0.6,
-                'scale': (0.6, 0.6),
-                'side': 30,
-                'animation': deque([pygame.image.load(f'/home/siarhei/Programming/IIT/Univer/ППвИС/lab_3/sprites/pin/anim/{i}.png').convert_alpha() for i in range(8)]),
-                'death_animation': [],
-                'is_dead': 'immortal',
-                'dead_shift': None,
-                'animation_dist': 800,
-                'animation_speed': 10,
                 'blocked': True,
                 'flag': 'decor',
                 'obj_action': []
@@ -190,11 +174,6 @@ class Sprites:
             SpriteObject(self.sprite_parameters['sprite_flame'], (22.47, 14.48)),
             SpriteObject(self.sprite_parameters['sprite_flame'], (11.46, 14.55)),
             SpriteObject(self.sprite_parameters['sprite_flame'], (1.46, 14.41)),
-            SpriteObject(self.sprite_parameters['sprite_pin'], (8.8, 2.5)),
-            SpriteObject(self.sprite_parameters['sprite_pin'], (16.82, 12.52)),
-            SpriteObject(self.sprite_parameters['sprite_pin'], (17.45, 3.55)),
-            SpriteObject(self.sprite_parameters['sprite_pin'], (10.62, 9.36)),
-            SpriteObject(self.sprite_parameters['sprite_pin'], (7.01, 13.47)),
             SpriteObject(self.sprite_parameters['sprite_flame'], (8.6, 5.6)),
 
             SpriteObject(self.sprite_parameters['npc_soldier0'], (2.5, 1.5)),
@@ -204,7 +183,7 @@ class Sprites:
             SpriteObject(self.sprite_parameters['npc_soldier0'], (8.75, 3.65)),
             SpriteObject(self.sprite_parameters['npc_soldier0'], (1.27, 11.5)),
             SpriteObject(self.sprite_parameters['npc_soldier0'], (1.26, 8.29)),
-            # SpriteObject(self.sprite_parameters['npc_soldier0'], (2.56, 7.38)), # <------------
+            # SpriteObject(self.sprite_parameters['npc_soldier0'], (2.56, 7.38)),
             SpriteObject(self.sprite_parameters['npc_soldier1'], (10.5, 1.1)),
             SpriteObject(self.sprite_parameters['npc_soldier1'], (3.66, 5.27)),
             SpriteObject(self.sprite_parameters['npc_soldier1'], (4.38, 6.56)),
@@ -272,19 +251,19 @@ class SpriteObject:
         self.shift = parameters['shift']
         self.scale = parameters['scale']
         self.animation = parameters['animation'].copy()
-        # ---------------------
+        
         self.death_animation = parameters['death_animation'].copy()
         self.is_dead = parameters['is_dead']
         self.dead_shift = parameters['dead_shift']
-        # ---------------------
+      
         self.animation_dist = parameters['animation_dist']
         self.animation_speed = parameters['animation_speed']
         self.blocked = parameters['blocked']
         self.flag = parameters['flag']
         self.obj_action = parameters['obj_action'].copy()
         self.x, self.y = pos[0] * TILE, pos[1] * TILE
-        self.side = parameters['side'] # <-------------------------------------------------------
-        # self.pos = self.x - self.side // 2, self.y - self.side // 2
+        self.side = parameters['side']
+        
         self.dead_animation_count = 0
         self.animation_count = 0
         self.npc_action_trigger = False
@@ -324,20 +303,20 @@ class SpriteObject:
 
         delta_rays = int(gamma / DELTA_ANGLE)
         self.current_ray = CENTER_RAY + delta_rays
-        if self.flag not in {'door_h', 'door_v'}: # <------------------
+        if self.flag not in {'door_h', 'door_v'}: 
             self.distance_to_sprite *= math.cos(HALF_FOV - self.current_ray * DELTA_ANGLE)
 
         fake_ray = self.current_ray + FAKE_RAYS
         if 0 <= fake_ray <= FAKE_RAYS_RANGE and self.distance_to_sprite > 30:
             self.proj_height = min(int(PROJ_COEFF / self.distance_to_sprite),
-                                   DOUBLE_HEIGHT if self.flag not in {'door_h', 'door_v'} else HEIGHT) # <--------
+                                   DOUBLE_HEIGHT if self.flag not in {'door_h', 'door_v'} else HEIGHT)
             sprite_width = int(self.proj_height * self.scale[0])
             sprite_height = int(self.proj_height * self.scale[1])
             half_sprite_width = sprite_width // 2
             half_sprite_height = sprite_height // 2
             shift = half_sprite_height * self.shift
 
-            # logic for doors, npc, decors
+            # двери + нпс
             if self.flag == 'door_h' or self.flag == 'door_v':
                 if self.door_open_trigger:
                     self.door_open()
@@ -351,23 +330,10 @@ class SpriteObject:
                 elif self.npc_action_trigger:
                     sprite_object = self.npc_in_action()
                 else:
-                    # choose sprite for angle
+                    # луч для спрайта
                     self.object = self.visible_sprite()
-                    # sprite animation
                     sprite_object = self.sprite_animation()
-            # print(sprite_width, sprite_height)
-            # if sprite_width > DOUBLE_WIDTH or sprite_height > DOUBLE_HEIGHT:
-            #     sprite_rect = sprite_object.get_rect()
-            #     kw = sprite_width / WIDTH
-            #     kh = sprite_height / HEIGHT
-            #     sprite_object = sprite_object.subsurface(sprite_rect.centerx - sprite_rect.w / kw / 2,
-            #                                              sprite_rect.centery - sprite_rect.h / kh / 2,
-            #                                              sprite_rect.w / kw, sprite_rect.h / kh)
-            #     sprite = pygame.transform.scale(sprite_object, (WIDTH, HEIGHT))
-            #     sprite_pos = (self.current_ray * SCALE - HALF_WIDTH, HALF_HEIGHT - HALF_HEIGHT + shift)
-            # else:
-            # sprite scale and pos
-            # print(sprite_object if type(sprite_object) == list else 0)
+
             sprite = pygame.transform.scale(sprite_object, (sprite_width, sprite_height))
             sprite_pos = (self.current_ray * SCALE - half_sprite_width, HALF_HEIGHT - half_sprite_height + shift)
 
