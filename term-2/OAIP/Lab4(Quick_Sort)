@@ -1,0 +1,574 @@
+/*В кассе имеется информация о поездах на ближайшую неделю : 
+дата выезда,
+пункт назначения,
+время отправления,
+число свободных мест;
+Необходимо зарезервировать m мест до города N на k - й день недели 
+с временем от - правления поезда не позднее t часов.
+Вывести время отправления или сообщение о невозможности выполнить заказ.
+Ключ : число свободных мест.*/
+
+
+#include <iostream>
+#include <fstream>
+#include <istream>
+#include <algorithm>
+#include <string.h>
+#include <string>
+#include <math.h>
+#include <vector>
+#include <map>
+#include <cstdint>
+
+using namespace std;
+
+class Train {
+private:
+    struct TrainData {
+        int date=0;
+        string destination=" ";
+        int departure_time=0;
+        int free_place=0;
+    };
+    vector<struct TrainData> Synchronization(vector<TrainData>My_Trains, string File_Name) 
+    {
+        ifstream recording(File_Name, ios_base::in);
+        char* str = new char[1024];
+
+        int s = 0;
+        while (!recording.eof()) 
+        {
+            recording.getline(str, 1024, '\n');
+            s++;
+        }
+        recording.close();
+        s -= 1;//тк getline считает +1 строку от заполненых
+        My_Trains.resize(s);
+        int i = 0;
+
+        ifstream record(File_Name, ios_base::in);
+        while (!record.eof() && i != My_Trains.size()) 
+        {
+            string value;
+
+            getline(record, value, ' ');
+            getline(record, value, ',');
+            My_Trains[i].date = stoi(value);
+
+            getline(record, My_Trains[i].destination, ',');
+
+            getline(record, value, ',');
+            My_Trains[i].departure_time = stoi(value);
+
+            getline(record, value, ';');
+            My_Trains[i].free_place = stoi(value);
+            i++;
+        }
+        record.close();
+        return My_Trains;
+    };
+    //Done
+    void Clearing(string File_Name)
+    {
+        ofstream fout(File_Name, ios_base::trunc);
+        fout.close();
+    }; 
+    //Done
+    vector<TrainData>Reserev{};
+    int Partition(vector<TrainData>& My_Trains, int left, int right)
+        //Внутри функции мы используем простую математику для вычисления 
+        //центральной точки поворота на основе нижней и внешней границ вектора. 
+
+    {
+        int pivotIndex = left + (right - left) / 2;//граница разворота (опорный элемент)
+        int pivotValue = My_Trains[pivotIndex].free_place;//индекс разворота
+
+        int i = left, j = right;
+        int temp;
+
+        //С помощью while цикла мы выполняем цикл, пока нижняя граница меньше или равна верхней. 
+        while (i <= j)
+        {
+            //Первый будет увеличивать наши нижние границы до тех пор, пока значение этого индекса меньше значения разворота.
+            while (My_Trains[i].free_place < pivotValue)
+            {
+                i++;
+            }
+
+            //Точно так же мы собираемся уменьшить индекс верхней границы до тех пор, пока значение больше, чем значение поворота.
+            while (My_Trains[j].free_place > pivotValue)
+            {
+                j--;
+            }
+
+            //Когда циклы закончены, мы нашли значения, которые нужно поменять местами.
+            //Обмен значений продолжается до тех пор, пока оба граничных значения не пересекутся.
+            if (i <= j)
+            {
+                //temp for remember
+                temp = My_Trains[i].free_place;
+                int temp2 = My_Trains[i].date;
+                int temp3 = My_Trains[i].departure_time;
+                string temp4 = My_Trains[i].destination;
+
+                //swap 1
+                My_Trains[i].free_place = My_Trains[j].free_place;
+                My_Trains[i].date = My_Trains[j].date;
+                My_Trains[i].departure_time = My_Trains[j].departure_time;
+                My_Trains[i].destination = My_Trains[j].destination;
+
+                //back swap
+                My_Trains[j].free_place = temp;
+                My_Trains[j].date = temp2;
+                My_Trains[j].departure_time = temp3;
+                My_Trains[j].destination = temp4;
+
+                i++;
+                j--;
+            }
+        }
+        return i;
+    }
+    //Done
+public:
+    vector<TrainData>My_Trains{};
+    //пропши геттеры и сеттеры для структуры.
+    void Record(vector<TrainData>My_Trains, string File_Name)
+    {
+        ofstream timing;
+        timing.open(File_Name, ios_base::out);
+        for (int i = 0; i < My_Trains.size(); i++) {
+            timing << "Train - " << i + 1 << " "
+                << My_Trains[i].date << ","
+                << My_Trains[i].destination << ","
+                << My_Trains[i].departure_time << ","
+                << My_Trains[i].free_place << ";" << endl;
+        }
+        timing.close();
+    };
+    //Done записываем данные в файл
+    vector<struct TrainData> File_work(string File_Name, vector<TrainData>My_Trains) 
+    {
+        ifstream file;
+        file.open(File_Name);
+        if (!file) 
+        { //если file=false создаем файл
+            ofstream created_file(File_Name);
+            created_file.close();
+        }
+        else 
+        {
+            My_Trains = Synchronization(My_Trains, File_Name);
+            file.close();//если file=true просто закрываем поток
+        }
+        return My_Trains;
+    };
+    //Done если файла нет -> создаем ,если есть -> синхроним MyVector
+    void Сreate(vector<TrainData>&My_Trains, string File_Name) 
+    {
+        ofstream timing;
+        timing.open(File_Name, ios::app);
+
+        cout << "How many trains do you want to create?" << endl;
+        int number_of_trains;
+        cin >> number_of_trains;
+
+        int i = My_Trains.size();
+        My_Trains.resize(i + number_of_trains);
+
+        for (i; i < My_Trains.size(); i++) 
+        {
+            cout << "Train number : " << i + 1 << endl;
+            cout << "Please, enter Date : ";
+            cin >> My_Trains[i].date;
+            cout << "Please, enter Destination : ";
+            cin >> My_Trains[i].destination;
+            cout << "Please, enter Departure time : ";
+            cin >> My_Trains[i].departure_time;
+            cout << "Please, enter free_place : ";
+            cin >> My_Trains[i].free_place;
+
+            timing << "Train_№" << i + 1 << " "
+                << My_Trains[i].date << ","
+                << My_Trains[i].destination << ","
+                << My_Trains[i].departure_time << ","
+                << My_Trains[i].free_place << ";" << endl;
+        }
+        timing.close();
+        return;
+    };
+    //Done создаем новые поезда
+    void Viewing(string File_Name)
+    {
+        cout << endl;
+        string line;
+        ifstream read(File_Name);
+        if (read.is_open())
+        {
+            while (!read.eof())
+            {
+                getline(read, line);
+                cout << line << endl;
+            }
+            read.close();
+        }
+    };
+    //Done просто просматривю содержимое файла
+    void Correction(vector<TrainData>&My_Trains, string File_Name) 
+    {
+        My_Trains = Synchronization(My_Trains, File_Name);
+        cout << endl << "You can : " << endl <<
+            "Correct train data (enter 1) " << endl <<
+            "Add new train (enter 2) " << endl <<
+            "Enter : ";
+        int operation, nomber, value, selection;
+        cin >> operation;
+        string f;
+
+        bool C = false;
+        switch (operation) 
+        {
+            case 1:
+            cout << "Please enter nomber of trains : ";
+            cin >> nomber;
+
+            do 
+            {
+                cout << endl << "What do you want to correct?" << endl << endl;
+                cout << "Date (enter 1)" << endl
+                    << "Destination (enter 2)" << endl
+                    << "Departure time (enter 3)" << endl
+                    << "Free places (enter 4)" << endl
+                    << "Exit = 5" << endl
+                    << "Enter : ";
+                cin >> selection;
+                Clearing(File_Name);
+                switch (selection) 
+                {
+                case 1:
+                    cout << "Enter new Date : ";
+                    cin >> value;
+                    My_Trains[nomber - 1].date = value ;
+                    break;
+                case 2:
+                    cout << "Enter new Destination : ";
+                    cin >> f;
+                    //getline(cin, My_Trains[nomber - 1].destination);
+                    My_Trains[nomber - 1].destination = f;
+                    break;
+                case 3:
+                    cout << "Enter new Departure time : ";
+                    cin >> value;
+                    My_Trains[nomber - 1].departure_time = value;
+                    break;
+                case 4:
+                    cout << "Enter new Free places : ";
+                    cin >> value;
+                    My_Trains[nomber - 1].free_place = value;
+                    break;
+                case 5:
+                    C = true;
+                    break;
+                default:
+                    cout << "Your choice isn't correct" << endl;
+                    break;
+                }
+                Record(My_Trains, File_Name);
+            }   while (!C);
+            return;
+            break;
+        case 2:
+            Сreate(My_Trains, File_Name);
+            break;
+        default:
+            cout << "Your choice isn't correct" << endl;
+            break;
+        }
+        return;
+    };
+    //Done корректируем инфу и перезаписываем(вроде)
+    vector<TrainData> Reservation(vector<TrainData>My_Trains)
+    {
+        int date, departure_time, free_place;
+        string destination;
+
+        cout << "Please enter your Destination : ";
+        cin >> destination;
+        //bool c = true;
+        //впадлу делать через find() ебашу по старинке
+        bool j = false;
+        for (int i = 0; i < My_Trains.size(); i++) 
+        {
+            if (My_Trains[i].destination == destination) 
+            {
+                cout << "Please enter your Date : ";
+                cin >> date;
+                if (My_Trains[i].date == date)
+                {
+                    cout << "Please enter your Departure time : ";
+                    cin >> departure_time;
+                    int t = My_Trains[i].departure_time;
+                    if(t <= departure_time)
+                    {
+                        cout << "Please enter your Number of seats : ";
+                        cin >> free_place;
+                        if (My_Trains[i].free_place >= free_place)
+                        {
+
+                            vector<TrainData>ttt;
+                            ttt.resize(1);
+                            ttt[0].date = date;
+                            ttt[0].departure_time = departure_time;
+                            ttt[0].free_place = free_place;
+                            ttt[0].destination = destination;
+                            Reserev.push_back(ttt[0]);
+
+                            My_Trains[i].free_place -= free_place;
+                                                       
+                            cout << "You have reserved "<<free_place
+                                <<" places to "<< destination 
+                                <<" on the "<<date
+                                <<"th at "<< departure_time<<endl;
+                            j =true;
+                        }
+                    }
+                }
+            }
+            
+        }
+        if(j==false)
+        {
+                cout << "There is no route with your conditions"<<endl;
+        }
+        //оказалось ,что походу for эффективнее find в данном случае
+        return My_Trains;
+    }
+    //Done
+    void Viewing_reservations() {
+        cout << endl;
+        for (int i = 0; i < Reserev.size(); i++) {
+            cout << "------------------------"<<endl;
+            cout << "Destination : " << Reserev[i].destination<<endl <<
+                    "Date : " << Reserev[i].date <<endl <<
+                    "Departure time : " << Reserev[i].departure_time <<endl <<
+                    "You reserved : " << Reserev[i].free_place <<endl;
+            cout << "------------------------"<<endl;
+        }
+        cout << endl;
+        return;
+    }
+    //Done
+    void linear_search(vector<TrainData>My_Trains)
+    {
+        cout<<"Trains to which city do you want to find ?"<<endl;
+        string find;
+        cin >>find;
+        for(int i=0;i<My_Trains.size();i++)
+        {
+            if (My_Trains[i].destination==find)
+            {   
+                cout << "------------------------" <<endl;
+                cout << "Destination : " << My_Trains[i].destination<<endl <<
+                    "Date : " << My_Trains[i].date <<endl <<
+                    "Departure time : " << My_Trains[i].departure_time <<endl <<
+                    "Free places : " << My_Trains[i].free_place <<endl;
+                cout << "------------------------" <<endl;
+            }
+        }
+    }
+    //Done
+    void Selection_Sort(vector<TrainData>& My_Trains, string File_Name)
+    {
+        int min, temp;
+        // One by one move boundary of unsorted subarray 
+        for (int i = 0; i < My_Trains.size(); ++i) // i - номер текущего шага
+        {
+            // Find the minimum element in unsorted array
+            min = i;
+            for (int j = i + 1; j < My_Trains.size(); j++)
+            {
+                if (My_Trains[j].free_place < My_Trains[min].free_place)
+                {
+                    min = j;
+                }
+                // Swap the found minimum element with the first element
+                //temp vlalue
+                temp = My_Trains[i].free_place;
+                int temp2 = My_Trains[i].date;
+                int temp3 = My_Trains[i].departure_time;
+                string temp4 = My_Trains[i].destination;
+
+
+                //swap 1
+                My_Trains[i].free_place = My_Trains[min].free_place;
+                My_Trains[i].date = My_Trains[min].date;
+                My_Trains[i].departure_time = My_Trains[min].departure_time;
+                My_Trains[i].destination = My_Trains[min].destination;
+
+
+                //swap 2
+                My_Trains[min].free_place = temp;
+                My_Trains[min].date = temp2;
+                My_Trains[min].departure_time = temp3;
+                My_Trains[min].destination = temp4;
+
+            }
+            Clearing(File_Name);
+            Record(My_Trains, File_Name);
+            return;
+        }
+    }
+    void Quick_Sort(vector<TrainData> &My_Trains, int left, int right,string File_Name) 
+    {
+        if(left < right) 
+        {
+            int pivotIndex = Partition(My_Trains, left, right);
+            Quick_Sort(My_Trains, left, pivotIndex - 1,File_Name);
+            Quick_Sort(My_Trains, pivotIndex, right,File_Name);
+        }
+        Clearing(File_Name);
+        Record(My_Trains,File_Name);
+        cout<<endl;
+        cout<<"Data sorted"<<endl;
+    }
+    //Done
+    void Binary_search(vector<TrainData> &My_Trains)
+    {
+        int value;
+        cout<<"Please enter your value : ";
+        cin>>value;
+        int l = 0, r = My_Trains.size() - 1;
+
+        while (r > l) 
+        {
+            int m = (l + r) / 2;    //целочисленное деление!
+
+            if (My_Trains[m].free_place < value) 
+            {
+                l = m + 1;
+            } 
+            else if (My_Trains[m].free_place > value) 
+            {
+                r = m - 1;
+            } 
+            else 
+            {
+                cout << "------------------------" <<endl;
+                cout << "Destination : " << My_Trains[m].destination<<endl <<
+                    "Date : " << My_Trains[m].date <<endl <<
+                    "Departure time : " << My_Trains[m].departure_time <<endl <<
+                    "Free places : " << My_Trains[m].free_place <<endl;
+                cout << "------------------------" <<endl;
+                return;
+            }
+        }
+
+        //l == r == искомый индекс
+
+        //Если искомого элемента не было в массиве,
+        //бинарный поиск найдёт следующий после него элемент.
+        //Чтобы распознать этот случай, мы используем дополнительное сравнение.
+        if (My_Trains[l].free_place == value) 
+        {
+            cout << "------------------------" <<endl;
+            cout << "Destination : " << My_Trains[l].destination<<endl <<
+                "Date : " << My_Trains[l].date <<endl <<
+                "Departure time : " << My_Trains[l].departure_time <<endl <<
+                "Free places : " << My_Trains[l].free_place <<endl;
+            cout << "------------------------" <<endl;
+            return;
+        } 
+        else 
+        {   
+            cout<<endl;
+            cout<<"There is no such value in the array"<<endl;
+            return;
+        }
+    }
+    //Done
+};
+
+int main() 
+{
+    Train Trains;
+
+    string File_Name;
+    cout << "Please, enter the file Name : ";
+    cin >> File_Name;
+    File_Name += ".txt";
+    //Trains.My_Trains.resize(3);
+
+
+    Trains.My_Trains = Trains.File_work(File_Name, Trains.My_Trains); //проверка существования файла (if flase => его создание)
+    //синхронизация с содержимым файла
+
+    cout << "What do you want to do?" << endl;
+    int choice;
+    bool c = false;
+
+
+    do {
+        cout << endl <<
+            "You can :" << endl <<
+            "Create (enter 1)" << endl <<
+            "Viewing (enter 2)" << endl <<
+            "Correction (enter 3)" << endl <<
+            "Quick Sort (enter 4)" << endl <<
+            "Selection Sort (enter 5)"<<endl<<
+            "Linear search (enter 6)"<<endl<<
+            "Binary search (enter 7)"<<endl<<
+            "Make a reservation (enter 8)"<<endl<<
+            "Viewing your reservations (Enter 9)"<<endl<<
+            "Exit = 10" << endl <<
+            "Enter : ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            Trains.Сreate(Trains.My_Trains,File_Name);
+            break;
+        case 2:
+            Trains.Viewing(File_Name);
+            break;
+        case 3:
+            Trains.Correction(Trains.My_Trains, File_Name);
+            break;
+        case 4:
+            Trains.Quick_Sort(Trains.My_Trains,0,Trains.My_Trains.size()-1,File_Name);
+            //Нижняя граница - это начало вектора с нулевым индексом, 
+            //а верхняя граница - это размер вектора минус один, потому что наш индекс начинается с нуля, а не с единицы.
+            /*Когда мы запускаем quicksortфункцию, leftбудет меньше right, поэтому мы вызовем partitionфункцию,
+            которая разрежет вектор посередине, произведет некоторую замену и вернет новый индекс поворота для использования. 
+            Затем мы можем снова разделить наш вектор и рекурсивно вызвать наш quicksortалгоритм. 
+            Это продолжит разбивать наш вектор на более мелкие части и менять местами, пока он не будет отсортирован.*/
+            break;
+        case 5:
+            Trains.Selection_Sort(Trains.My_Trains,File_Name);
+            break;
+        case 6:
+            Trains.linear_search(Trains.My_Trains);
+            break;
+        case 7:
+                Trains.Binary_search(Trains.My_Trains);
+            break;
+        case 8:
+            Trains.My_Trains=Trains.Reservation(Trains.My_Trains);
+            break;
+        case 9:
+            Trains.Viewing_reservations();
+            break;
+        case 10:
+            c = true;
+            break;
+        default:
+            cout << "Your choice isn't correct" << endl;
+            break;
+        }
+    }     while (!c);
+
+    string line;
+    cout << "Введите ваше имя: ";
+    getline(cin, line);
+    cout << "Ваше имя: " << line << endl;
+
+    return 0;
+}
