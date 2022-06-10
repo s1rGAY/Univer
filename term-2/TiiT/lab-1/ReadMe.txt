@@ -1,2 +1,5 @@
-Дерево сумм. Поиск суммы чисел на отрезке массива. Изменение всех
-чисел на отрезке массива на какое-то значение.
+The tree of sums.
+
+Finding the sum of numbers on an array segment.
+
+Changing all numbers in an array segment to some value.
