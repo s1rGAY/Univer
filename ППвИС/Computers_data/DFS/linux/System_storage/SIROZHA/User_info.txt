@@ -1,1 +1,0 @@
-('SIROZHA', 'S', 'linux')
