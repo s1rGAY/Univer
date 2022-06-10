@@ -1,4 +1,3 @@
-Задча описана в kruskal.cpp
-Для её решения был использован алгоритм краскала
-так же приведены тестовые файлы (.in)
-и правильные файлы вывода (.out)
+The task is described in kruskal.cpp
+tests - (.in)
+test answers - (.out)
