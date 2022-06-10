@@ -1,4 +1,3 @@
-Все лабы были залиты после окончания сема 
-и из-за путаницы с большим колличеством файлов
-могла быть залита версия с небольшими багами
-НО в целом код рабочий, просто перепроверьте перед использованием
+# Fundamentals of algorithmization and programming(rus - AOIS)
+
+All labs were added after end of term. => they may contain small bugs, but in general they work.
