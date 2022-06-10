@@ -1,0 +1,703 @@
+<?xml version="1.0" ?>
+ <trains>
+  <train>
+   <train_number>833</train_number>
+   <depart_st>Hudson</depart_st>
+   <arriv_st>Potsdam</arriv_st>
+   <data_of_departure>23/5/2002 1:1:54</data_of_departure>
+   <data_of_arrival>12/5/2010 7:27:3</data_of_arrival>
+  </train>
+  <train>
+   <train_number>881</train_number>
+   <depart_st>Queens</depart_st>
+   <arriv_st>Binghamton</arriv_st>
+   <data_of_departure>4/4/2005 14:28:2</data_of_departure>
+   <data_of_arrival>23/5/2008 6:60:40</data_of_arrival>
+  </train>
+  <train>
+   <train_number>58</train_number>
+   <depart_st>Mineola</depart_st>
+   <arriv_st>Windsor</arriv_st>
+   <data_of_departure>24/5/2000 21:33:10</data_of_departure>
+   <data_of_arrival>4/9/2006 13:57:4</data_of_arrival>
+  </train>
+  <train>
+   <train_number>665</train_number>
+   <depart_st>Ogdensburg</depart_st>
+   <arriv_st>Jamestown</arriv_st>
+   <data_of_departure>15/11/2001 23:47:47</data_of_departure>
+   <data_of_arrival>9/1/2008 18:1:17</data_of_arrival>
+  </train>
+  <train>
+   <train_number>727</train_number>
+   <depart_st>Brook</depart_st>
+   <arriv_st>Ogdensburg</arriv_st>
+   <data_of_departure>16/2/2001 15:45:59</data_of_departure>
+   <data_of_arrival>21/8/2009 1:44:55</data_of_arrival>
+  </train>
+  <train>
+   <train_number>1</train_number>
+   <depart_st>Glen</depart_st>
+   <arriv_st>Beacon</arriv_st>
+   <data_of_departure>14/1/2004 19:26:19</data_of_departure>
+   <data_of_arrival>1/1/2009 2:3:32</data_of_arrival>
+  </train>
+  <train>
+   <train_number>686</train_number>
+   <depart_st>Falls</depart_st>
+   <arriv_st>Clinton</arriv_st>
+   <data_of_departure>23/6/2000 15:34:40</data_of_departure>
+   <data_of_arrival>18/4/2009 2:24:16</data_of_arrival>
+  </train>
+  <train>
+   <train_number>599</train_number>
+   <depart_st>Massena</depart_st>
+   <arriv_st>Potsdam</arriv_st>
+   <data_of_departure>6/1/2002 6:50:18</data_of_departure>
+   <data_of_arrival>28/6/2005 16:9:45</data_of_arrival>
+  </train>
+  <train>
+   <train_number>163</train_number>
+   <depart_st>Queens</depart_st>
+   <arriv_st>Glens</arriv_st>
+   <data_of_departure>1/3/2002 20:43:59</data_of_departure>
+   <data_of_arrival>29/10/2009 9:29:33</data_of_arrival>
+  </train>
+  <train>
+   <train_number>491</train_number>
+   <depart_st>Rotterdam</depart_st>
+   <arriv_st>Auburn</arriv_st>
+   <data_of_departure>19/6/2000 5:23:59</data_of_departure>
+   <data_of_arrival>3/12/2005 20:28:10</data_of_arrival>
+  </train>
+  <train>
+   <train_number>787</train_number>
+   <depart_st>Bronx</depart_st>
+   <arriv_st>Glen</arriv_st>
+   <data_of_departure>31/12/2002 20:50:31</data_of_departure>
+   <data_of_arrival>5/2/2009 2:14:43</data_of_arrival>
+  </train>
+  <train>
+   <train_number>125</train_number>
+   <depart_st>Mamaroneck</depart_st>
+   <arriv_st>Eastchester</arriv_st>
+   <data_of_departure>25/6/2000 18:1:6</data_of_departure>
+   <data_of_arrival>3/5/2010 14:30:30</data_of_arrival>
+  </train>
+  <train>
+   <train_number>830</train_number>
+   <depart_st>Gloversville</depart_st>
+   <arriv_st>Geneva</arriv_st>
+   <data_of_departure>4/9/2002 24:37:50</data_of_departure>
+   <data_of_arrival>27/3/2008 4:12:52</data_of_arrival>
+  </train>
+  <train>
+   <train_number>64</train_number>
+   <depart_st>Ogdensburg</depart_st>
+   <arriv_st>North</arriv_st>
+   <data_of_departure>21/1/2004 17:15:34</data_of_departure>
+   <data_of_arrival>12/2/2010 21:39:6</data_of_arrival>
+  </train>
+  <train>
+   <train_number>794</train_number>
+   <depart_st>Great</depart_st>
+   <arriv_st>Scarsdale</arriv_st>
+   <data_of_departure>15/5/2001 17:53:17</data_of_departure>
+   <data_of_arrival>11/6/2009 8:52:45</data_of_arrival>
+  </train>
+  <train>
+   <train_number>752</train_number>
+   <depart_st>Sag</depart_st>
+   <arriv_st>Fredonia</arriv_st>
+   <data_of_departure>6/9/2002 19:32:29</data_of_departure>
+   <data_of_arrival>3/8/2006 5:57:41</data_of_arrival>
+  </train>
+  <train>
+   <train_number>183</train_number>
+   <depart_st>Harlem</depart_st>
+   <arriv_st>Placid</arriv_st>
+   <data_of_departure>25/2/2002 15:45:8</data_of_departure>
+   <data_of_arrival>23/8/2008 21:5:11</data_of_arrival>
+  </train>
+  <train>
+   <train_number>5</train_number>
+   <depart_st>Seneca</depart_st>
+   <arriv_st>Albany</arriv_st>
+   <data_of_departure>24/11/2000 1:34:5</data_of_departure>
+   <data_of_arrival>9/3/2009 9:58:10</data_of_arrival>
+  </train>
+  <train>
+   <train_number>259</train_number>
+   <depart_st>Crown</depart_st>
+   <arriv_st>Coney</arriv_st>
+   <data_of_departure>13/5/2000 18:34:37</data_of_departure>
+   <data_of_arrival>4/8/2007 4:13:19</data_of_arrival>
+  </train>
+  <train>
+   <train_number>841</train_number>
+   <depart_st>City</depart_st>
+   <arriv_st>Rotterdam</arriv_st>
+   <data_of_departure>10/9/2000 18:43:55</data_of_departure>
+   <data_of_arrival>9/6/2005 3:51:40</data_of_arrival>
+  </train>
+  <train>
+   <train_number>621</train_number>
+   <depart_st>Windsor</depart_st>
+   <arriv_st>Geneva</arriv_st>
+   <data_of_departure>3/1/2005 11:2:12</data_of_departure>
+   <data_of_arrival>20/12/2010 7:44:12</data_of_arrival>
+  </train>
+  <train>
+   <train_number>176</train_number>
+   <depart_st>Cheektowaga</depart_st>
+   <arriv_st>Rochester</arriv_st>
+   <data_of_departure>18/11/2001 11:36:27</data_of_departure>
+   <data_of_arrival>26/4/2009 6:14:46</data_of_arrival>
+  </train>
+  <train>
+   <train_number>182</train_number>
+   <depart_st>New</depart_st>
+   <arriv_st>Placid</arriv_st>
+   <data_of_departure>19/5/2002 4:2:36</data_of_departure>
+   <data_of_arrival>1/12/2007 19:30:6</data_of_arrival>
+  </train>
+  <train>
+   <train_number>446</train_number>
+   <depart_st>Seneca</depart_st>
+   <arriv_st>Port</arriv_st>
+   <data_of_departure>16/12/2005 24:2:60</data_of_departure>
+   <data_of_arrival>28/4/2008 15:34:37</data_of_arrival>
+  </train>
+  <train>
+   <train_number>507</train_number>
+   <depart_st>Levittown</depart_st>
+   <arriv_st>Palmyra</arriv_st>
+   <data_of_departure>14/8/2003 21:22:54</data_of_departure>
+   <data_of_arrival>30/6/2007 20:51:43</data_of_arrival>
+  </train>
+  <train>
+   <train_number>23</train_number>
+   <depart_st>Mamaroneck</depart_st>
+   <arriv_st>Hudson</arriv_st>
+   <data_of_departure>7/3/2005 10:30:3</data_of_departure>
+   <data_of_arrival>9/9/2009 2:8:51</data_of_arrival>
+  </train>
+  <train>
+   <train_number>81</train_number>
+   <depart_st>Ilion</depart_st>
+   <arriv_st>Island</arriv_st>
+   <data_of_departure>24/10/2005 16:56:36</data_of_departure>
+   <data_of_arrival>17/7/2010 1:3:59</data_of_arrival>
+  </train>
+  <train>
+   <train_number>824</train_number>
+   <depart_st>Cortland</depart_st>
+   <arriv_st>Hyde</arriv_st>
+   <data_of_departure>10/5/2003 20:32:44</data_of_departure>
+   <data_of_arrival>5/11/2005 6:38:59</data_of_arrival>
+  </train>
+  <train>
+   <train_number>125</train_number>
+   <depart_st>Troy</depart_st>
+   <arriv_st>Schenectady</arriv_st>
+   <data_of_departure>25/10/2001 7:26:57</data_of_departure>
+   <data_of_arrival>13/4/2006 13:33:8</data_of_arrival>
+  </train>
+  <train>
+   <train_number>157</train_number>
+   <depart_st>Port</depart_st>
+   <arriv_st>Binghamton</arriv_st>
+   <data_of_departure>18/3/2003 20:21:24</data_of_departure>
+   <data_of_arrival>23/10/2010 8:1:4</data_of_arrival>
+  </train>
+  <train>
+   <train_number>579</train_number>
+   <depart_st>Stony</depart_st>
+   <arriv_st>Watervliet</arriv_st>
+   <data_of_departure>10/9/2001 19:4:54</data_of_departure>
+   <data_of_arrival>28/5/2007 8:2:7</data_of_arrival>
+  </train>
+  <train>
+   <train_number>152</train_number>
+   <depart_st>Cortland</depart_st>
+   <arriv_st>Island</arriv_st>
+   <data_of_departure>18/12/2000 7:37:35</data_of_departure>
+   <data_of_arrival>26/7/2008 11:51:7</data_of_arrival>
+  </train>
+  <train>
+   <train_number>313</train_number>
+   <depart_st>Hempstead</depart_st>
+   <arriv_st>Middletown</arriv_st>
+   <data_of_departure>12/4/2003 2:32:12</data_of_departure>
+   <data_of_arrival>11/8/2010 17:57:18</data_of_arrival>
+  </train>
+  <train>
+   <train_number>589</train_number>
+   <depart_st>Oneida</depart_st>
+   <arriv_st>Oyster</arriv_st>
+   <data_of_departure>8/10/2005 3:4:3</data_of_departure>
+   <data_of_arrival>10/7/2005 19:20:5</data_of_arrival>
+  </train>
+  <train>
+   <train_number>628</train_number>
+   <depart_st>Coney</depart_st>
+   <arriv_st>Olean</arriv_st>
+   <data_of_departure>9/7/2000 19:39:38</data_of_departure>
+   <data_of_arrival>12/12/2009 20:23:35</data_of_arrival>
+  </train>
+  <train>
+   <train_number>204</train_number>
+   <depart_st>Gloversville</depart_st>
+   <arriv_st>Rome</arriv_st>
+   <data_of_departure>15/7/2000 21:3:40</data_of_departure>
+   <data_of_arrival>8/2/2005 13:53:43</data_of_arrival>
+  </train>
+  <train>
+   <train_number>583</train_number>
+   <depart_st>Cheektowaga</depart_st>
+   <arriv_st>Palmyra</arriv_st>
+   <data_of_departure>3/9/2003 11:31:33</data_of_departure>
+   <data_of_arrival>28/4/2008 10:55:25</data_of_arrival>
+  </train>
+  <train>
+   <train_number>362</train_number>
+   <depart_st>Crown</depart_st>
+   <arriv_st>Tarrytown</arriv_st>
+   <data_of_departure>26/3/2003 24:3:33</data_of_departure>
+   <data_of_arrival>1/3/2005 1:49:15</data_of_arrival>
+  </train>
+  <train>
+   <train_number>871</train_number>
+   <depart_st>Potsdam</depart_st>
+   <arriv_st>Glen</arriv_st>
+   <data_of_departure>7/6/2001 17:50:26</data_of_departure>
+   <data_of_arrival>22/11/2008 8:43:16</data_of_arrival>
+  </train>
+  <train>
+   <train_number>569</train_number>
+   <depart_st>Auburn</depart_st>
+   <arriv_st>Flushing</arriv_st>
+   <data_of_departure>17/9/2003 10:24:44</data_of_departure>
+   <data_of_arrival>30/10/2005 20:37:39</data_of_arrival>
+  </train>
+  <train>
+   <train_number>946</train_number>
+   <depart_st>Southampton</depart_st>
+   <arriv_st>Huntington</arriv_st>
+   <data_of_departure>9/5/2001 19:51:32</data_of_departure>
+   <data_of_arrival>19/1/2010 17:54:15</data_of_arrival>
+  </train>
+  <train>
+   <train_number>447</train_number>
+   <depart_st>Geneva</depart_st>
+   <arriv_st>Crown</arriv_st>
+   <data_of_departure>17/7/2002 12:16:3</data_of_departure>
+   <data_of_arrival>22/6/2009 14:48:34</data_of_arrival>
+  </train>
+  <train>
+   <train_number>547</train_number>
+   <depart_st>Kingston</depart_st>
+   <arriv_st>Syracuse</arriv_st>
+   <data_of_departure>8/12/2004 17:47:29</data_of_departure>
+   <data_of_arrival>22/3/2008 24:59:28</data_of_arrival>
+  </train>
+  <train>
+   <train_number>238</train_number>
+   <depart_st>Oneonta</depart_st>
+   <arriv_st>Lockport</arriv_st>
+   <data_of_departure>23/9/2005 19:22:2</data_of_departure>
+   <data_of_arrival>31/10/2006 4:23:35</data_of_arrival>
+  </train>
+  <train>
+   <train_number>589</train_number>
+   <depart_st>Tarrytown</depart_st>
+   <arriv_st>Hudson</arriv_st>
+   <data_of_departure>18/7/2003 7:28:29</data_of_departure>
+   <data_of_arrival>23/6/2007 9:49:30</data_of_arrival>
+  </train>
+  <train>
+   <train_number>749</train_number>
+   <depart_st>Falls</depart_st>
+   <arriv_st>Hills</arriv_st>
+   <data_of_departure>3/3/2005 19:59:15</data_of_departure>
+   <data_of_arrival>19/5/2005 24:22:3</data_of_arrival>
+  </train>
+  <train>
+   <train_number>466</train_number>
+   <depart_st>Poughkeepsie</depart_st>
+   <arriv_st>Palmyra</arriv_st>
+   <data_of_departure>28/9/2004 6:5:47</data_of_departure>
+   <data_of_arrival>18/1/2009 18:60:19</data_of_arrival>
+  </train>
+  <train>
+   <train_number>425</train_number>
+   <depart_st>Falls</depart_st>
+   <arriv_st>Binghamton</arriv_st>
+   <data_of_departure>16/2/2003 23:2:35</data_of_departure>
+   <data_of_arrival>14/4/2006 8:54:52</data_of_arrival>
+  </train>
+  <train>
+   <train_number>349</train_number>
+   <depart_st>Bay</depart_st>
+   <arriv_st>East</arriv_st>
+   <data_of_departure>6/5/2003 12:39:55</data_of_departure>
+   <data_of_arrival>27/8/2009 10:8:12</data_of_arrival>
+  </train>
+  <train>
+   <train_number>769</train_number>
+   <depart_st>Glens</depart_st>
+   <arriv_st>Point</arriv_st>
+   <data_of_departure>9/7/2002 11:58:10</data_of_departure>
+   <data_of_arrival>17/6/2006 19:35:10</data_of_arrival>
+  </train>
+  <train>
+   <train_number>535</train_number>
+   <depart_st>Brooklyn</depart_st>
+   <arriv_st>Johnstown</arriv_st>
+   <data_of_departure>18/12/2000 9:20:56</data_of_departure>
+   <data_of_arrival>11/9/2008 7:43:23</data_of_arrival>
+  </train>
+  <train>
+   <train_number>975</train_number>
+   <depart_st>Springs</depart_st>
+   <arriv_st>Harlem</arriv_st>
+   <data_of_departure>1/2/2001 23:60:38</data_of_departure>
+   <data_of_arrival>3/11/2007 22:53:51</data_of_arrival>
+  </train>
+  <train>
+   <train_number>309</train_number>
+   <depart_st>Newburgh</depart_st>
+   <arriv_st>Plains</arriv_st>
+   <data_of_departure>25/6/2005 22:14:36</data_of_departure>
+   <data_of_arrival>23/8/2008 16:7:1</data_of_arrival>
+  </train>
+  <train>
+   <train_number>169</train_number>
+   <depart_st>White</depart_st>
+   <arriv_st>Rensselaer</arriv_st>
+   <data_of_departure>28/6/2003 13:25:56</data_of_departure>
+   <data_of_arrival>20/1/2005 19:27:46</data_of_arrival>
+  </train>
+  <train>
+   <train_number>982</train_number>
+   <depart_st>Jamestown</depart_st>
+   <arriv_st>Rochester</arriv_st>
+   <data_of_departure>27/6/2005 10:42:8</data_of_departure>
+   <data_of_arrival>7/1/2007 20:22:32</data_of_arrival>
+  </train>
+  <train>
+   <train_number>189</train_number>
+   <depart_st>Huntington</depart_st>
+   <arriv_st>North</arriv_st>
+   <data_of_departure>4/8/2003 24:53:21</data_of_departure>
+   <data_of_arrival>19/9/2007 4:2:40</data_of_arrival>
+  </train>
+  <train>
+   <train_number>169</train_number>
+   <depart_st>Hampton</depart_st>
+   <arriv_st>Cohoes</arriv_st>
+   <data_of_departure>12/7/2002 7:53:50</data_of_departure>
+   <data_of_arrival>20/7/2009 19:13:11</data_of_arrival>
+  </train>
+  <train>
+   <train_number>67</train_number>
+   <depart_st>Staten</depart_st>
+   <arriv_st>Rotterdam</arriv_st>
+   <data_of_departure>11/12/2004 2:2:9</data_of_departure>
+   <data_of_arrival>14/9/2006 19:58:37</data_of_arrival>
+  </train>
+  <train>
+   <train_number>628</train_number>
+   <depart_st>Jamestown</depart_st>
+   <arriv_st>Aurora</arriv_st>
+   <data_of_departure>6/3/2002 11:56:3</data_of_departure>
+   <data_of_arrival>24/12/2008 16:20:11</data_of_arrival>
+  </train>
+  <train>
+   <train_number>153</train_number>
+   <depart_st>Jamestown</depart_st>
+   <arriv_st>Rye</arriv_st>
+   <data_of_departure>6/5/2001 16:49:12</data_of_departure>
+   <data_of_arrival>5/11/2005 24:49:60</data_of_arrival>
+  </train>
+  <train>
+   <train_number>148</train_number>
+   <depart_st>Point</depart_st>
+   <arriv_st>Syracuse</arriv_st>
+   <data_of_departure>16/9/2005 8:16:28</data_of_departure>
+   <data_of_arrival>25/5/2009 4:11:39</data_of_arrival>
+  </train>
+  <train>
+   <train_number>225</train_number>
+   <depart_st>Brook</depart_st>
+   <arriv_st>Fredonia</arriv_st>
+   <data_of_departure>4/6/2003 19:2:31</data_of_departure>
+   <data_of_arrival>16/2/2006 3:6:35</data_of_arrival>
+  </train>
+  <train>
+   <train_number>260</train_number>
+   <depart_st>Utica</depart_st>
+   <arriv_st>Stony</arriv_st>
+   <data_of_departure>3/1/2001 3:44:2</data_of_departure>
+   <data_of_arrival>2/5/2005 22:18:40</data_of_arrival>
+  </train>
+  <train>
+   <train_number>757</train_number>
+   <depart_st>Rochelle</depart_st>
+   <arriv_st>Seneca</arriv_st>
+   <data_of_departure>27/7/2002 2:12:14</data_of_departure>
+   <data_of_arrival>20/7/2006 6:11:31</data_of_arrival>
+  </train>
+  <train>
+   <train_number>962</train_number>
+   <depart_st>Staten</depart_st>
+   <arriv_st>Queens</arriv_st>
+   <data_of_departure>8/1/2004 13:45:12</data_of_departure>
+   <data_of_arrival>1/11/2008 1:24:29</data_of_arrival>
+  </train>
+  <train>
+   <train_number>589</train_number>
+   <depart_st>Ithaca</depart_st>
+   <arriv_st>Peekskill</arriv_st>
+   <data_of_departure>11/12/2005 14:7:23</data_of_departure>
+   <data_of_arrival>30/5/2009 9:11:15</data_of_arrival>
+  </train>
+  <train>
+   <train_number>939</train_number>
+   <depart_st>Cohoes</depart_st>
+   <arriv_st>Kingston</arriv_st>
+   <data_of_departure>29/4/2005 10:35:46</data_of_departure>
+   <data_of_arrival>20/6/2009 16:5:32</data_of_arrival>
+  </train>
+  <train>
+   <train_number>228</train_number>
+   <depart_st>Huntington</depart_st>
+   <arriv_st>Troy</arriv_st>
+   <data_of_departure>20/2/2005 9:34:51</data_of_departure>
+   <data_of_arrival>4/2/2010 2:4:57</data_of_arrival>
+  </train>
+  <train>
+   <train_number>858</train_number>
+   <depart_st>Lake</depart_st>
+   <arriv_st>Seneca</arriv_st>
+   <data_of_departure>10/12/2001 18:29:52</data_of_departure>
+   <data_of_arrival>26/4/2005 3:28:16</data_of_arrival>
+  </train>
+  <train>
+   <train_number>168</train_number>
+   <depart_st>Seneca</depart_st>
+   <arriv_st>Hyde</arriv_st>
+   <data_of_departure>20/5/2003 5:17:53</data_of_departure>
+   <data_of_arrival>8/3/2007 20:58:56</data_of_arrival>
+  </train>
+  <train>
+   <train_number>552</train_number>
+   <depart_st>Vernon</depart_st>
+   <arriv_st>Cohoes</arriv_st>
+   <data_of_departure>12/9/2002 21:49:43</data_of_departure>
+   <data_of_arrival>20/3/2005 19:6:49</data_of_arrival>
+  </train>
+  <train>
+   <train_number>404</train_number>
+   <depart_st>Oneonta</depart_st>
+   <arriv_st>White</arriv_st>
+   <data_of_departure>6/9/2004 13:32:52</data_of_departure>
+   <data_of_arrival>23/1/2010 15:16:55</data_of_arrival>
+  </train>
+  <train>
+   <train_number>591</train_number>
+   <depart_st>Falls</depart_st>
+   <arriv_st>Forest</arriv_st>
+   <data_of_departure>15/1/2004 16:59:1</data_of_departure>
+   <data_of_arrival>23/8/2006 6:14:8</data_of_arrival>
+  </train>
+  <train>
+   <train_number>180</train_number>
+   <depart_st>Saratoga</depart_st>
+   <arriv_st>Harbor</arriv_st>
+   <data_of_departure>21/10/2002 9:34:43</data_of_departure>
+   <data_of_arrival>15/9/2008 4:51:26</data_of_arrival>
+  </train>
+  <train>
+   <train_number>96</train_number>
+   <depart_st>Placid</depart_st>
+   <arriv_st>Rotterdam</arriv_st>
+   <data_of_departure>25/3/2005 19:40:7</data_of_departure>
+   <data_of_arrival>23/1/2010 21:19:56</data_of_arrival>
+  </train>
+  <train>
+   <train_number>40</train_number>
+   <depart_st>Forest</depart_st>
+   <arriv_st>Coney</arriv_st>
+   <data_of_departure>14/11/2003 11:6:14</data_of_departure>
+   <data_of_arrival>24/5/2010 14:30:20</data_of_arrival>
+  </train>
+  <train>
+   <train_number>281</train_number>
+   <depart_st>Binghamton</depart_st>
+   <arriv_st>Seneca</arriv_st>
+   <data_of_departure>19/4/2003 16:42:28</data_of_departure>
+   <data_of_arrival>2/6/2008 9:32:25</data_of_arrival>
+  </train>
+  <train>
+   <train_number>960</train_number>
+   <depart_st>East</depart_st>
+   <arriv_st>Watkins</arriv_st>
+   <data_of_departure>6/2/2005 19:10:17</data_of_departure>
+   <data_of_arrival>14/1/2005 19:8:23</data_of_arrival>
+  </train>
+  <train>
+   <train_number>772</train_number>
+   <depart_st>Beacon</depart_st>
+   <arriv_st>Watkins</arriv_st>
+   <data_of_departure>2/3/2000 19:11:55</data_of_departure>
+   <data_of_arrival>13/1/2006 19:5:23</data_of_arrival>
+  </train>
+  <train>
+   <train_number>454</train_number>
+   <depart_st>Clinton</depart_st>
+   <arriv_st>Bedford</arriv_st>
+   <data_of_departure>26/3/2004 3:37:1</data_of_departure>
+   <data_of_arrival>1/11/2007 2:15:18</data_of_arrival>
+  </train>
+  <train>
+   <train_number>514</train_number>
+   <depart_st>Cooperstown</depart_st>
+   <arriv_st>Point</arriv_st>
+   <data_of_departure>25/1/2001 9:48:8</data_of_departure>
+   <data_of_arrival>27/10/2007 11:11:38</data_of_arrival>
+  </train>
+  <train>
+   <train_number>914</train_number>
+   <depart_st>Corning</depart_st>
+   <arriv_st>Manhattan</arriv_st>
+   <data_of_departure>31/4/2003 15:23:37</data_of_departure>
+   <data_of_arrival>13/7/2007 23:51:25</data_of_arrival>
+  </train>
+  <train>
+   <train_number>59</train_number>
+   <depart_st>Hudson</depart_st>
+   <arriv_st>Queens</arriv_st>
+   <data_of_departure>2/4/2002 1:8:21</data_of_departure>
+   <data_of_arrival>3/12/2008 19:37:49</data_of_arrival>
+  </train>
+  <train>
+   <train_number>764</train_number>
+   <depart_st>Rochelle</depart_st>
+   <arriv_st>Middletown</arriv_st>
+   <data_of_departure>11/11/2002 2:19:15</data_of_departure>
+   <data_of_arrival>4/10/2010 4:47:10</data_of_arrival>
+  </train>
+  <train>
+   <train_number>990</train_number>
+   <depart_st>Rye</depart_st>
+   <arriv_st>Watertown</arriv_st>
+   <data_of_departure>26/7/2001 2:55:20</data_of_departure>
+   <data_of_arrival>30/5/2005 24:10:60</data_of_arrival>
+  </train>
+  <train>
+   <train_number>945</train_number>
+   <depart_st>Island</depart_st>
+   <arriv_st>Levittown</arriv_st>
+   <data_of_departure>20/6/2001 7:47:2</data_of_departure>
+   <data_of_arrival>11/4/2010 18:51:19</data_of_arrival>
+  </train>
+  <train>
+   <train_number>964</train_number>
+   <depart_st>Binghamton</depart_st>
+   <arriv_st>Syracuse</arriv_st>
+   <data_of_departure>4/10/2005 7:13:13</data_of_departure>
+   <data_of_arrival>5/12/2005 14:58:36</data_of_arrival>
+  </train>
+  <train>
+   <train_number>793</train_number>
+   <depart_st>Elmira</depart_st>
+   <arriv_st>Plattsburgh</arriv_st>
+   <data_of_departure>18/1/2002 17:37:39</data_of_departure>
+   <data_of_arrival>6/9/2008 20:57:32</data_of_arrival>
+  </train>
+  <train>
+   <train_number>678</train_number>
+   <depart_st>Queens</depart_st>
+   <arriv_st>Massena</arriv_st>
+   <data_of_departure>20/12/2001 3:6:23</data_of_departure>
+   <data_of_arrival>23/1/2006 5:39:59</data_of_arrival>
+  </train>
+  <train>
+   <train_number>937</train_number>
+   <depart_st>Ossining</depart_st>
+   <arriv_st>Nyack</arriv_st>
+   <data_of_departure>29/4/2001 20:36:48</data_of_departure>
+   <data_of_arrival>5/3/2008 13:28:44</data_of_arrival>
+  </train>
+  <train>
+   <train_number>661</train_number>
+   <depart_st>Garden</depart_st>
+   <arriv_st>Batavia</arriv_st>
+   <data_of_departure>27/8/2001 1:29:42</data_of_departure>
+   <data_of_arrival>3/7/2008 16:3:31</data_of_arrival>
+  </train>
+  <train>
+   <train_number>338</train_number>
+   <depart_st>City</depart_st>
+   <arriv_st>Oneonta</arriv_st>
+   <data_of_departure>5/1/2002 22:16:11</data_of_departure>
+   <data_of_arrival>1/12/2005 19:42:9</data_of_arrival>
+  </train>
+  <train>
+   <train_number>431</train_number>
+   <depart_st>East</depart_st>
+   <arriv_st>Oneida</arriv_st>
+   <data_of_departure>12/2/2004 24:49:16</data_of_departure>
+   <data_of_arrival>5/7/2007 7:33:7</data_of_arrival>
+  </train>
+  <train>
+   <train_number>227</train_number>
+   <depart_st>Gloversville</depart_st>
+   <arriv_st>Harlem</arriv_st>
+   <data_of_departure>12/3/2001 14:27:10</data_of_departure>
+   <data_of_arrival>3/8/2006 12:12:50</data_of_arrival>
+  </train>
+  <train>
+   <train_number>517</train_number>
+   <depart_st>East</depart_st>
+   <arriv_st>Rensselaer</arriv_st>
+   <data_of_departure>21/10/2005 7:53:58</data_of_departure>
+   <data_of_arrival>27/4/2010 22:15:50</data_of_arrival>
+  </train>
+  <train>
+   <train_number>406</train_number>
+   <depart_st>Plattsburgh</depart_st>
+   <arriv_st>White</arriv_st>
+   <data_of_departure>30/4/2001 10:58:45</data_of_departure>
+   <data_of_arrival>30/4/2005 4:53:60</data_of_arrival>
+  </train>
+  <train>
+   <train_number>384</train_number>
+   <depart_st>Rochelle</depart_st>
+   <arriv_st>Seneca</arriv_st>
+   <data_of_departure>24/10/2003 19:4:37</data_of_departure>
+   <data_of_arrival>29/9/2009 3:15:3</data_of_arrival>
+  </train>
+  <train>
+   <train_number>955</train_number>
+   <depart_st>Watkins</depart_st>
+   <arriv_st>Auburn</arriv_st>
+   <data_of_departure>16/3/2000 21:5:57</data_of_departure>
+   <data_of_arrival>24/7/2006 1:2:25</data_of_arrival>
+  </train>
+  <train>
+   <train_number>836</train_number>
+   <depart_st>Mineola</depart_st>
+   <arriv_st>Oneonta</arriv_st>
+   <data_of_departure>3/10/2000 3:2:41</data_of_departure>
+   <data_of_arrival>3/3/2007 4:17:49</data_of_arrival>
+  </train>
+  <train>
+   <train_number>394</train_number>
+   <depart_st>Lake</depart_st>
+   <arriv_st>Bedford</arriv_st>
+   <data_of_departure>12/2/2001 16:22:4</data_of_departure>
+   <data_of_arrival>14/2/2006 1:4:40</data_of_arrival>
+  </train>
+ </trains>
